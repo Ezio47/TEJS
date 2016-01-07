@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Terra Explorer 6.6+ must be installed for this test to work
+    -->
+
+    <title>Testing page</title>
+    <meta charset="utf-8" />
+    <script src="TEJS.js"></script>
+</head>
+<body>
+
+    <script>
+
+        var globe = new SGWorld('6.6');
+
+        // version.toString() should be a full version string
+        alert('globe.Version.toString() = "' + globe.Version.toString() + '"');
+
+        // RootID should still come up as an empty string from the prototype
+        alert('globe.ProjectTree.RootID = "' + globe.ProjectTree.RootID + '"');
+
+    </script>
+
+</body>
+</html>
