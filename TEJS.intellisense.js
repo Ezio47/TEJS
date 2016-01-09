@@ -5,7 +5,7 @@
     /// </signature>
     /// <signature>
     /// <summary>ISGWorld in the main entry point to most TerraExplorer interfaces. Through this interface you can manage your application and 3D content and handle events.</summary>
-    /// <param name="version" type="String">"6.5" or "6.6"</param>
+    /// <param name="version" type="Decimal">6.5 or 6.6</param>
     /// <returns type="ISGWorld" />
     /// </signature>
 
@@ -222,7 +222,6 @@
     function IProjectTree() {
         return {
             //Members
-
             /// <field type="String">Gets the ID of the hidden group tree element. When this ID is passed as an element’s ParentGroupID, the element will be added under a hidden group</field>
             HiddenGroupID:'',
             /// <field type="String">Gets the name of the hidden group tree element. When this name is passed as an element’s ParentGroupName, the element will be added under a hidden group</field>
@@ -235,7 +234,6 @@
  	        RootID:'',
             
             // Methods
-
  	        CreateGroup: function (GroupName, ParentGroupID) {
  	            /// <signature>
  	            /// <summary>This method creates a group in root of the Project Tree
@@ -267,64 +265,93 @@
  	            /// </signature>
  	        },
  	        DeleteItem: function (ID) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	            /// <summary>Deletes an item from the Project Tree (and from the terrain, if that item was a terrain object such as a polyline)</summary>
+ 	            /// <param name="ID" type="String">The ID of the item to be deleted</param>
+ 	            /// <returns type="Undefined" />
  	        },
  	        EditItem: function (ID, Flags) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	            /// <summary>Opens the property sheet to edit a specified item. Advanced edit options are available through the Flags parameter</summary>
+ 	            /// <param name="ID" type="String">The ID of the item to edit</param>
+ 	            /// <param name="Flags" type="EditITemFlags">enum</param>
+ 	            /// <returns type="Undefined" />
  	        },
  	        EditItems: function (Items) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	            /// <summary>Opens the Multi Edit property sheet to edit multiple specified items</summary>
+ 	            /// <param name="Items" type="object">An array that contains item IDs. Each item ID in the array is selected for the multi-edit operation</param>
+ 	            /// <returns type="Undefined" />
  	        },
  	        EnableRedraw: function (bEnable) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	            /// <summary>This method is used to allow or prevent redrawing of changes in the Project Tree</summary>
+ 	            /// <param name="bEnable" type="Boolean">A Boolean that determines whether or not the Project Tree should be redrawn</param>
+ 	            /// <returns type="Undefined" />
  	        },
  	        EndEdit: function() {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	            /// <summary>This method terminates the EditItem mode</summary>
+ 	            /// <returns type="Undefined" />
  	        },
  	        ExpandGroup: function (GroupID, bExpand) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	            /// <summary>Expands the specified group (so that it displays all of its children) or collapses it</summary>
+ 	            /// <param name="GroupID" type="String">The ID the group that is expanded (or collapsed). You can obtain the GroupID by one of the following methods:
+ 	            /// <para>IProjectTree.CreateGroup, IProjectTree.FindItem, IProjectTree.GetNextItem</para>
+ 	            /// </param>
+ 	            /// <param name="bExpand" type="Boolean">A Boolean that determines whether the group is expanded or collapsed</param>
+ 	            /// <returns type="Undefined" />
  	        },
  	        FindItem: function (PathName) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	            /// <summary>Finds an item using a path to that item. Supported by TerraExplorer Viewer</summary>
+ 	            /// <param name="PathName" type="String">The exact path to the item being searched. Child items are separated by ‘\’ (i.e. “Cities\Boston”)</param>
+ 	            /// <returns type="String" />
  	        },
  	        GetActivationCode: function (GroupID) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	            /// <summary>Returns the activation action assigned to the specified group</summary>
+ 	            /// <param name="GroupID" type="String">Refers to the group whose activation action is retrieved. You can obtain the GroupID by one of the following methods
+ 	            /// <para>IProjectTree.CreateGroup, IProjectTree.FindItem, IProjectTree.GetNextItem</para>
+                /// </param>
+ 	            /// <returns type="IAction" />
  	        },
  	        GetClientData: function (ID, Namespace) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	            /// <summary>The GetClientData method retrieves the text string stored in a specific namespace</summary>
+ 	            /// <param name="ID" type="String">The item whose client data you want to retrieve</param>
+ 	            /// <param name="Namespace" type="String">The identifier of the text string</param>
+ 	            /// <returns type="String" />
  	        },
  	        GetGroupEndTime: function (GroupID) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	            /// <summary>This method returns the date and time on which the specified group no longer displays on the terrain</summary>
+ 	            /// <param name="GroupID" type="String">The Project Tree group whose end time is being retrieved. You can obtain the GroupID by one of the following methods
+ 	            /// <para>IProjectTree.CreateGroup, IProjectTree.FindItem, IProjectTree.GetNextItem</para>
+ 	            /// </param>
+ 	            /// <returns type="Object" />
  	        },
  	        GetGroupLocation: function (GroupID) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	            /// <summary>This method returns the location parameters of the specified group</summary>
+ 	            /// <param name="GroupID" type="String">The ID of the group whose location you are about to get. You can obtain the GroupID by one of the following methods
+ 	            /// <para>IProjectTree.CreateGroup, IProjectTree.FindItem, IProjectTree.GetNextItem</para>
+ 	            /// </param>
+ 	            /// <returns type="IPosition" />
  	        },
  	        GetGroupStartTime: function (GroupID) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	            /// <summary>This method returns the date and time on which the specified group is first visible on the terrain</summary>
+ 	            /// <param name="GroupID" type="String">The Project Tree group whose start time is being returned. You can obtain the GroupID by one of the following methods
+ 	            /// <para>IProjectTree.CreateGroup, IProjectTree.FindItem, IProjectTree.GetNextItem</para>
+ 	            /// </param>
+ 	            /// <returns type="Object" />
  	        },
  	        GetItemName: function(ID) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	            /// <summary>Returns the name of a specific item in the Project Tree using its ID</summary>
+ 	            /// <param name="ID" type="String">The ID of the item whose name you are looking for</param>
+ 	            /// <returns type="String" />
  	        },
  	        GetLayer: function (GroupID) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	            /// <summary>The GetLayer method returns an interface to the IFeatureLayer object based on the specified ID. 
+                /// <para>To determine whether GroupID is the ID of a feature layer, use IProjectTree.GetObject to return an interface to the Project Tree element and then ITerraExplorerObject. ObjectType to get the element type</para></summary>
+ 	            /// <param name="GroupID" type="String">The ID of the layer item requested</param>
+ 	            /// <returns type="IFeatureLayer" />
  	        },
- 	        GetNextItem: function (ID,Code) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	        GetNextItem: function (ID, Code) {
+ 	            /// <summary>You can call this method to retrieve the Tree item that has the specified relationship, indicated by the Code parameter, to another item whose ID is specified</summary>
+ 	            /// <param name="ID" type="String">The reference item from which the next item is located</param>
+ 	            /// <param name="Code" type="ItemCode">An enum that indicates what item is being searched (In relation to the ID parameter)</param>
+ 	            /// <returns type="String" />
  	        },
  	        GetObject: function (ID) {
  	            /// <summary>Returns an interface to an object based on its ID. If IProjectTree.GetObject fails, it might be that the item that you are trying to access is actually a group (which has no interface).
@@ -334,122 +361,182 @@
  	            /// <returns type="ITerraExplorerObject" />
  	        },
  	        GetVisibility: function (ID) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	            /// <summary>This method returns the visibility status of a Project Tree item on the terrain</summary>
+ 	            /// <param name="ID" type="String">The ID of the Project Tree item in question</param>
+ 	            /// <returns type="enum" />
  	        },
- 	        IsGroup           : function(ID) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	        IsGroup: function(ID) {
+ 	            /// <summary>This method checks whether or not a ProjectTree item is a group. IsGroup returns TRUE when the ProjectTree item is a group</summary>
+ 	            /// <param name="ID" type="String">The ID of the item in question</param>
+ 	            /// <returns type="Boolean" />
  	        },
- 	        IsLayer	          : function() {
+ 	        IsLayer: function() {
  	            /// <summary>Obsolete. To determine whether a Project Tree element is a feature layer, use IProjectTree.GetObject to return an interface to the element and then ITerraExplorerObject. ObjectType to get the element type.</summary>
  	            /// <deprecated type="remove"></deprecated>
             },
- 	        IsLocked          : function(ID) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	        IsLocked: function(ID) {
+ 	            /// <summary>This method checks whether or not a group is locked. IsLocked returns TRUE when the specified group is locked</summary>
+ 	            /// <param name="ID" type="String">The ID of the group in question</param>
+ 	            /// <returns type="Boolean" />
  	        },
- 	        LoadFlyLayer: function (FlyURL,ParentGroupID) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	        LoadFlyLayer: function (FlyURL, ParentGroupID) {
+ 	            /// <signature>
+ 	            /// <summary>This method loads a Fly file into the current project. All the objects from the Fly file, including locations, presentations, and hyperlinks, are added</summary>
+ 	            /// <param name="FlyURL" type="String">A full path name or a URL to the Fly file to load</param>
+ 	            /// <returns type="String" />
+ 	            /// </signature>
+ 	            /// <signature>
+ 	            /// <summary>This method loads a Fly file into the current project. All the objects from the Fly file, including locations, presentations, and hyperlinks, are added</summary>
+ 	            /// <param name="FlyURL" type="String">A full path name or a URL to the Fly file to load</param>
+ 	            /// <param name="ParentGroupID" type="String">The Project Tree group in which to put the objects from the imported Fly file. If set to zero, the object is created under the root. The layer objects are put in a group with the name of the Fly file (e.g., for the file “C:\MyFly.fly”, a new group named “MyFly” is created), and maintain the same internal group hierarchy as the loaded file. You can obtain the GroupID by one of the following methods:
+ 	            /// <para>IProjectTree.CreateGroup, IProjectTree.FindItem, IProjectTree.GetNextItem</para>
+ 	            /// </param>
+ 	            /// <returns type="String" />
+ 	            /// </signature>
  	        },
- 	        LockGroup: function (GroupID,bLock) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	        LockGroup: function (GroupID, bLock) {
+ 	            /// <summary>The method sets a group to a “lock” (collapsed) status mode. When a group is locked, users of TerraExplorer Viewer cannot expand the group and view its contents</summary>
+ 	            /// <param name="GroupID" type="String">The group whose lock status is changed. You can obtain the GroupID by one of the following methods
+ 	            /// <para>IProjectTree.CreateGroup, IProjectTree.FindItem, IProjectTree.GetNextItem</para>
+ 	            /// </param>
+ 	            /// <param name="bLock" type="Boolean">A Boolean that determines whether the group is locked or unlocked</param>
+ 	            /// <returns type="Undefined" />
  	        },
- 	        RenameGroup: function (GroupID,GroupName) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	        RenameGroup: function (GroupID, GroupName) {
+ 	            /// <summary>Renames a specified group in the Project Tree</summary>
+ 	            /// <param name="GroupID" type="String">Refers to the group that is renamed. You can obtain the GroupID by one of the following methods
+ 	            /// <para>IProjectTree.CreateGroup, IProjectTree.FindItem, IProjectTree.GetNextItem</para>
+ 	            /// </param>
+ 	            /// <param name="GroupName" type="String">The group’s new name</param>
+ 	            /// <returns type="Undefined" />
  	        },
- 	        SaveAsFly: function (FlyName,GroupID) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	        SaveAsFly: function (FlyName, GroupID) {
+ 	            /// <summary>This method saves the specified group to a Fly file. For security reasons the file is saved to a predefined “Skyline\TerraExplorer” folder in the “Application Data” space of the current user. The full path of the saved file is provided in the method’s return value. You can also use %APPDATA% in Windows Explorer to locate the path on your computer
+ 	            /// <para>Note: If the folder contains a file by the same name, the existing file is overwritten without a prompt</para>
+ 	            /// <para>Note: The Application Data folder path changes between different users and different Windows operating systems. To find the path used by your client look at the %APPDATA% environment variable</para>
+ 	            ///</summary>
+ 	            /// <param name="FlyName" type="String">The name for the Fly file. If it is not specified, a FLY extension is added to the file name automatically
+ 	            /// <para>Note: A file name with a full path cannot be used here</para>
+                /// </param>
+ 	            /// <param name="GroupID" type="String">The group that is being saved to a FLY. You can obtain the GroupID by one of the following methods:
+ 	            /// <para>IProjectTree.CreateGroup, IProjectTree.FindItem, IProjectTree.GetNextItem</para>
+ 	            /// </param>
+ 	            /// <returns type="String" />
  	        },
- 	        SaveAsKml: function (KmlName,GroupID) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	        SaveAsKml: function (KmlName, GroupID) {
+ 	            /// <summary>This method saves the specified group to a compressed KML file (KMZ). For security reasons the file is saved to a predefined “Skyline\TerraExplorer” folder in the “Application Data” space of the current user. The full path of the saved file is provided in the method’s return value. You can also use %APPDATA% in Windows Explorer to locate the path on your computer
+ 	            /// <para>Note: If the folder contains a file by the same name, the existing file is overwritten without a prompt</para>
+ 	            /// <para>Note: The Application Data folder path changes between different users and different Windows operating systems. To find the path used by your client look at the %APPDATA% environment variable</para>
+ 	            /// </summary>
+ 	            /// <param name="KmlName" type="String">The name for the KML file. If it is not specified, a KMZ extension is added to the file name automatically. If KML extension is specified, an uncompressed KML is created
+ 	            /// <para>Note: A file name with a full path cannot be used here</para>
+                /// </param>
+ 	            /// <param name="GroupID" type="String">The group that is being saved to a KML file. You can obtain the GroupID by one of the following methods:
+ 	            /// <para>IProjectTree.CreateGroup, IProjectTree.FindItem, IProjectTree.GetNextItem</para>
+ 	            /// </param>
+ 	            /// <returns type="String" />
  	        },
- 	        SelectItem: function (ID,Flags,Reserved) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	        SelectItem: function (ID, Flags, Reserved) {
+ 	            /// <signature>
+ 	            /// <summary>This method selects an item in the Project Tree</summary>
+ 	            /// <param name="ID" type="String">The ID of the item to select</param>
+ 	            /// <returns type="Undefined" />
+ 	            /// </signature>
+ 	            /// <signature>
+ 	            /// <summary>This method selects an item in the Project Tree</summary>
+ 	            /// <param name="ID" type="String">The ID of the item to select</param>
+ 	            /// <param name="Flags" type="Number">Currently not used. Always pass 0 (zero) for single selection</param>
+ 	            /// <returns type="Undefined" />
+ 	            /// </signature>
+ 	            /// <signature>
+ 	            /// <summary>This method selects an item in the Project Tree</summary>
+ 	            /// <param name="ID" type="String">The ID of the item to select</param>
+ 	            /// <param name="Flags" type="Number">Currently not used. Always pass 0 (zero) for single selection</param>
+ 	            /// <param name="Reserved" type="Number">Reserved, always pass 0 (zero). Currently not used</param>
+ 	            /// <returns type="Undefined" />
+ 	            /// </signature>
  	        },
- 	        SetActivationCode: function (GroupID,ACode,ActivationParam) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	        SetActivationCode: function (GroupID, ACode, ActivationParam) {
+ 	            /// <signature>
+ 	            /// <summary>Determines the default activation action executed when clicking on the locked group symbol</summary>
+ 	            /// <param name="GroupID" type="String">The ID of the group whose activation action is being set. You can obtain the GroupID by one of the following methods:
+ 	            /// <para></para>
+ 	            /// </param>
+ 	            /// <param name="ACode" type="enum">An enum that instructs the plane on how to approach and focus in on the group.</param>
+ 	            /// <returns type="Undefined" />
+ 	            /// </signature>
+ 	            /// <signature>
+ 	            /// <summary>Determines the default activation action executed when clicking on the locked group symbol</summary>
+ 	            /// <param name="GroupID" type="String">The ID of the group whose activation action is being set. You can obtain the GroupID by one of the following methods:
+ 	            /// <para></para>
+ 	            /// </param>
+ 	            /// <param name="ACode" type="enum">An enum that instructs the plane on how to approach and focus in on the group.</param>
+ 	            /// <param name="ActivationParam" type="String">When ACode is set to AC_SHOW, the ActivationParam can be one of the following values:
+ 	            /// <para>0-The item is set to hide, 1-The item is set to show</para>
+                /// </param>
+ 	            /// <returns type="Undefined" />
+ 	            /// </signature>
  	        },
- 	        SetClientData: function (ID,Namespace,ClientData) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	        SetClientData: function (ID, Namespace, ClientData) {
+ 	            /// <summary>This method stores a text string in the Project Tree item’s global namespace for the purpose of describing the item or any other purpose. You can store several text strings by using different namespaces. You can read this string by using the GetClientData method</summary>
+ 	            /// <param name="ID" type="String">The item whose client data we set</param>
+ 	            /// <param name="Namespace" type="String">The identifier of the text string. You can store several text strings in the group by using different namespaces. You must use the correct namespace when accessing the client data using the GetClientData method</param>
+ 	            /// <param name="ClientData" type="String">A text string. Note that the input string should not contain the formatting characters '\n' and '\r'</param>
+ 	            /// <returns type="Undefined" />
  	        },
- 	        SetGroupEndTime: function (GroupID,newVal) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	        SetGroupEndTime: function (GroupID, newVal) {
+ 	            /// <summary>Determines the date and time when the group should stop being visible on the terrain</summary>
+ 	            /// <param name="GroupID" type="String">The Project Tree group whose end time is being set. You can obtain the GroupID by one of the following methods:
+ 	            /// <para>IProjectTree.CreateGroup, IProjectTree.FindItem, IProjectTree.GetNextItem</para>
+ 	            /// </param>
+ 	            /// <param name="newVal" type="Object">The end date and time for the group</param>
+ 	            /// <returns type="Undefined" />
  	        },
- 	        SetGroupLocation: function (GroupID,newVal) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	        SetGroupLocation: function (GroupID, newVal) {
+ 	            /// <summary>Determines the location parameters for a specified group</summary>
+ 	            /// <param name="GroupID" type="String">Refers to the group whose location you are about to change. You can obtain the GroupID by one of the following methods:
+ 	            /// <para>IProjectTree.CreateGroup, IProjectTree.FindItem, IProjectTree.GetNextItem</para>
+ 	            /// </param>
+ 	            /// <param name="newVal" type="Object">The location parameters for the specified group</param>
+ 	            /// <returns type="Undefined" />
  	        },
  	        SetGroupStartTime: function (GroupID) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	            /// <summary>Determines the date and time when a group should start being visible</summary>
+ 	            /// <param name="GroupID" type="String">The Project Tree group whose start time is being set. You can obtain the GroupID by one of the following methods:
+ 	            /// <para>IProjectTree.CreateGroup, IProjectTree.FindItem, IProjectTree.GetNextItem</para>
+ 	            /// </param>
+ 	            /// <returns type="Object" />
  	        },
- 	        SetParent: function (ID,ParentGroupID) {
- 	            /// <summary></summary>
- 	            /// <returns type="" />
+ 	        SetParent: function (ID, ParentGroupID) {
+ 	            /// <summary>Moves an item to a different group</summary>
+ 	            /// <param name="ID" type="String">Specifies which item is placed within the new parent group</param>
+ 	            /// <param name="ParentGroupID" type="String">The ID of the item that becomes the new parent for the item specified by the ID parameter. The ParentGroupID must be a valid group ID</param>
+ 	            /// <returns type="Undefined" />
  	        },
  	        SetVisibility: function (ID,bShow) {
  	            /// <summary>This method sets a Project Tree item’s visibility on the terrain</summary>
+ 	            /// <param name="ID" type="String">The ID of the item</param>
+ 	            /// <param name="bShow" type="Boolean">A Boolean that determines whether the Project Tree item is visible on the terrain</param>
  	            /// <returns type="Undefined" />
  	        },
- 	        SortGroup: function (GroupID,SType) {
+ 	        SortGroup: function (GroupID, SType) {
+ 	            /// <signature>
  	            /// <summary>Sorts the items in the group according to the specified sort type</summary>
+ 	            /// <param name="GroupID" type="String">The ID of the group that is to be sorted. If it is set to zero, the root group is sorted. You can obtain the GroupID by one of the following methods:
+ 	            /// <para>IProjectTree.CreateGroup, IProjectTree.FindItem, IProjectTree.GetNextItem</para>
+ 	            /// </param>
  	            /// <returns type="Undefined" />
+ 	            /// </signature>
+ 	            /// <signature>
+ 	            /// <summary>Sorts the items in the group according to the specified sort type</summary>
+ 	            /// <param name="GroupID" type="String">The ID of the group that is to be sorted. If it is set to zero, the root group is sorted. You can obtain the GroupID by one of the following methods:
+ 	            /// <para>IProjectTree.CreateGroup, IProjectTree.FindItem, IProjectTree.GetNextItem</para>
+ 	            /// </param>
+ 	            /// <param name="SType" type="SortType">An enum that determines the type of sort that is performed on the group</param>
+ 	            /// <returns type="Undefined" />
+ 	            /// </signature>
             },
-
-            //$$$$$$$$$$$$
-            /*
- 	            
-            
-            Creates a group in a “locked” (collapsed) mode. When locked, TerraExplorer Viewer users cannot expand the group to view its contents
-            Deletes an item from the Project Tree (and from the terrain, if that item was a terrain object)
-            Opens the property sheet to edit a specified item.
-            Opens the Multi Edit property sheet to edit multiple specified items.
-            Enables changes to be redrawn or prevents them from being redrawn in the Project Tree.
-            Terminates the edit item mode.
-            Expands the specified group so that it displays all of its children, or collapses it.
-            Finds an item using a path to that item.
-            Returns the activation code assigned for the specified group.
-            Returns the text string describing the group’s attribute data. This information is available for general use in your application. 
-            Returns the specified group’s end date and time.
-            Returns the location of the specified group.
-            Returns the specified group’s start date and time.
-            Returns the name of a specific item using its ID.
-            Returns an interface to the IFeatureLayer66 object based on the specified group ID.
-            Retrieves the Project Tree item that has the specified relationship, indicated by the Code parameter, to another item whose ID is specified.
-            Returns an ITerraExplorerObject interface to an object based on its ID. 
-            Returns the visibility status of a Project Tree item on the terrain. 
-            Determines whether or not a ProjectTree item is a group.
-            Determines whether or not  a group is locked.
-            Loads a Fly file into the current project. All the objects from the Fly file, including locations, routes and hyperlinks, are added. 
-            Sets a group to a “lock” (collapsed) status mode. When a group is locked, users of TerraExplorer Viewer cannot expand the group and view its contents.
-            Renames a group in the Project Tree.
-            Saves the specified group to a Fly file.
-            Saves the specified group to a KML file.
-            Selects an item in the Project Tree.
-            Determines the default activation action executed when clicking on the locked group symbol.
-            Stores a text string in the group global namespace.
-            Determines the date and time when the group should stop being visible
-            Determines the location parameters for a specified group.
-            Determines the date and time when the group should start being visible
-            Moves an item to a different group.
-            Sets a ProjectTree item to be visible, or not visible, on the terrain.
- 	            ShowSubTree	Reserved
-            Sorts the items in the group according to specified sort type.
-
-            */
-
-            //$$$$$$$$$$$$
-        }
+        };
     }
     function ITerrain() {
         return {};
@@ -464,13 +551,45 @@
 
     function ITerraExplorerObject() {
         return {
+            ClientData: function(Namespace, pVal){
+                /// <signature>
+                /// <summary>Gets an array of text strings assigned to each object. The array is indexed by a Namespace identifier</summary>
+                /// <param name="Namespace" type="String">The identifier of the text string. You can store several text strings in the group by using different namespaces</param>
+                /// <returns type="String" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Gets and sets an array of text strings assigned to each object. The array is indexed by a Namespace identifier</summary>
+                /// <param name="Namespace" type="String">The identifier of the text string. You can store several text strings in the group by using different namespaces</param>
+                /// <param name="pVal" type="String">A text string</param>
+                /// <returns type="Undefined" />
+                /// </signature>
+            },
             /// <field type="String">Gets the ID of the object</field>
             ID: '',
             /// <field type="Number">Gets an enum that identifies the type of the object</field>
-            ObjectType: 0
+            ObjectType: 0,
+            SaveInFly:true,
+            GetParam:function(){
+                /// <summary>Reserved. Currently not used</summary>
+            },
+            SetParam:function(){
+                /// <summary>Reserved. Currently not used</summary>
+            }
         }
     }
 
 
 }
 
+/*
+ * Note:
+ *  -How to switch intellisense depending on version
+ * 
+ * GetClientData: (version<6.6) ? function (ID, Namespace) {
+ *      /// <summary>65</summary>
+ *      /// <returns type="" />
+ *  } : function (ID, Namespace) {
+ *      /// <summary>66</summary>
+ *  }
+ * 
+ */
