@@ -44,8 +44,8 @@
         /// <field type="ITerrain">An ITerrain object representing information about the terrain, such as the MPT file name that is being used, and information about the MPT coordinate system</field>
         , Terrain: new ITerrain()
 
-        /// <field type="IVersionInfo">Gets information about the version of TerraExplorer that is running</field>
-        , Version: new IVersionInfo()
+        /// <field type="ITEVersionInfo">Gets information about the version of TerraExplorer that is running</field>
+        , Version: new ITEVersionInfo()
 
         /// <field type="IWindow">A wrapper for all the functionality that represents interaction with the 3D Window, such as snapshots, dimensions and query pixel information.</field>
         ,Window: new IWindow()
@@ -195,14 +195,312 @@
 
     function IAnalysis()
     {
-        return {};
+        return {
+            CalculateVolume: function (arrObjectID, SampleInterval) {
+                /// <summary>Analyzes the amount of terrain removed or added by selected Modify Terrain objects</summary>
+                /// <param name="arrObjectID" type="Object">An array that contains the IDs of the ITerrainModifier objects to be analyzed</param>
+                /// <param name="SampleInterval" type="Double">The distance between terrain sample points. The smaller the sample interval, the more accurate the calculation, but the longer it takes to calculate</param>
+                /// <returns type="IVolumeAnalysisInfo" />
+            },
+            Create3DViewshed: function (ViewerPosition, FieldOfViewX, FieldOfViewY, Distance, ParentGroupID, Description) {
+                /// <signature>
+                /// <summary>Creates a graphical representation of all regions on the terrain and on 3D models and objects that are visible, within a field of view, from a given viewing point</summary>
+                /// <param name="ViewerPosition" type="IPosition">An IPosition66 representing the viewing point position, defined by its coordinates in the 3D World</param>
+                /// <param name="FieldOfViewX" type="Double">The horizontal angle limits of the viewshed. Values are in degrees from 0 to 120. For a spherical 3D viewshed, the value is 360</param>
+                /// <param name="FieldOfViewY" type="Double">The vertical angle limits of the viewshed. Values are in degrees from 0 to 120. For a spherical 3D viewshed, the value is 360</param>
+                /// <param name="Distance" type="Double">Length, in meters, of the viewshed analysis from the viewer position</param>
+                /// <returns type="I3DViewshed" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a graphical representation of all regions on the terrain and on 3D models and objects that are visible, within a field of view, from a given viewing point</summary>
+                /// <param name="ViewerPosition" type="IPosition">An IPosition66 representing the viewing point position, defined by its coordinates in the 3D World</param>
+                /// <param name="FieldOfViewX" type="Double">The horizontal angle limits of the viewshed. Values are in degrees from 0 to 120. For a spherical 3D viewshed, the value is 360</param>
+                /// <param name="FieldOfViewY" type="Double">The vertical angle limits of the viewshed. Values are in degrees from 0 to 120. For a spherical 3D viewshed, the value is 360</param>
+                /// <param name="Distance" type="Double">Length, in meters, of the viewshed analysis from the viewer position</param>
+                /// <param name="ParentGroupID" type="String">The Project Tree group in which the model is created. If it is set to an empty string, the object is created under the root</param>
+                /// <returns type="I3DViewshed" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a graphical representation of all regions on the terrain and on 3D models and objects that are visible, within a field of view, from a given viewing point</summary>
+                /// <param name="ViewerPosition" type="IPosition">An IPosition66 representing the viewing point position, defined by its coordinates in the 3D World</param>
+                /// <param name="FieldOfViewX" type="Double">The horizontal angle limits of the viewshed. Values are in degrees from 0 to 120. For a spherical 3D viewshed, the value is 360</param>
+                /// <param name="FieldOfViewY" type="Double">The vertical angle limits of the viewshed. Values are in degrees from 0 to 120. For a spherical 3D viewshed, the value is 360</param>
+                /// <param name="Distance" type="Double">Length, in meters, of the viewshed analysis from the viewer position</param>
+                /// <param name="ParentGroupID" type="String">The Project Tree group in which the model is created. If it is set to an empty string, the object is created under the root</param>
+                /// <param name="Description" type="String">The name of the viewshed object as it appears in the Project Tree. If an empty string is passed to this parameter, TerraExplorer assigns it a unique name</param>
+                /// <returns type="I3DViewshed" />
+                /// </signature>
+            },
+            CreateContourMap: function (UpperLeftX, UpperLeftY, LowerRightX, LowerRightY, DisplayStyle, PaletteID, GroupID, Description) {
+                /// <summary>Creates a topographic map that portrays differences in terrain elevation by connecting points of equal elevation with contour lines or by coloring terrain according to varying altitudes. The contour palettes and/or contour lines can be applied to a specified rectangular area, or to the entire terrain using the CoverageArea property of the resulting IContourMap object</summary>
+                /// <param name="UpperLeftX" type="String">The West-East coordinate of the contour map’s upper left corner in the project’s coordinate system units</param>
+                /// <param name="UpperLeftY" type="String">The North-South coordinate of the contour map’s upper left corner in the project’s coordinate system units</param>
+                /// <param name="LowerRightX" type="String">The West-East coordinate of the contour map’s lower right corner in the project’s coordinate system units</param>
+                /// <param name="LowerRightY" type="String">The North-South coordinate of the contour map’s lower right corner in the project’s coordinate system units</param>
+                /// <param name="DisplayStyle" type="String">An enum that determines how the contour map is displayed</param>
+                /// <param name="PaletteID" type="String">The GUID for the palette. GUIDs are listed in the palette XMLs found in the Pseudo directory, which is located under the [TerraExplorer installation]\ Lang\1033 folder and under %APPDATA%\Skyline\TerraExplorer
+                /// <para>Note: 1033 is the English language directory. If you are running TerraExplorer in a different language, the Pseudo folder will be located under your language directory</para>
+                /// </param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the contour map object is created. If it is set to an empty string, the object is created under the root</param>
+                /// <param name="Description" type="String">The name of the contour map object as it appears in the Project Tree. If an empty string is passed into this parameter, TerraExplorer assigns it a unique name</param>
+                /// <returns type="IContourMap" />
+            },
+            CreateFloodContinuousWaterRise: function (OriginX, OriginY, Radius, WaterRiseRate, SampleInterval, TimeSampleIntervalHours, StartTime, EndTime, GroupID, Description) {
+                /// <signature>
+                /// <summary>Creates a set of polygons showing the land area covered by water when the water level is rising at a constant rate over a certain period of time (rate of rise and rise interval set by user)</summary>
+                /// <param name="OriginX" type="Double">The flood origin’s x-coordinate (longitude)</param>
+                /// <param name="OriginY" type="Double">The flood origin’s y-coordinate (latitude)</param>
+                /// <param name="Radius" type="Double">The radius of the area on which the flood analysis is being performed</param>
+                /// <param name="WaterRiseRate" type="Double">The rate the water is rising (meters per hour)</param>
+                /// <param name="SampleInterval" type="Double">The distance between terrain sample points. The smaller the sample interval, the more accurate the calculation, but the longer it takes to calculate</param>
+                /// <param name="TimeSampleIntervalHours" type="Double">The time between terrain samples within the time period between the StartTime and EndTime. A shorter sample size is more accurate but slower to calculate</param>
+                /// <param name="StartTime" type="Object">The date and time the water begins to rise</param>
+                /// <param name="EndTime" type="Object">The date and time the water stops rising</param>
+                /// <returns type="String" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a set of polygons showing the land area covered by water when the water level is rising at a constant rate over a certain period of time (rate of rise and rise interval set by user)</summary>
+                /// <param name="OriginX" type="Double">The flood origin’s x-coordinate (longitude)</param>
+                /// <param name="OriginY" type="Double">The flood origin’s y-coordinate (latitude)</param>
+                /// <param name="Radius" type="Double">The radius of the area on which the flood analysis is being performed</param>
+                /// <param name="WaterRiseRate" type="Double">The rate the water is rising (meters per hour)</param>
+                /// <param name="SampleInterval" type="Double">The distance between terrain sample points. The smaller the sample interval, the more accurate the calculation, but the longer it takes to calculate</param>
+                /// <param name="TimeSampleIntervalHours" type="Double">The time between terrain samples within the time period between the StartTime and EndTime. A shorter sample size is more accurate but slower to calculate</param>
+                /// <param name="StartTime" type="Object">The date and time the water begins to rise</param>
+                /// <param name="EndTime" type="Object">The date and time the water stops rising</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the flood analysis object is created. If it is set to an empty string, the object is created under the root</param>
+                /// <returns type="String" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a set of polygons showing the land area covered by water when the water level is rising at a constant rate over a certain period of time (rate of rise and rise interval set by user)</summary>
+                /// <param name="OriginX" type="Double">The flood origin’s x-coordinate (longitude)</param>
+                /// <param name="OriginY" type="Double">The flood origin’s y-coordinate (latitude)</param>
+                /// <param name="Radius" type="Double">The radius of the area on which the flood analysis is being performed</param>
+                /// <param name="WaterRiseRate" type="Double">The rate the water is rising (meters per hour)</param>
+                /// <param name="SampleInterval" type="Double">The distance between terrain sample points. The smaller the sample interval, the more accurate the calculation, but the longer it takes to calculate</param>
+                /// <param name="TimeSampleIntervalHours" type="Double">The time between terrain samples within the time period between the StartTime and EndTime. A shorter sample size is more accurate but slower to calculate</param>
+                /// <param name="StartTime" type="Object">The date and time the water begins to rise</param>
+                /// <param name="EndTime" type="Object">The date and time the water stops rising</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the flood analysis object is created. If it is set to an empty string, the object is created under the root</param>
+                /// <param name="Description" type="String">The name of the flood analysis object as it appears in the Project Tree. If an empty string is passed into this parameter, TerraExplorer assigns it a unique name</param>
+                /// <returns type="String" />
+                /// </signature>
+            },
+            CreateFloodSingleWaterRise: function (OriginX, OriginY, Radius, TotalWaterLevelRaise, SampleInterval, ParentGroupID, Description) {
+                /// <signature>
+                /// <summary>Creates a set of polygons showing the land area covered by water when the water level rises once (initial water level set by user)</summary>
+                /// <param name="OriginX" type="String">The flood origin’s x-coordinate (longitude)</param>
+                /// <param name="OriginY" type="String">The flood origin’s y-coordinate (latitude)</param>
+                /// <param name="Radius" type="String">The radius of the area on which the flood analysis is being performed</param>
+                /// <param name="TotalWaterLevelRaise" type="String">The total number of meters the water rises</param>
+                /// <param name="SampleInterval" type="String">The distance between terrain sample points. The smaller the sample interval, the more accurate the calculation, but the longer it takes to calculate</param>
+                /// <returns type="String" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a set of polygons showing the land area covered by water when the water level rises once (initial water level set by user)</summary>
+                /// <param name="OriginX" type="String">The flood origin’s x-coordinate (longitude)</param>
+                /// <param name="OriginY" type="String">The flood origin’s y-coordinate (latitude)</param>
+                /// <param name="Radius" type="String">The radius of the area on which the flood analysis is being performed</param>
+                /// <param name="TotalWaterLevelRaise" type="String">The total number of meters the water rises</param>
+                /// <param name="SampleInterval" type="String">The distance between terrain sample points. The smaller the sample interval, the more accurate the calculation, but the longer it takes to calculate</param>
+                /// <param name="ParentGroupID" type="String">The ID of the group in which the flood analysis object is created. If it is set to an empty string, the object is created under the root</param>
+                /// <returns type="String" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a set of polygons showing the land area covered by water when the water level rises once (initial water level set by user)</summary>
+                /// <param name="OriginX" type="String">The flood origin’s x-coordinate (longitude)</param>
+                /// <param name="OriginY" type="String">The flood origin’s y-coordinate (latitude)</param>
+                /// <param name="Radius" type="String">The radius of the area on which the flood analysis is being performed</param>
+                /// <param name="TotalWaterLevelRaise" type="String">The total number of meters the water rises</param>
+                /// <param name="SampleInterval" type="String">The distance between terrain sample points. The smaller the sample interval, the more accurate the calculation, but the longer it takes to calculate</param>
+                /// <param name="ParentGroupID" type="String">The ID of the group in which the flood analysis object is created. If it is set to an empty string, the object is created under the root</param>
+                /// <param name="Description" type="String">The name of the flood analysis object as it appears in the Project Tree. If an empty string is passed into this parameter, TerraExplorer assigns it a unique name</param>
+                /// <returns type="String" />
+                /// </signature>
+            },
+            CreateLineOfSight: function (ViewerPosition, SampleInterval, arrTargetPosition, GroupID, Description) {
+                /// <summary>Description</summary>
+                /// <param name="ViewerPosition" type="String">The position of the viewer, defined by its coordinates in the 3D world</param>
+                /// <param name="SampleInterval" type="String">Description</param>
+                /// <param name="arrTargetPosition" type="String">Description</param>
+                /// <param name="GroupID" type="String">Description</param>
+                /// <param name="Description" type="String">Description</param>
+                /// <returns type="String" />
+            },
+            CreateSlopeMap: function (UpperLeftX, UpperLeftY, LowerRightX, LowerRightY, DisplayStyle, PaletteID, GroupID, Description) {
+                /// <summary>Description</summary>
+                /// <param name="UpperLeftX" type="String">Description</param>
+                /// <param name="UpperLeftY" type="String">Description</param>
+                /// <param name="LowerRightX" type="String">Description</param>
+                /// <param name="LowerRightY" type="String">Description</param>
+                /// <param name="DisplayStyle" type="String">Description</param>
+                /// <param name="PaletteID" type="String">Description</param>
+                /// <param name="GroupID" type="String">Description</param>
+                /// <param name="Description" type="String">Description</param>
+                /// <returns type="String" />
+            },
+            CreateTerrainProfile: function (arrPoints) {
+                /// <summary>Description</summary>
+                /// <param name="arrPoints" type="String">Description</param>
+                /// <returns type="String" />
+            },
+            CreateThreatDome: function(){
+                /// <summary>Description</summary>
+                /// <returns type="String" />
+            },
+            CreateViewshed: function (ViewerPosition, FieldOfView, SampleInterval, RaySpacing, TargetHeightAboveGround, TimeStart, TimeEnd, ParentGroupID, Description) {
+                /// <summary>Description</summary>
+                /// <param name="ViewerPosition" type="String">Description</param>
+                /// <param name="FieldOfView" type="String">Description</param>
+                /// <param name="SampleInterval" type="String">Description</param>
+                /// <param name="RaySpacing" type="String">Description</param>
+                /// <param name="TargetHeightAboveGround" type="String">Description</param>
+                /// <param name="TimeStart" type="String">Description</param>
+                /// <param name="TimeEnd" type="String">Description</param>
+                /// <param name="ParentGroupID" type="String">Description</param>
+                /// <returns type="String" />
+            },
+            CreateViewshedOnRoute: function (Route, AnalysisType, ViewerHeight, Distance, SampleInterval, RaySpacing, DistanceBetweenWaypoints, TimeStart, TimeEnd, ParentGroupID, Description) {
+                /// <summary>Description</summary>
+                /// <param name="Route" type="String">Description</param>
+                /// <param name="AnalysisType" type="String">Description</param>
+                /// <param name="ViewerHeight" type="String">Description</param>
+                /// <param name="Distance" type="String">Description</param>
+                /// <param name="SampleInterval" type="String">Description</param>
+                /// <param name="RaySpacing" type="String">Description</param>
+                /// <param name="DistanceBetweenWaypoints" type="String">Description</param>
+                /// <param name="TimeStart" type="String">Description</param>
+                /// <param name="TimeEnd" type="String">Description</param>
+                /// <param name="ParentGroupID" type="String">Description</param>
+                /// <param name="Description" type="String">Description</param>
+                /// <returns type="String" />
+            },
+            EndVisibilityQuery: function(){
+                /// <summary></summary>
+                /// <returns type="String" />
+            },
+            MeasureTerrainArea: function (pIGeometry) {
+                /// <summary>Description</summary>
+                /// <param name="pIGeometry" type="String">Description</param>
+                /// <returns type="String" />
+            },
+            MeasureTerrainGroundDistance   : function(pIGeometry, sampleInterval, IncludeGroundObjects){
+                /// <summary>Description</summary>
+                /// <param name="pIGeometry" type="String">Description</param>
+                /// <param name="sampleInterval" type="String">Description</param>
+                /// <param name="IncludeGroundObjects" type="String">Description</param>
+                /// <returns type="String" />
+            },
+            MeasureTerrainPerimeter: function (pIGeometry) {
+                /// <summary>Description</summary>
+                /// <param name="pIGeometry" type="String">Description</param>
+                /// <returns type="String" />
+            },
+            MeasureTerrainProfile: function (KeyPoints, SampleInterval, IncludeGroundObjects) {
+                /// <summary>Description</summary>
+                /// <param name="KeyPoints" type="String">Description</param>
+                /// <param name="SampleInterval" type="String">Description</param>
+                /// <param name="IncludeGroundObjects" type="String">Description</param>
+                /// <returns type="String" />
+            },
+            MeasureTerrainSurface: function (pIGeometry, SampleInterval) {
+                /// <summary>Description</summary>
+                /// <param name="pIGeometry" type="String">Description</param>
+                /// <param name="SampleInterval" type="String">Description</param>
+                /// <returns type="String" />
+            },
+            MeasureTerrainSurfacePerimeter: function (pIGeometry, SampleInterval) {
+                /// <summary>Description</summary>
+                /// <param name="pIGeometry" type="String">Description</param>
+                /// <param name="SampleInterval" type="String">Description</param>
+                /// <returns type="String" />
+            },
+            QueryElevationBuffer: function (UpperLeftX, UpperLeftY, ResX, ResY, DimensionX, DimensionY) {
+                /// <summary>Description</summary>
+                /// <param name="UpperLeftX" type="String">Description</param>
+                /// <param name="UpperLeftY" type="String">Description</param>
+                /// <param name="ResX" type="String">Description</param>
+                /// <param name="ResY" type="String">Description</param>
+                /// <param name="DimensionX" type="String">Description</param>
+                /// <param name="DimensionY" type="String">Description</param>
+                /// <returns type="String" />
+            },
+            QueryPointVisibility: function (QueryPosition) {
+                /// <summary>Description</summary>
+                /// <param name="QueryPosition" type="String">Description</param>
+                /// <returns type="String" />
+            },
+            QueryVisibilityDistance: function (QueryPosition) {
+                /// <summary>Description</summary>
+                /// <param name="QueryPosition" type="String">Description</param>
+                /// <returns type="String" />
+            },
+            StartShadowVisibilityQuery: function(QuerySpherePosition, QuerySphereRadius, Type){
+                /// <summary>Description</summary>
+                /// <param name="QuerySpherePosition" type="String">Description</param>
+                /// <param name="QuerySphereRadius" type="String">Description</param>
+                /// <param name="Type" type="String">Description</param>
+                /// <returns type="String" />
+            },
+            StartViewshedVisibilityQuery: function(ViewshedID, Quality){
+                /// <summary>Initializes a viewshed visibility query for a specific viewshed. After this initialization, subsequent calls can be made to QueryPointVisibility to calculate the visibility of a selected position on a 3D viewshed (passed in this method’s ViewshedID parameter) from the observer viewpoint of the 3D viewshed or to QueryVisibilityDistance to get the point where the view is blocked</summary>
+                /// <param name="ViewshedID" type="String">Description</param>
+                /// <param name="Quality" type="String">Description</param>
+                /// <returns type="String" />
+            }
+        };
     }
     function IApplication()
     {
-        return {};
+        return {
+            /// <field type="IClipboard">An IClipboard representing TerraExplorer application’s clipboard</field>
+            Clipboard:{},
+            /// <field type="IContainers">An IContainers representing TerraExplorer application’s containers</field>
+            Containers: {},
+            /// <field type="String">Gets and sets a Boolean that determines whether TerraExplorer stops the render cycle until the user interface is utilized, or until another call is made passing false as its parameter</field>
+            CPUSaveMode: true,
+            /// <field type="String">Gets the path for the application data of the user</field>
+            DataPath: '',
+            /// <field type="String">Gets and sets a Boolean that determines whether the joystick is enabled</field>
+            EnableJoystick: true,
+            /// <field type="String">Gets the path for the TerraExplorer executable file that started the application, not including the executable name</field>
+            ExecutablePath: '',
+            /// <field type="IMultiple3DWindows">An IMultiple3DWindows that provides services related to synchronization and management of multiple 3D windows that are embedded in the same application</field>
+            Multiple3DWindows: {},
+            /// <field type="Boolean">Gets and sets a Boolean that determines whether error messages are suppressed</field>
+            SuppressUIErrors: true,
+        };
     }
     function ICommand() {
-        return {};
+        return {
+            	
+            CanExecute: function (CommandID, parameter) {
+                /// <summary>Checks whether a specific TerraExplorer command can be executed</summary>
+                /// <param name="CommandID" type="Number">The ID of the menu command whose status is being checked. See the list of menu commands organized according to TerraExplorer Ribbon tabs. </param>
+                /// <param name="parameter" type="Object">The command parameter</param>
+                /// <returns type="Boolean" />
+            },
+            Execute: function (CommandID, parameters) {
+                /// <summary>The Execute method activates a TerraExplorer ribbon command
+                /// <para>Note: The list below describes the complete set of menu entries in the TerraExplorer product suite. The menu entries that are functioning in your version are determined by your product level (e.g., TerraExplorer Viewer, TerraExplorer Pro), and your licensed extensions.</para>
+                /// <para>See: ICommand.CanExecute </para>
+                /// </summary>
+                /// <param name="CommandID" type="Number">The ID of the menu command to be executed</param>
+                /// <param name="parameters" type="Object">The command parameters</param>
+                /// <returns type="Undefined" />
+            },
+            GetValue: function (CommandID) {
+                /// <summary>This method returns the value that was set for a specified menu command</summary>
+                /// <param name="CommandID" type="Number">The ID of the menu command whose value is being returned. Ribbon commands that are not available in the list below cannot be used from this method. The commands are organized according to Ribbon tabs</param>
+                /// <returns type="Object" />
+            },
+            IsChecked: function (CommandID, parameters) {
+                /// <summary>This method determines the checked status of a menu command. IsChecked returns TRUE when the specified command item is selected or toggled on.</summary>
+                /// <param name="CommandID" type="Number">The ID of the menu command whose checked status is to be returned. IsChecked applies to the commands in the list of menu commands that are toggled on/off</param>
+                /// <param name="parameters" type="Object">The command parameters. See the command parameters in the list of menu commands</param>
+                /// <returns type="Boolean" />
+            }
+        };
     }
     function ICoordServices() {
         return {};
@@ -541,14 +839,538 @@
     function ITerrain() {
         return {};
     }
-    function IVersionInfo() {
-        return {};
+    function ITEVersionInfo() {
+        return {
+            /// <field type="Number">Gets the third number in the version number</field>
+            Build,
+            /// <field type="Number">Gets the number in parenthesis in the version number. Fly files created by versions older than v6 will return -1 in the freeze number</field>
+            Freeze,
+            /// <field type="Number">Gets the first number in the version number</field>
+            Major,
+            /// <field type="Number">Gets the second number in the version number</field>
+            Minor,
+            /// <field type="VersionType">Gets the application in the TerraExplorer family that is being used: TerraExplorer Pro, TerraExplorer Plus or TerraExplorer Viewer</field>
+            Type,
+
+            toString:function(){
+                /// <summary>Extension: 
+                /// <para>Combines all the version numbers into a string</para>
+                /// <para>Example: "6.1.3.1234"</para></summary>
+                /// <returns type="String" />
+            }
+        };
     }
     function IWindow() {
-        return {};
+        return {
+            /// <field type="Boolean">Gets and sets a Boolean that determines whether TerraExplorer should hide the onscreen presentation controls when a presentation is played</field>
+            DisablePresentationControl:false,
+            /// <field type="IScreenRect">This interface returns the size and position of the 3D Window</field>
+            Rect:{},
+ 
+            //Methods
+
+            CenterPixelToWorld: function (TypeFilterFlags) {
+                /// <summary>Returns the real world coordinates on the terrain, behind the center pixel on the window</summary>
+                /// <param name="TypeFilterFlags" type="String">Description</param>
+                /// <returns type="IWorldPointInfo" />
+            },
+            GetControls: function () {
+                /// <summary>Returns the currently shown navigation controls</summary>
+                /// <returns type="controlFlags" />
+            },
+            GetInputMode: function () {
+                /// <summary>Returns the current input mode of the mouse</summary>
+                /// <returns type="MouseInputMode" />
+            },
+            GetMouseInfo: function () {
+                /// <summary>Returns the mouse position and general mouse information</summary>
+                /// <returns type="MouseInfo" />
+            },
+            GetPopupByCaption: function (PopupCaption) {
+                /// <summary>Removes a popup with a specified caption. The popup is removed and not simply hidden from view</summary>
+                /// <param name="PopupCaption" type="String">A string representing the caption of the popup that is to be removed</param>
+                /// <returns type="String" />
+            },
+            GetSnapShot: function (toFile, Width, Height, Format, TerrainQuality) {
+                /// <signature>
+                /// <summary>Returns a snapshot of the window</summary>
+                /// <param name="toFile" type="Boolean">A Boolean that indicates whether the snapshot should be saved to a file (TRUE) or whether a dialog window should be opened with the snapshot image</param>
+                /// <returns type="String" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Returns a snapshot of the window</summary>
+                /// <param name="toFile" type="Boolean">A Boolean that indicates whether the snapshot should be saved to a file (TRUE) or whether a dialog window should be opened with the snapshot image</param>
+                /// <param name="Width" type="Number">The width of the snapshot. If the width is not specified, the snapshot is created with the current 3D Window width</param>
+                /// <returns type="String" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Returns a snapshot of the window</summary>
+                /// <param name="toFile" type="Boolean">A Boolean that indicates whether the snapshot should be saved to a file (TRUE) or whether a dialog window should be opened with the snapshot image</param>
+                /// <param name="Width" type="Number">The width of the snapshot. If the width is not specified, the snapshot is created with the current 3D Window width</param>
+                /// <param name="Height" type="Number">The height of the snapshot. If the height is not specified, the snapshot is created with the current 3D Window height</param>
+                /// <returns type="String" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Returns a snapshot of the window</summary>
+                /// <param name="toFile" type="Boolean">A Boolean that indicates whether the snapshot should be saved to a file (TRUE) or whether a dialog window should be opened with the snapshot image</param>
+                /// <param name="Width" type="Number">The width of the snapshot. If the width is not specified, the snapshot is created with the current 3D Window width</param>
+                /// <param name="Height" type="Number">The height of the snapshot. If the height is not specified, the snapshot is created with the current 3D Window height</param>
+                /// <param name="Format" type="String">A string defining the format and compression of the image file. Use ”BMP” for a windows bitmap file, or “JPeg75" for a 75% JPEG image</param>
+                /// <returns type="String" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Returns a snapshot of the window</summary>
+                /// <param name="toFile" type="Boolean">A Boolean that indicates whether the snapshot should be saved to a file (TRUE) or whether a dialog window should be opened with the snapshot image</param>
+                /// <param name="Width" type="Number">The width of the snapshot. If the width is not specified, the snapshot is created with the current 3D Window width</param>
+                /// <param name="Height" type="Number">The height of the snapshot. If the height is not specified, the snapshot is created with the current 3D Window height</param>
+                /// <param name="Format" type="String">A string defining the format and compression of the image file. Use ”BMP” for a windows bitmap file, or “JPeg75" for a 75% JPEG image</param>
+                /// <param name="TerrainQuality" type="TerrainQuality">Defines how to get the required terrain database resolution for every snapshot</param>
+                /// <returns type="String" />
+                /// </signature>
+            },
+            HideMessageBarText: function () {
+                /// <summary>This method hides (but does not remove) the text message in the Message Bar container</summary>
+                /// <returns type="Undefined" />
+            },
+            PixelFromWorld: function (Position, Mode) {
+                /// <signature>
+                /// <summary>This method returns an indication of whether a specified terrain coordinate is visible in the 3D Window. If it is visible, the screen coordinates of the specified pixel are returned</summary>
+                /// <param name="Position" type="IPosition">The position of the specified coordinate, defined by its coordinates in the 3D World</param>
+                /// <returns type="IScreenPointInfo" />
+                /// </signature>
+                /// <signature>
+                /// <summary>This method returns an indication of whether a specified terrain coordinate is visible in the 3D Window. If it is visible, the screen coordinates of the specified pixel are returned</summary>
+                /// <param name="Position" type="IPosition">The position of the specified coordinate, defined by its coordinates in the 3D World</param>
+                /// <param name="Mode" type="PixelFromWorldMode">An enum that determines if the method takes obstructions into account in determining the visibility of the world point</param>
+                /// <returns type="IScreenPointInfo" />
+                /// </signature>
+            },
+            PixelToWorld: function (PixelX, PixelY, TypeFilterFlags) {
+                /// <summary>Returns the real world coordinates on the terrain, behind a specified pixel on the window</summary>
+                /// <param name="PixelX" type="Number">The left-right coordinate in pixels of a specified point on the window</param>
+                /// <param name="PixelY" type="Number">The top-bottom coordinate in pixels of a specified point on the window</param>
+                /// <param name="TypeFilterFlags" type="WorldPointType">Description</param>
+                /// <returns type="IWorldPointInfo" />
+            },
+            RemovePopup: function (popup) {
+                /// <summary>Specifies an instance of an IPopupMessage object up to be removed. The popup is removed and not simply hidden from view</summary>
+                /// <param name="popup" type="IPopupMessage">An IPopupMessage representing the existing popup object that is to be removed</param>
+                /// <returns type="Undefined" />
+            },
+            RemovePopupByCaption: function (PopupCaption) {
+                /// <summary>Removes a popup with a specified caption. The popup is removed and not simply hidden from view</summary>
+                /// <param name="PopupCaption" type="String">A string representing the caption of the popup that is to be removed</param>
+                /// <returns type="Undefined" />
+            },
+            SetHUDLayer: function (pIStream, Index, MapMode) {
+                /// <summary>This method displays a complete Head Up Display (HUD) in a graphic form. It accepts a serialized meta-DC that is saved into a stream, and draws it on top of the 3D Window</summary>
+                /// <param name="pIStream" type="Object">Meta-DC saved as a stream. Passing Null clears the current HUD layer</param>
+                /// <param name="Index" type="Number">Reserved. Currently not used. Should be set to zero</param>
+                /// <param name="MapMode" type="Number">Reserved. Currently not used</param>
+                /// <returns type="Undefined" />
+            },
+            SetInputMode: function (InputMode, cursorURL, AllowDrag) {
+                /// <signature>
+                /// <summary>This method determines the input mode of the mouse. Different input modes allow you to control the behavior of the mouse. For example, in free flight mode, clicking with the mouse on the various areas of the 3D Window, changes the camera’s yaw or tilt. This makes it hard to click a point on the terrain to place an object. Instead you can use the COM client mode that does not change the camera position</summary>
+                /// <param name="InputMode" type="MouseInputMode">Set the Mouse Input mode</param>
+                /// <returns type="Undefined" />
+                /// </signature>
+                /// <signature>
+                /// <summary>This method determines the input mode of the mouse. Different input modes allow you to control the behavior of the mouse. For example, in free flight mode, clicking with the mouse on the various areas of the 3D Window, changes the camera’s yaw or tilt. This makes it hard to click a point on the terrain to place an object. Instead you can use the COM client mode that does not change the camera position</summary>
+                /// <param name="InputMode" type="MouseInputMode">Set the Mouse Input mode</param>
+                /// <param name="cursorURL" type="String">If the input mode is MI_COM_CLIENT, this parameter can specify the URL of a cursor to be displayed on the 3D Window</param>
+                /// <returns type="Undefined" />
+                /// </signature>
+                /// <signature>
+                /// <summary>This method determines the input mode of the mouse. Different input modes allow you to control the behavior of the mouse. For example, in free flight mode, clicking with the mouse on the various areas of the 3D Window, changes the camera’s yaw or tilt. This makes it hard to click a point on the terrain to place an object. Instead you can use the COM client mode that does not change the camera position</summary>
+                /// <param name="InputMode" type="MouseInputMode">Set the Mouse Input mode</param>
+                /// <param name="cursorURL" type="String">If the input mode is MI_COM_CLIENT, this parameter can specify the URL of a cursor to be displayed on the 3D Window</param>
+                /// <param name="AllowDrag" type="Boolean">This parameter indicates whether the 3D Window can be moved by dragging it to another position on the screen</param>
+                /// <returns type="Undefined" />
+                /// </signature>
+            },
+            ShowControls: function (controlFlags) {
+                /// <summary>Shows navigation controls and/or graphical and textual information in the 3D Window</summary>
+                /// <param name="controlFlags" type="controlFlags">The currently displayed navigation controls</param>
+                /// <returns type="Undefined" />
+            },
+            ShowMessageBarText: function (Text, Alignment, Timeout) {
+                /// <summary>This method displays the text message in the Message Bar container</summary>
+                /// <param name="Text" type="String">The text string that is to be displayed in the message bar</param>
+                /// <param name="Alignment" type="MessageBarTextAlignment">An enum determining the alignment of the message bar</param>
+                /// <param name="Timeout" type="Number">Time in milliseconds, the message bar is displayed</param>
+                /// <returns type="Undefined" />
+            },
+            ShowPopup: function (popup) {
+                /// <summary>This method displays an HTML popup window that contains any text or HTML content</summary>
+                /// <param name="popup" type="IPopupMessage">An IPopupMessage object representing the content and properties of the popup window</param>
+                /// <returns type="Undefined" />
+            }
+        };
     }
 
+    // All Other Interfaces
 
+    function I3DMLFeatureLayer(){
+        return{
+        };
+    }
+    function I3DMLFeatureLayers() {
+        return {
+        };
+    }
+    function I3DMLFeatureProperties() {
+        return {
+        };
+    }
+    function I3DViewshed() {
+        return {
+        };
+    }
+    function IAction() {
+        return {
+        };
+    }
+    function IAttachment() {
+        return {
+        };
+    }
+    function IAttribute() {
+        return {
+        };
+    }
+    function IAttributes() {
+        return {
+        };
+    }
+    function IAviWriter() {
+        return {
+        };
+    }
+    function IBBox2D() {
+        return {
+        };
+    }
+    function IBBox3D() {
+        return {
+        };
+    }
+    function IBuildingFace() {
+        return {
+        };
+    }
+    function IBuildingSides() {
+        return {
+        };
+    }
+    function IClipboard() {
+        return {
+        };
+    }
+    function ICodecInfo() {
+        return {
+        };
+    }
+    function IColor() {
+        return {
+        };
+    }
+    function IContainerItem() {
+        return {
+        };
+    }
+    function IContainers() {
+        return {
+        };
+    }
+    function IContourMap() {
+        return {
+        };
+    }
+    function ICoord2D() {
+        return {
+        };
+    }
+    function ICoordinateSystem() {
+        return {
+        };
+    }
+    function IDataSourceInfo() {
+        return {
+        };
+    }
+    function IFeature() {
+        return {
+        };
+    }
+    function IFeatureAttribute() {
+        return {
+        };
+    }
+    function IFeatureAttributes() {
+        return {
+        };
+    }
+    function IFeatureGroup() {
+        return {
+        };
+    }
+    function IFeatureGroups() {
+        return {
+        };
+    }
+    function IFeatureLayer() {
+        return {
+        };
+    }
+    function IFeatures() {
+        return {
+        };
+    }
+    function IFillStyle() {
+        return {
+        };
+    }
+    function IGeometry() {
+        return {
+        };
+    }
+    function IGeometryCollection() {
+        return {
+        };
+    }
+    function IGeometryCreator() {
+        return {
+        };
+    }
+    function IKMLLayer() {
+        return {
+        };
+    }
+    function ILabelStyle() {
+        return {
+        };
+    }
+    function ILinearRing() {
+        return {
+        };
+    }
+    function ILineOfSight() {
+        return {
+        };
+    }
+    function ILineString() {
+        return {
+        };
+    }
+    function ILineStyle() {
+        return {
+        };
+    }
+    function IMeshLayer() {
+        return {
+        };
+    }
+    function IMessageObject() {
+        return {
+        };
+    }
+    function IMouseInfo() {
+        return {
+        };
+    }
+    function IMultiLineString() {
+        return {
+        };
+    }
+    function IMultiple3DWindows() {
+        return {
+        };
+    }
+    function IMultiPolygon() {
+        return {
+        };
+    }
+    function IObjectTexture() {
+        return {
+        };
+    }
+    function IPoint() {
+        return {
+        };
+    }
+    function IPointCloudDefaultLocation() {
+        return {
+        };
+    }
+    function IPoints() {
+        return {
+        };
+    }
+    function IPolygon() {
+        return {
+        };
+    }
+    function IPopupMessage() {
+        return {
+        };
+    }
+    function IPosition() {
+        return {
+            /// <field type="Double">Gets and sets the altitude of the IPosition66 object according to the Altitude Type value</field>
+            Altitude: 0,
+            /// <field type="AltitudeTypeCode">Gets and sets an enum determining how the altitude is interpreted</field>
+            AltitudeType: 0,
+            /// <field type="Boolean">Gets and sets a Boolean that determines whether calculations are based on a Cartesian coordinate system. When using a flat terrain database, the calculation is always based on a Cartesian system</field>
+            Cartesian: true,
+            /// <field type="Double">If the IPosition object is used to create a location object, the distance specifies a distance from which the x, y, and altitude coordinates must be viewed. If this property is set to -1, the recommended viewing distance for the object, based on its size, will be automatically calculated when needed (e.g. before Fly To operation)</field>
+            Distance: 0,
+            /// <field type="Double">Gets and sets the tilt angle</field>
+            Pitch: 0,
+            /// <field type="Double">Gets and sets the spin angle</field>
+            Roll: 0,
+            /// <field type="Double">Gets and sets the x-coordinate in the project’s coordinate system units</field>
+            X: 0,
+            /// <field type="Double">Gets and sets the y-coordinate in the project’s coordinate system units</field>
+            Y: 0,
+            /// <field type="Double">Gets and sets the yaw orientation of the object</field>
+            Yaw: 0,
+
+            // Methods
+
+            AimTo: function (Position) {
+                /// <summary>Returns an IPosition66 object that represents the same position as the caller’s coordinates and the angles that are directed toward the given coordinates</summary>
+                /// <param name="Position" type="IPosition">An IPosition66 representing a position on the terrain</param>
+                /// <returns type="IPosition" />
+            },
+            ChangeAltitudeType: function (AltitudeType) {
+                /// <summary>Converts the altitude type of the caller to a new altitude type. The caller’s altitude is also changed as a result</summary>
+                /// <param name="AltitudeType" type="AltitudeTypeCode">Description</param>
+                /// <returns type="Undefined" />
+            },
+            Copy: function(){
+                /// <summary>Returns an IPosition object that is a copy of the caller</summary>
+                /// <returns type="IPosition" />
+            },
+            DistanceTo: function (Position) {
+                /// <summary>Measures the distance between two coordinates</summary>
+                /// <param name="Position" type="IPosition">An IPosition66 representing the coordinate whose distance from the caller’s coordinates is being measured</param>
+                /// <returns type="Number" />
+            },
+            Init: function (X, Y, Altitude, Yaw, Pitch, Roll, AltitudeType, Distance) {
+                /// <summary>Initializes a new instance of the IPosition</summary>
+                /// <param name="X" type="Double">The x-coordinate in coordinate system units</param>
+                /// <param name="Y" type="Double">The y-coordinate in coordinate system units</param>
+                /// <param name="Altitude" type="Double">The altitude</param>
+                /// <param name="Yaw" type="Double">The direction angle</param>
+                /// <param name="Pitch" type="Double">The tilt angle</param>
+                /// <param name="Roll" type="Double">The spin angle</param>
+                /// <param name="AltitudeType" type="AltitudeTypeCode">An enum determining how the altitude is interpreted</param>
+                /// <param name="Distance" type="Double">The distance to the camera once the camera comes to a stop</param>
+                /// <returns type="Undefined" />
+            },
+            InitFrom: function(oVar){
+                /// <summary>Initializes an IPosition object based on a string of comma separated position values in the following order: X/Longitude, Y/Latitude, Altitude, Yaw, Pitch, Roll, Distance, AltitudeType</summary>
+                /// <param name="oVar" type="Object">A string of comma separated position values in the following order: X/Longitude, Y/Latitude, Altitude, Yaw, Pitch, Roll, Distance, AltitudeType</param>
+                /// <returns type="Undefined" />
+            },
+            IsEqual: function (Position) {
+                /// <summary>Compares the property values of this IPosition object to another IPosition66 object</summary>
+                /// <param name="Position" type="IPosition">An IPosition66 representing a position, defined by its coordinates in the 3D World</param>
+                /// <returns type="Boolean" />
+            },
+            Lerp: function (Position, Percentage) {
+                /// <summary>Moves a coordinate a given percentage toward another coordinate</summary>
+                /// <param name="Position" type="IPosition">An IPosition66 representing the coordinate towards which the selected coordinate is being moved</param>
+                /// <param name="Percentage" type="Double">The percentage to move</param>
+                /// <returns type="IPosition" />
+            },
+            Move: function (Distance, Yaw, Pitch) {
+                /// <summary>Moves a coordinate a specific distance</summary>
+                /// <param name="Distance" type="Double">The distance to move</param>
+                /// <param name="Yaw" type="Double">The direction to move the coordinate</param>
+                /// <param name="Pitch" type="Double">The pitch angle to move the coordinate</param>
+                /// <returns type="IPosition" />
+            },
+            MoveToward: function (Position, Distance) {
+                /// <summary>Moves a coordinate the specified distance toward another coordinate</summary>
+                /// <param name="Position" type="IPosition">An IPosition66 representing the coordinate towards which the selected coordinate is being moved</param>
+                /// <param name="Distance" type="Double">The distance to move</param>
+                /// <returns type="IPosition" />
+            },
+            ToAbsolute: function (Accuracy) {
+                /// <summary>Returns an IPosition object that is converted to absolute height (ATC_TERRAIN_ABSOLUTE)</summary>
+                /// <param name="Accuracy" type="AccuracyLevel">An enum that determines the accuracy level</param>
+                /// <returns type="IPosition" />
+            },
+            ToRelative: function (Accuracy) {
+                /// <summary>Returns an IPosition object that is converted to height relative to terrain (ATC_TERRAIN_RELATIVE).</summary>
+                /// <param name="Accuracy" type="AccuracyLevel">An enum that determines the accuracy level</param>
+                /// <returns type="IPosition" />
+            },
+            ToString: function (Format) {
+                /// <signature>
+                /// <summary>Returns a string of comma separated position values in the following order: X/Longitude, Y/Latitude, Altitude, Yaw, Pitch, Roll, Distance, AltitudeType</summary>
+                /// </signature>
+                /// <signature>
+                /// <summary>Returns a string of comma separated position values in the following order: X/Longitude, Y/Latitude, Altitude, Yaw, Pitch, Roll, Distance, AltitudeType</summary>
+                /// <param name="Format" type="String"></param>
+                /// </signature>
+            }
+        };
+    }
+    function IPresentation() {
+        return {
+        };
+    }
+    function IPresentationStep() {
+        return {
+        };
+    }
+    function IPresentationSteps() {
+        return {
+        };
+    }
+    function IRings() {
+        return {
+        };
+    }
+    function IRoofFace() {
+        return {
+        };
+    }
+    function IRouteWaypoint() {
+        return {
+        };
+    }
+    function IRouteWaypoints() {
+        return {
+        };
+    }
+    function IScreenRect() {
+        return {
+        };
+    }
+    function IScreenPointInfo() {
+        return {
+        };
+    }
+    function ISlopeMap() {
+        return {
+        };
+    }
+    function ISpatialOperator() {
+        return {
+        };
+    }
+    function ISpatialRelation() {
+        return {
+        };
+    }
+    function ITerraExplorerMessage() {
+        return {
+        };
+    }
     function ITerraExplorerObject() {
         return {
             ClientData: function(Namespace, pVal){
@@ -577,8 +1399,142 @@
             }
         }
     }
-
-
+    function ITerrain3DArrow() {
+        return {
+        };
+    }
+    function ITerrain3DPolygon() {
+        return {
+        };
+    }
+    function ITerrain3DRectBase() {
+        return {
+        };
+    }
+    function ITerrain3DRegBase() {
+        return {
+        };
+    }
+    function ITerrainArc() {
+        return {
+        };
+    }
+    function ITerrainArrow() {
+        return {
+        };
+    }
+    function ITerrainBuilding() {
+        return {
+        };
+    }
+    function ITerrainDynamicObject() {
+        return {
+        };
+    }
+    function ITerrainEffect() {
+        return {
+        };
+    }
+    function ITerrainEllipse() {
+        return {
+        };
+    }
+    function ITerrainHole() {
+        return {
+        };
+    }
+    function ITerrainImageLabel() {
+        return {
+        };
+    }
+    function ITerrainLabel() {
+        return {
+        };
+    }
+    function ITerrainLocation() {
+        return {
+        };
+    }
+    function ITerrainModel() {
+        return {
+        };
+    }
+    function ITerrainModifier() {
+        return {
+        };
+    }
+    function ITerrainObject() {
+        return {
+        };
+    }
+    function ITerrainPointCloudModel() {
+        return {
+        };
+    }
+    function ITerrainPolygon() {
+        return {
+        };
+    }
+    function ITerrainPolyline() {
+        return {
+        };
+    }
+    function ITerrainRasterLayer() {
+        return {
+        };
+    }
+    function ITerrainRectangle() {
+        return {
+        };
+    }
+    function ITerrainRegularPolygon() {
+        return {
+        };
+    }
+    function ITerrainSphere() {
+        return {
+        };
+    }
+    function ITerrainThreatDome() {
+        return {
+        };
+    }
+    function ITerrainVideo() {
+        return {
+        };
+    }
+    function ITimeSpan() {
+        return {
+        };
+    }
+    function ITooltip() {
+        return {
+        };
+    }
+    function ITreeHotlink() {
+        return {
+        };
+    }
+    function ITreeItem() {
+        return {
+        };
+    }
+    function IVisibility() {
+        return {
+        };
+    }
+    function IVolumeAnalysisInfo() {
+        return {
+        };
+    }
+    function IWks() {
+        return {
+        };
+    }
+    function IWorldPointInfo() {
+        return {
+        };
+    }
 }
 
 /*
