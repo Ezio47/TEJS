@@ -153,5 +153,36 @@ var MessageBarTextAlignment = {
     'MBT_RIGHT': 2
 };
 
+var ViewshedQuality = {
+    'VSQ_QUALITY_LOW': 0,
+    'VSQ_QUALITY_MEDIUM': 1,
+    'VSQ_QUALITY_HIGH': 2
+};
+
+var MultipleViewshedAnalysisType = {
+    'MVT_VIEWSHED_ON_ROUTE': 0,
+    'MVT_TIMESPAN_VIEWSHED_ON_ROUTE': 1,
+    'MVT_CUMULATIVE_VIEWSHED_ON_ROUTE': 2
+};
+
+var SlopeDisplayStyle = {
+    'CDS_SLOPE_STYLE_DEFAULT': -1,
+    'CDS_SLOPE_STYLE_DIRECTION': 0,
+    'CDS_SLOPE_STYLE_COLORS': 1,
+    'CDS_SLOPE_STYLE_DIRECTION_AND_COLORS': 2
+};
+
+var ContourDisplayStyle = {
+    'CDS_CONTOUR_STYLE_DEFAULT': -1,
+    'CDS_CONTOUR_STYLE_LINES': 0,
+    'CDS_CONTOUR_STYLE_COLORS': 1,
+    'CDS_CONTOUR_STYLE_LINES_AND_COLORS': 2
+};
+
+
+
+
+
+
 
 
