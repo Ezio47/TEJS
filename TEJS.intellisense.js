@@ -233,11 +233,11 @@
             },
             CreateContourMap: function (UpperLeftX, UpperLeftY, LowerRightX, LowerRightY, DisplayStyle, PaletteID, GroupID, Description) {
                 /// <summary>Creates a topographic map that portrays differences in terrain elevation by connecting points of equal elevation with contour lines or by coloring terrain according to varying altitudes. The contour palettes and/or contour lines can be applied to a specified rectangular area, or to the entire terrain using the CoverageArea property of the resulting IContourMap object</summary>
-                /// <param name="UpperLeftX" type="String">The West-East coordinate of the contour map’s upper left corner in the project’s coordinate system units</param>
-                /// <param name="UpperLeftY" type="String">The North-South coordinate of the contour map’s upper left corner in the project’s coordinate system units</param>
-                /// <param name="LowerRightX" type="String">The West-East coordinate of the contour map’s lower right corner in the project’s coordinate system units</param>
-                /// <param name="LowerRightY" type="String">The North-South coordinate of the contour map’s lower right corner in the project’s coordinate system units</param>
-                /// <param name="DisplayStyle" type="String">An enum that determines how the contour map is displayed</param>
+                /// <param name="UpperLeftX" type="Double">The West-East coordinate of the contour map’s upper left corner in the project’s coordinate system units</param>
+                /// <param name="UpperLeftY" type="Double">The North-South coordinate of the contour map’s upper left corner in the project’s coordinate system units</param>
+                /// <param name="LowerRightX" type="Double">The West-East coordinate of the contour map’s lower right corner in the project’s coordinate system units</param>
+                /// <param name="LowerRightY" type="Double">The North-South coordinate of the contour map’s lower right corner in the project’s coordinate system units</param>
+                /// <param name="DisplayStyle" type="ContourDisplayStyle">An enum that determines how the contour map is displayed</param>
                 /// <param name="PaletteID" type="String">The GUID for the palette. GUIDs are listed in the palette XMLs found in the Pseudo directory, which is located under the [TerraExplorer installation]\ Lang\1033 folder and under %APPDATA%\Skyline\TerraExplorer
                 /// <para>Note: 1033 is the English language directory. If you are running TerraExplorer in a different language, the Pseudo folder will be located under your language directory</para>
                 /// </param>
@@ -289,164 +289,253 @@
             CreateFloodSingleWaterRise: function (OriginX, OriginY, Radius, TotalWaterLevelRaise, SampleInterval, ParentGroupID, Description) {
                 /// <signature>
                 /// <summary>Creates a set of polygons showing the land area covered by water when the water level rises once (initial water level set by user)</summary>
-                /// <param name="OriginX" type="String">The flood origin’s x-coordinate (longitude)</param>
-                /// <param name="OriginY" type="String">The flood origin’s y-coordinate (latitude)</param>
-                /// <param name="Radius" type="String">The radius of the area on which the flood analysis is being performed</param>
-                /// <param name="TotalWaterLevelRaise" type="String">The total number of meters the water rises</param>
-                /// <param name="SampleInterval" type="String">The distance between terrain sample points. The smaller the sample interval, the more accurate the calculation, but the longer it takes to calculate</param>
+                /// <param name="OriginX" type="Double">The flood origin’s x-coordinate (longitude)</param>
+                /// <param name="OriginY" type="Double">The flood origin’s y-coordinate (latitude)</param>
+                /// <param name="Radius" type="Double">The radius of the area on which the flood analysis is being performed</param>
+                /// <param name="TotalWaterLevelRaise" type="Double">The total number of meters the water rises</param>
+                /// <param name="SampleInterval" type="Double">The distance between terrain sample points. The smaller the sample interval, the more accurate the calculation, but the longer it takes to calculate</param>
                 /// <returns type="String" />
                 /// </signature>
                 /// <signature>
                 /// <summary>Creates a set of polygons showing the land area covered by water when the water level rises once (initial water level set by user)</summary>
-                /// <param name="OriginX" type="String">The flood origin’s x-coordinate (longitude)</param>
-                /// <param name="OriginY" type="String">The flood origin’s y-coordinate (latitude)</param>
-                /// <param name="Radius" type="String">The radius of the area on which the flood analysis is being performed</param>
-                /// <param name="TotalWaterLevelRaise" type="String">The total number of meters the water rises</param>
-                /// <param name="SampleInterval" type="String">The distance between terrain sample points. The smaller the sample interval, the more accurate the calculation, but the longer it takes to calculate</param>
+                /// <param name="OriginX" type="Double">The flood origin’s x-coordinate (longitude)</param>
+                /// <param name="OriginY" type="Double">The flood origin’s y-coordinate (latitude)</param>
+                /// <param name="Radius" type="Double">The radius of the area on which the flood analysis is being performed</param>
+                /// <param name="TotalWaterLevelRaise" type="Double">The total number of meters the water rises</param>
+                /// <param name="SampleInterval" type="Double">The distance between terrain sample points. The smaller the sample interval, the more accurate the calculation, but the longer it takes to calculate</param>
                 /// <param name="ParentGroupID" type="String">The ID of the group in which the flood analysis object is created. If it is set to an empty string, the object is created under the root</param>
                 /// <returns type="String" />
                 /// </signature>
                 /// <signature>
                 /// <summary>Creates a set of polygons showing the land area covered by water when the water level rises once (initial water level set by user)</summary>
-                /// <param name="OriginX" type="String">The flood origin’s x-coordinate (longitude)</param>
-                /// <param name="OriginY" type="String">The flood origin’s y-coordinate (latitude)</param>
-                /// <param name="Radius" type="String">The radius of the area on which the flood analysis is being performed</param>
-                /// <param name="TotalWaterLevelRaise" type="String">The total number of meters the water rises</param>
-                /// <param name="SampleInterval" type="String">The distance between terrain sample points. The smaller the sample interval, the more accurate the calculation, but the longer it takes to calculate</param>
+                /// <param name="OriginX" type="Double">The flood origin’s x-coordinate (longitude)</param>
+                /// <param name="OriginY" type="Double">The flood origin’s y-coordinate (latitude)</param>
+                /// <param name="Radius" type="Double">The radius of the area on which the flood analysis is being performed</param>
+                /// <param name="TotalWaterLevelRaise" type="Double">The total number of meters the water rises</param>
+                /// <param name="SampleInterval" type="Double">The distance between terrain sample points. The smaller the sample interval, the more accurate the calculation, but the longer it takes to calculate</param>
                 /// <param name="ParentGroupID" type="String">The ID of the group in which the flood analysis object is created. If it is set to an empty string, the object is created under the root</param>
                 /// <param name="Description" type="String">The name of the flood analysis object as it appears in the Project Tree. If an empty string is passed into this parameter, TerraExplorer assigns it a unique name</param>
                 /// <returns type="String" />
                 /// </signature>
             },
-            CreateLineOfSight: function (ViewerPosition, SampleInterval, arrTargetPosition, GroupID, Description) {
-                /// <summary>Description</summary>
-                /// <param name="ViewerPosition" type="String">The position of the viewer, defined by its coordinates in the 3D world</param>
-                /// <param name="SampleInterval" type="String">Description</param>
-                /// <param name="arrTargetPosition" type="String">Description</param>
-                /// <param name="GroupID" type="String">Description</param>
-                /// <param name="Description" type="String">Description</param>
-                /// <returns type="String" />
+            CreateLineOfSight: function (ViewerPosition, SampleInterval, arrTargetPosition, ParentGroupID, Description) {
+                /// <signature>
+                /// <summary>Creates a visual marker for the existence of a line of sight between two points</summary>
+                /// <param name="ViewerPosition" type="IPosition">The position of the viewer, defined by its coordinates in the 3D world</param>
+                /// <param name="SampleInterval" type="Double">The distance between terrain samples for the measurement along each line. A smaller sample size is more accurate but slower to calculate</param>
+                /// <param name="arrTargetPosition" type="Object">An array of IPosition objects that contains the target positions in the 3D World</param>
+                /// <returns type="ILineOfSight" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a visual marker for the existence of a line of sight between two points</summary>
+                /// <param name="ViewerPosition" type="IPosition">The position of the viewer, defined by its coordinates in the 3D world</param>
+                /// <param name="SampleInterval" type="Double">The distance between terrain samples for the measurement along each line. A smaller sample size is more accurate but slower to calculate</param>
+                /// <param name="arrTargetPosition" type="Object">An array of IPosition objects that contains the target positions in the 3D World</param>
+                /// <param name="ParentGroupID" type="String">The Project Tree group in which the line of sight object is created. If it is set to an empty string, the object is created under the root</param>
+                /// <returns type="ILineOfSight" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a visual marker for the existence of a line of sight between two points</summary>
+                /// <param name="ViewerPosition" type="IPosition">The position of the viewer, defined by its coordinates in the 3D world</param>
+                /// <param name="SampleInterval" type="Double">The distance between terrain samples for the measurement along each line. A smaller sample size is more accurate but slower to calculate</param>
+                /// <param name="arrTargetPosition" type="Object">An array of IPosition objects that contains the target positions in the 3D World</param>
+                /// <param name="ParentGroupID" type="String">The Project Tree group in which the line of sight object is created. If it is set to an empty string, the object is created under the root</param>
+                /// <param name="Description" type="String">The name of the line of sight object as it appears in the Project Tree. If an empty string is passed into this parameter, TerraExplorer assigns it a unique name</param>
+                /// <returns type="ILineOfSight" />
+                /// </signature>
             },
             CreateSlopeMap: function (UpperLeftX, UpperLeftY, LowerRightX, LowerRightY, DisplayStyle, PaletteID, GroupID, Description) {
-                /// <summary>Description</summary>
-                /// <param name="UpperLeftX" type="String">Description</param>
-                /// <param name="UpperLeftY" type="String">Description</param>
-                /// <param name="LowerRightX" type="String">Description</param>
-                /// <param name="LowerRightY" type="String">Description</param>
-                /// <param name="DisplayStyle" type="String">Description</param>
-                /// <param name="PaletteID" type="String">Description</param>
-                /// <param name="GroupID" type="String">Description</param>
-                /// <param name="Description" type="String">Description</param>
-                /// <returns type="String" />
+                /// <summary>Creates a slope map on the terrain that can show degree (steepness) and/or aspect (direction). The terrain is colored according to degree of slope, and arrows display the direction of the slope. The color map and arrows can be applied to a specified rectangular area or to the entire terrain using the CoverageArea property of the resulting ISlopeMap object</summary>
+                /// <param name="UpperLeftX" type="Double">The West-East coordinate of the slope map’s upper left corner in the project’s coordinate system units</param>
+                /// <param name="UpperLeftY" type="Double">The North-South coordinate of the slope map’s upper left corner in the project’s coordinate system units</param>
+                /// <param name="LowerRightX" type="Double">The West-East coordinate of the slope map’s lower right corner in the project’s coordinate system units</param>
+                /// <param name="LowerRightY" type="Double">The North-South coordinate of the slope map’s lower right corner in the project’s coordinate system units</param>
+                /// <param name="DisplayStyle" type="SlopeDisplayStyle">An enum that determines how the slope map is displayed</param>
+                /// <param name="PaletteID" type="String">The GUID for the palette. GUIDs are listed in the palette XMLs found in the Pseudo directory, which is located under the [TerraExplorer installation]\ Lang\1033 folder and under %APPDATA%\Skyline\TerraExplorer</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the slope map object is created. If it is set to an empty string, the object is created under the root</param>
+                /// <param name="Description" type="String">The name of the slope map object as it appears in the Project Tree. If an empty string is passed into this parameter, TerraExplorer assigns it a unique name</param>
+                /// <returns type="ISlopeMap" />
             },
             CreateTerrainProfile: function (arrPoints) {
-                /// <summary>Description</summary>
-                /// <param name="arrPoints" type="String">Description</param>
-                /// <returns type="String" />
+                /// <summary>Creates a graphical representation of the terrain elevation profile along a path, displaying related information on this profile such as maximum and minimum elevation values and slopes</summary>
+                /// <param name="arrPoints" type="Object">An array that contains pairs of doubles marking the path to be analyzed. Each pair is composed of an x-coordinate and a y-coordinate</param>
+                /// <returns type="Undefined" />
             },
             CreateThreatDome: function(){
-                /// <summary>Description</summary>
-                /// <returns type="String" />
+                /// <summary>Obsolete. Use ICommand.Execute (setting the CommandID parameter to 1149 and the parameters parameter to 33) to create the new threat dome</summary>
+                /// <deprecated type="remove"></deprecated>
             },
             CreateViewshed: function (ViewerPosition, FieldOfView, SampleInterval, RaySpacing, TargetHeightAboveGround, TimeStart, TimeEnd, ParentGroupID, Description) {
-                /// <summary>Description</summary>
-                /// <param name="ViewerPosition" type="String">Description</param>
-                /// <param name="FieldOfView" type="String">Description</param>
-                /// <param name="SampleInterval" type="String">Description</param>
-                /// <param name="RaySpacing" type="String">Description</param>
-                /// <param name="TargetHeightAboveGround" type="String">Description</param>
-                /// <param name="TimeStart" type="String">Description</param>
-                /// <param name="TimeEnd" type="String">Description</param>
-                /// <param name="ParentGroupID" type="String">Description</param>
+                /// <signature>
+                /// <summary>Creates a graphical representation of all the visible areas of the terrain within a field of view, from a given viewing point</summary>
+                /// <param name="ViewerPosition" type="IPosition">An IPosition representing the viewing point position, defined by its coordinates in the 3D World</param>
+                /// <param name="FieldOfView" type="Double">The angular extent of the 3D World that can be seen. The default is set to 53 degrees</param>
+                /// <param name="SampleInterval" type="Double">The distance between terrain samples for the measurement along each ray. A smaller sample size is more accurate but slower to calculate</param>
+                /// <param name="RaySpacing" type="Double">The space in degrees between each ray that TerraExplorer samples. TerraExplorer samples several rays (lines of sight) in the area sector. The smaller the ray spacing, the more accurate the measurement, but the longer it takes to calculate</param>
+                /// <param name="TargetHeightAboveGround" type="Double">The target height</param>
+                /// <param name="TimeStart" type="Object">The start time for the visibility of the Viewshed Analysis group of objects in the 3D Window</param>
+                /// <param name="TimeEnd" type="Object">The end time for the visibility of the Viewshed Analysis group of objects in the 3D Window</param>
                 /// <returns type="String" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a graphical representation of all the visible areas of the terrain within a field of view, from a given viewing point</summary>
+                /// <param name="ViewerPosition" type="IPosition">An IPosition representing the viewing point position, defined by its coordinates in the 3D World</param>
+                /// <param name="FieldOfView" type="Double">The angular extent of the 3D World that can be seen. The default is set to 53 degrees</param>
+                /// <param name="SampleInterval" type="Double">The distance between terrain samples for the measurement along each ray. A smaller sample size is more accurate but slower to calculate</param>
+                /// <param name="RaySpacing" type="Double">The space in degrees between each ray that TerraExplorer samples. TerraExplorer samples several rays (lines of sight) in the area sector. The smaller the ray spacing, the more accurate the measurement, but the longer it takes to calculate</param>
+                /// <param name="TargetHeightAboveGround" type="Double">The target height</param>
+                /// <param name="TimeStart" type="Object">The start time for the visibility of the Viewshed Analysis group of objects in the 3D Window</param>
+                /// <param name="TimeEnd" type="Object">The end time for the visibility of the Viewshed Analysis group of objects in the 3D Window</param>
+                /// <param name="ParentGroupID" type="String">The Project Tree group in which the model is created. If it is set to an empty string, the object is created under the root</param>
+                /// <returns type="String" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a graphical representation of all the visible areas of the terrain within a field of view, from a given viewing point</summary>
+                /// <param name="ViewerPosition" type="IPosition">An IPosition representing the viewing point position, defined by its coordinates in the 3D World</param>
+                /// <param name="FieldOfView" type="Double">The angular extent of the 3D World that can be seen. The default is set to 53 degrees</param>
+                /// <param name="SampleInterval" type="Double">The distance between terrain samples for the measurement along each ray. A smaller sample size is more accurate but slower to calculate</param>
+                /// <param name="RaySpacing" type="Double">The space in degrees between each ray that TerraExplorer samples. TerraExplorer samples several rays (lines of sight) in the area sector. The smaller the ray spacing, the more accurate the measurement, but the longer it takes to calculate</param>
+                /// <param name="TargetHeightAboveGround" type="Double">The target height</param>
+                /// <param name="TimeStart" type="Object">The start time for the visibility of the Viewshed Analysis group of objects in the 3D Window</param>
+                /// <param name="TimeEnd" type="Object">The end time for the visibility of the Viewshed Analysis group of objects in the 3D Window</param>
+                /// <param name="ParentGroupID" type="String">The Project Tree group in which the model is created. If it is set to an empty string, the object is created under the root</param>
+                /// <param name="Description" type="String">The name of the viewshed object as it appears in the Project Tree. If an empty string is passed into this parameter, TerraExplorer assigns it a unique name</param>
+                /// <returns type="String" />
+                /// </signature>
             },
             CreateViewshedOnRoute: function (Route, AnalysisType, ViewerHeight, Distance, SampleInterval, RaySpacing, DistanceBetweenWaypoints, TimeStart, TimeEnd, ParentGroupID, Description) {
-                /// <summary>Description</summary>
-                /// <param name="Route" type="String">Description</param>
-                /// <param name="AnalysisType" type="String">Description</param>
-                /// <param name="ViewerHeight" type="String">Description</param>
-                /// <param name="Distance" type="String">Description</param>
-                /// <param name="SampleInterval" type="String">Description</param>
-                /// <param name="RaySpacing" type="String">Description</param>
-                /// <param name="DistanceBetweenWaypoints" type="String">Description</param>
-                /// <param name="TimeStart" type="String">Description</param>
-                /// <param name="TimeEnd" type="String">Description</param>
-                /// <param name="ParentGroupID" type="String">Description</param>
-                /// <param name="Description" type="String">Description</param>
+                /// <signature>
+                /// <summary>Creates a graphical representation of all the visible areas of the terrain, within a field of view, from a given viewing point. The user can define viewer height and radius of viewshed analysis. The calculated route viewshed can be displayed as:
+                /// <para>----Individual viewshed results for each selected point along the route</para>
+                /// <para>----A single composite viewshed showing visible area from any of the route’s waypoints</para>
+                /// <para>----A series of individual viewshed results that display according to a set timespan</para>
+                ///</summary>
+                /// <param name="Route" type="ILineString">An ILineString object representing the geometry that defines the route</param>
+                /// <param name="AnalysisType" type="MultipleViewshedAnalysisType">An enum that determines the Viewshed analysis type</param>
+                /// <param name="ViewerHeight" type="Double">The height of the viewer waypoints on the route</param>
+                /// <param name="Distance" type="Double">The radius of the viewshed analysis from each of the route’s waypoints</param>
+                /// <param name="SampleInterval" type="Double">The distance between terrain samples for the measurement along each ray. A smaller sample size is more accurate but slower to calculate</param>
+                /// <param name="RaySpacing" type="Double">The space in degrees between each ray that TerraExplorer samples. TerraExplorer samples several rays (lines of sight) in the area sector. The smaller the ray spacing, the more accurate the measurement, but the longer it takes to calculate</param>
+                /// <param name="DistanceBetweenWaypoints" type="Double">The distance between viewsheds along the route</param>
+                /// <param name="TimeStart" type="Object">The start time assigned to the Viewshed on Route results</param>
+                /// <param name="TimeEnd" type="Object">The end time assigned to the Viewshed on Route results</param>
                 /// <returns type="String" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a graphical representation of all the visible areas of the terrain, within a field of view, from a given viewing point. The user can define viewer height and radius of viewshed analysis. The calculated route viewshed can be displayed as:
+                /// <para>----Individual viewshed results for each selected point along the route</para>
+                /// <para>----A single composite viewshed showing visible area from any of the route’s waypoints</para>
+                /// <para>----A series of individual viewshed results that display according to a set timespan</para>
+                ///</summary>
+                /// <param name="Route" type="ILineString">An ILineString object representing the geometry that defines the route</param>
+                /// <param name="AnalysisType" type="MultipleViewshedAnalysisType">An enum that determines the Viewshed analysis type</param>
+                /// <param name="ViewerHeight" type="Double">The height of the viewer waypoints on the route</param>
+                /// <param name="Distance" type="Double">The radius of the viewshed analysis from each of the route’s waypoints</param>
+                /// <param name="SampleInterval" type="Double">The distance between terrain samples for the measurement along each ray. A smaller sample size is more accurate but slower to calculate</param>
+                /// <param name="RaySpacing" type="Double">The space in degrees between each ray that TerraExplorer samples. TerraExplorer samples several rays (lines of sight) in the area sector. The smaller the ray spacing, the more accurate the measurement, but the longer it takes to calculate</param>
+                /// <param name="DistanceBetweenWaypoints" type="Double">The distance between viewsheds along the route</param>
+                /// <param name="TimeStart" type="Object">The start time assigned to the Viewshed on Route results</param>
+                /// <param name="TimeEnd" type="Object">The end time assigned to the Viewshed on Route results</param>
+                /// <param name="ParentGroupID" type="String">The Project Tree group in which the model is created. If it is set to an empty string, the object is created under the root</param>
+                /// <returns type="String" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a graphical representation of all the visible areas of the terrain, within a field of view, from a given viewing point. The user can define viewer height and radius of viewshed analysis. The calculated route viewshed can be displayed as:
+                /// <para>----Individual viewshed results for each selected point along the route</para>
+                /// <para>----A single composite viewshed showing visible area from any of the route’s waypoints</para>
+                /// <para>----A series of individual viewshed results that display according to a set timespan</para>
+                ///</summary>
+                /// <param name="Route" type="ILineString">An ILineString object representing the geometry that defines the route</param>
+                /// <param name="AnalysisType" type="MultipleViewshedAnalysisType">An enum that determines the Viewshed analysis type</param>
+                /// <param name="ViewerHeight" type="Double">The height of the viewer waypoints on the route</param>
+                /// <param name="Distance" type="Double">The radius of the viewshed analysis from each of the route’s waypoints</param>
+                /// <param name="SampleInterval" type="Double">The distance between terrain samples for the measurement along each ray. A smaller sample size is more accurate but slower to calculate</param>
+                /// <param name="RaySpacing" type="Double">The space in degrees between each ray that TerraExplorer samples. TerraExplorer samples several rays (lines of sight) in the area sector. The smaller the ray spacing, the more accurate the measurement, but the longer it takes to calculate</param>
+                /// <param name="DistanceBetweenWaypoints" type="Double">The distance between viewsheds along the route</param>
+                /// <param name="TimeStart" type="Object">The start time assigned to the Viewshed on Route results</param>
+                /// <param name="TimeEnd" type="Object">The end time assigned to the Viewshed on Route results</param>
+                /// <param name="ParentGroupID" type="String">The Project Tree group in which the model is created. If it is set to an empty string, the object is created under the root</param>
+                /// <param name="Description" type="String">The name of the viewshed object as it appears in the Project Tree. If an empty string is passed into this parameter, TerraExplorer assigns it a unique name</param>
+                /// <returns type="String" />
+                /// </signature>
             },
             EndVisibilityQuery: function(){
-                /// <summary></summary>
-                /// <returns type="String" />
+                /// <summary>This method frees resources for a call from either StartShadowVisibilityQuery or StartViewshedVisibilityQuery</summary>
+                /// <returns type="Undefined" />
             },
             MeasureTerrainArea: function (pIGeometry) {
-                /// <summary>Description</summary>
-                /// <param name="pIGeometry" type="String">Description</param>
-                /// <returns type="String" />
+                /// <summary>Measures the area of the horizontal projection (2D measurement) of a defined region, even if some or all of the defined region encompasses mountainous terrain</summary>
+                /// <param name="pIGeometry" type="IGeometry">An IGeometry representing the geometric properties of the defined region</param>
+                /// <returns type="Number" />
             },
-            MeasureTerrainGroundDistance   : function(pIGeometry, sampleInterval, IncludeGroundObjects){
-                /// <summary>Description</summary>
-                /// <param name="pIGeometry" type="String">Description</param>
-                /// <param name="sampleInterval" type="String">Description</param>
-                /// <param name="IncludeGroundObjects" type="String">Description</param>
-                /// <returns type="String" />
+            MeasureTerrainGroundDistance: function(pIGeometry, sampleInterval, IncludeGroundObjects){
+                /// <summary>Measures the distance along a line path taking into account the terrain contour</summary>
+                /// <param name="pIGeometry" type="IGeometry">An IGeometry representing the geometric properties of the defined path. Only ILineString geometries are accepted</param>
+                /// <param name="sampleInterval" type="Double">The distance between terrain sample points. Pass zero (0) for automatic interval</param>
+                /// <param name="IncludeGroundObjects" type="Boolean">A Boolean that determines if ground objects are taken into account in calculating the distance measurement</param>
+                /// <returns type="Number" />
             },
             MeasureTerrainPerimeter: function (pIGeometry) {
-                /// <summary>Description</summary>
-                /// <param name="pIGeometry" type="String">Description</param>
-                /// <returns type="String" />
+                /// <summary>Measures the perimeter of the horizontal projection (2D measurement). The region measured is the horizontal projection of the defined region, even if some or all of the defined region encompasses mountainous terrain</summary>
+                /// <param name="pIGeometry" type="IGeometry">An IGeometry representing the geometric properties of the defined region</param>
+                /// <returns type="Number" />
             },
             MeasureTerrainProfile: function (KeyPoints, SampleInterval, IncludeGroundObjects) {
-                /// <summary>Description</summary>
-                /// <param name="KeyPoints" type="String">Description</param>
-                /// <param name="SampleInterval" type="String">Description</param>
-                /// <param name="IncludeGroundObjects" type="String">Description</param>
-                /// <returns type="String" />
+                /// <summary>Measures the terrain elevation profile along a defined path, returning a polyline with the X and Y coordinates of each of the sampled points along the path, and the Z value that was sampled from the terrain for each of these points</summary>
+                /// <param name="KeyPoints" type="IGeometry">An IGeometry with the X and Y coordinates of the points marking the path to be analyzed</param>
+                /// <param name="SampleInterval" type="Double">The distance between terrain sample points along the path. Pass zero (0) for automatic interval</param>
+                /// <param name="IncludeGroundObjects" type="Boolean">A Boolean that determines if ground objects are taken into account in calculating the terrain profile</param>
+                /// <returns type="IGeometry" />
             },
             MeasureTerrainSurface: function (pIGeometry, SampleInterval) {
-                /// <summary>Description</summary>
-                /// <param name="pIGeometry" type="String">Description</param>
-                /// <param name="SampleInterval" type="String">Description</param>
-                /// <returns type="String" />
+                /// <summary>Measures the surface area (3D measurement) of the defined region. The measurement takes into account terrain contours</summary>
+                /// <param name="pIGeometry" type="IGeometry">An IGeometry representing the geometric properties of the defined region</param>
+                /// <param name="SampleInterval" type="Double">The distance between terrain sample points</param>
+                /// <returns type="Number" />
             },
             MeasureTerrainSurfacePerimeter: function (pIGeometry, SampleInterval) {
-                /// <summary>Description</summary>
-                /// <param name="pIGeometry" type="String">Description</param>
-                /// <param name="SampleInterval" type="String">Description</param>
-                /// <returns type="String" />
+                /// <summary>Measures the perimeter of the surface of the defined region. The perimeter measured takes into account terrain contours</summary>
+                /// <param name="pIGeometry" type="IGeometry">An IGeometry representing the geometric properties of the defined region</param>
+                /// <param name="SampleInterval" type="Double">The distance between terrain sample points</param>
+                /// <returns type="Double" />
             },
             QueryElevationBuffer: function (UpperLeftX, UpperLeftY, ResX, ResY, DimensionX, DimensionY) {
-                /// <summary>Description</summary>
-                /// <param name="UpperLeftX" type="String">Description</param>
-                /// <param name="UpperLeftY" type="String">Description</param>
-                /// <param name="ResX" type="String">Description</param>
-                /// <param name="ResY" type="String">Description</param>
-                /// <param name="DimensionX" type="String">Description</param>
-                /// <param name="DimensionY" type="String">Description</param>
-                /// <returns type="String" />
+                /// <summary>This method returns an array of elevation values for a designated area of the terrain. The query includes all ground objects, modify terrain objects, 3DML, etc. that are currently loaded on the terrain. If a layer is being streamed, this QueryElevationBuffer only returns elevation values for features that were already streamed at the time this method is called.
+                /// <para>The designated area’s coordinates and coordinate system units should be passed in the coordinate system of the terrain and they are not translated by ICoordServices.SourceCoordinateSystem like other places in the API. See ITerrain.CoordinateSystem for information.</para>
+                /// <para>Make sure the terrain opacity is set to 100% (ITerrain.Opacity = 1)  before calling this method.</para>
+                /// </summary>
+                /// <param name="UpperLeftX" type="Double">The West-East coordinate of the elevation layer’s upper left corner in the terrain coordinate system</param>
+                /// <param name="UpperLeftY" type="Double">The North-South coordinate of the elevation layer’s upper left corner in the terrain coordinate system</param>
+                /// <param name="ResX" type="Double">The X cell resolution in the terrain coordinate system units</param>
+                /// <param name="ResY" type="Double">The Y cell resolution in the terrain coordinate system units</param>
+                /// <param name="DimensionX" type="Number">The width, in pixels, of the raster array</param>
+                /// <param name="DimensionY" type="Number">The height, in pixels, of the raster array</param>
+                /// <returns type="Object" />
             },
             QueryPointVisibility: function (QueryPosition) {
-                /// <summary>Description</summary>
-                /// <param name="QueryPosition" type="String">Description</param>
-                /// <returns type="String" />
+                /// <summary>This method executes a visibility query (either StartShadowVisibilityQuery or StartViewshedVisibilityQuery) based on the parameters set by the last StartXXVisibilityQuery call. Multiple calls to QueryPointVisibility can be made. When the queries are finished, EndVisibilityQuery should be called to free system resources</summary>
+                /// <param name="QueryPosition" type="IPosition">An IPosition representing the position for which the query is being performed</param>
+                /// <returns type="Number" />
             },
             QueryVisibilityDistance: function (QueryPosition) {
-                /// <summary>Description</summary>
-                /// <param name="QueryPosition" type="String">Description</param>
-                /// <returns type="String" />
+                /// <summary>Based on the parameters set by the last StartXXVisibilityQuery call (either StartShadowVisibilityQuery or StartViewshedVisibilityQuery), this method gets the point along the path from the origin of the shadow (QuerySperePosition) or viewshed source where the visibility or shadow is blocked by the terrain or a ground object</summary>
+                /// <param name="QueryPosition" type="IPosition">An IPosition representing the position of the endpoint of the path from the origin of the shadow (QuerySperePosition) or viewshed source that is being queried for the presence of a terrain or ground object</param>
+                /// <returns type="Number" />
             },
             StartShadowVisibilityQuery: function(QuerySpherePosition, QuerySphereRadius, Type){
-                /// <summary>Description</summary>
-                /// <param name="QuerySpherePosition" type="String">Description</param>
-                /// <param name="QuerySphereRadius" type="String">Description</param>
-                /// <param name="Type" type="String">Description</param>
+                /// <summary>Initializes a shadow visibility query for a selected position and shadow effect. After this initialization, subsequent calls can be made to QueryPointVisibility to calculate shadow visibility or to QueryVisibilityDistance to return the point where the shadow is blocked. The query can be based on the shadow effect of selected objects (selection Shadow) or of all the project’s objects (global shadow). Shadows are displayed using the ICommand66.Execute method (set the CommandID parameter to 2118 for a global shadow and to 2119 for a selection shadow)
+                /// <para>Note: The selection of objects for a selection shadow can only be performed through the user interface since it is not currently supported by the API</para>
+                /// </summary>
+                /// <param name="QuerySpherePosition" type="IPosition">The center point of the sphere that defines the region in which the shadow analysis is performed</param>
+                /// <param name="QuerySphereRadius" type="Double">The radius of the sphere that defines the region in which the shadow analysis is performed</param>
+                /// <param name="Type" type="ShadowType">An enum that defines what shadow effect should be considered in the query</param>
                 /// <returns type="String" />
             },
             StartViewshedVisibilityQuery: function(ViewshedID, Quality){
                 /// <summary>Initializes a viewshed visibility query for a specific viewshed. After this initialization, subsequent calls can be made to QueryPointVisibility to calculate the visibility of a selected position on a 3D viewshed (passed in this method’s ViewshedID parameter) from the observer viewpoint of the 3D viewshed or to QueryVisibilityDistance to get the point where the view is blocked</summary>
-                /// <param name="ViewshedID" type="String">Description</param>
-                /// <param name="Quality" type="String">Description</param>
-                /// <returns type="String" />
+                /// <param name="ViewshedID" type="String">The ID of the required I3DViewshed66 object that defines the viewshed on which the analysis is being performed</param>
+                /// <param name="Quality" type="ViewshedQuality">An enum that determines the accuracy level of the viewshed query</param>
+                /// <returns type="Undefined" />
             }
         };
     }
