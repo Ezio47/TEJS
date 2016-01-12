@@ -178,11 +178,52 @@ var ContourDisplayStyle = {
     'CDS_CONTOUR_STYLE_COLORS': 1,
     'CDS_CONTOUR_STYLE_LINES_AND_COLORS': 2
 };
-
-
-
-
-
-
-
-
+var ProjectSettingsDictionary = {
+    /// <field type="String">Determines whether all loaded models are automatically optimized by conversion to XPL2 upon loading</field>
+    'GenerateLevelsOfDetailFor3DModels': 'GenerateLevelsOfDetailFor3DModels',
+    /// <field type="String">Determines whether the faces of 3D models are rendered from two sides</field>
+    'DoubleSidedRenderingOf3DModels': 'DoubleSidedRenderingOf3DModels',
+    /// <field type="String">Determines whether the Skyline copyright text is removed. 1 – removed or 0 – displayed</field>
+    'RemoveSkylineCopyright': 'RemoveSkylineCopyright',
+    /// <field type="String">The color of the fog that covers the terrain in hexadecimal form: 0x00bbggrr</field>
+    'FogColor': 'FogColor',
+    /// <field type="String">The color of the sky in the hexadecimal form: 0x00bbggrr</field>
+    'SkyColor': 'SkyColor',
+    /// <field type="String">Distance to the horizon, in meters</field>
+    'VisualRange': 'VisualRange',
+    /// <field type="String">Distance, in meters, at which the fog starts</field>
+    'FogStart ': 'FogStart ',
+    /// <field type="String">Determines whether the sun is used as the light source. 1 – displayed or 0 – hidden</field>
+    'DisplaySun': 'DisplaySun',
+    /// <field type="String">Determines whether the currently used date and time value is defined in local time (1) or global date and time (0).
+    /// <para>Note: Changes only take effect after saving and reopening the TerraExplorer project</para>
+    ///</field>
+    'SunAndMoonUseFixedLocalTime': 'SunAndMoonUseFixedLocalTime',
+    /// <field type="String">Date (Javascript) or DateTime (C#) object that represents the currently used local time.
+    /// <para>Note: Changes only take effect after saving and reopening the TerraExplorer project.</para>
+    /// </field>
+    'SunAndMoonFixedLocalTime': 'SunAndMoonFixedLocalTime',
+    /// <field type="String">Date (Javascript) or DateTime (C#) object that represents the currently used global date and time.
+    /// <para>Note: Changes only take effect after saving and reopening the TerraExplorer project</para>
+    /// </field>
+    'SunAndMoonTime': 'SunAndMoonTime',
+    /// <field type="String">An XML string that defines the available time zones in the operating system.
+    /// For example: <SELECT ID="TimeZoneList" SIZE="XX">
+    /// <OPTION VALUE ="Alaska Standard Time">(GMT-09:00) Alaska<OPTION>
+    /// ... </SELECT></field>
+    'TimeZoneListXML': 'TimeZoneListXML',
+    /// <field type="String">A string description of the currently used time zone, e.g., "(GMT-09:00) Alaska". The string corresponds to the value of the OPTION node in the XML returned from "TimeZoneListXML”</field>
+    'SunAndMoonTimeZoneDisplayName': 'SunAndMoonTimeZoneDisplayName',
+    /// <field type="String">A string key of the used time zone, e.g., "Alaska Standard Time". The key can be one of the VALUE attributes of an OPTION node in the XML returned from "TimeZoneListXML.</field>
+    'SunAndMoonTimeZoneKey': 'SunAndMoonTimeZoneKey',
+    /// <field type="String">Determines the minimum altitude allowed for the plane in meters or feet above ground level.</field>
+    'AltitudeMinimumAltitude': 'AltitudeMinimumAltitude',
+    /// <field type="String">Determines the altitude above the terrain database vertical datum base ellipsoid</field>
+    'AltitudeUndergroundSurface': 'AltitudeUndergroundSurface',
+    /// <field type="String">Determines the altitude above the terrain database vertical datum base ellipsoid</field>
+    'AltitudeUndergroundSurface': 'AltitudeUndergroundSurface',
+    /// <field type="String">Determines the navigation speed when using the keyboard controls and mouse</field>
+    'KeyboardAndMouseNavigationSpeed': 'KeyboardAndMouseNavigationSpeed',
+    /// <field type="String">Determines the joystick speed</field>
+    'JoystickNavigationSpeed': 'JoystickNavigationSpeed'
+};
