@@ -604,7 +604,68 @@
         return {};
     }
     function IProject() {
-        return {};
+        return {
+            /// <field type="ITEVersionInfo">Returns an ITEVersionInfo representing the version of TerraExplorer currently running</field>
+            FileVersion:0,
+            /// <field type="String">Gets the name of the current loaded Fly file. If no Fly file is loaded, an empty string is returned</field>
+            Name: 0,
+            /// <field type="String">Allows defining the value of a specified parameter in the Fly file Project Settings. Each parameter is accessed by a unique identification string.
+            /// <para>Use the ProjectSettingsDictionary type to request a certain key</para>
+            ///</field>
+            Settings: '',
+
+            // Methods
+
+            Close: function (bSuppressConfirmation) {
+                /// <summary>Closes a Fly file or terrain database</summary>
+                /// <param name="bSuppressConfirmation" type="Boolean">A Boolean that determines whether a dialog should display confirming the Close request</param>
+                /// <returns type="Boolean" />
+            },
+            Open: function (ProjectURL, Asynchronous, User, Password) {
+                /// <signature>
+                /// <summary>Opens a Fly file or terrain database. Open passes the user name and password for the terrain database opened. In addition, Open can work in synchronous or asynchronous mode. In synchronous mode the method returns after the file is loaded. In asynchronous mode, the method returns immediately. You can then use ISGWorld.OnLoadFinished to be notified when the file is loaded</summary>
+                /// <param name="ProjectURL" type="String">A full path name or a URL of a Fly file to be loaded by TerraExplorer. You can also load a local terrain database file by using a full path name to an MPT file, or a terrain database from TerraGate by following the format: “TerrainDatabase.Type@TerraGateAddress:PortNumber” (e.g., washington-dc.mpt@tgate.skylinesoft.com)</param>
+                /// <returns type="Undefined" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Opens a Fly file or terrain database. Open passes the user name and password for the terrain database opened. In addition, Open can work in synchronous or asynchronous mode. In synchronous mode the method returns after the file is loaded. In asynchronous mode, the method returns immediately. You can then use ISGWorld.OnLoadFinished to be notified when the file is loaded</summary>
+                /// <param name="ProjectURL" type="String">A full path name or a URL of a Fly file to be loaded by TerraExplorer. You can also load a local terrain database file by using a full path name to an MPT file, or a terrain database from TerraGate by following the format: “TerrainDatabase.Type@TerraGateAddress:PortNumber” (e.g., washington-dc.mpt@tgate.skylinesoft.com)</param>
+                /// <param name="Asynchronous" type="Boolean">When set to TRUE, the method executes asynchronously, meaning returns immediately. When set to FALSE, the method executes synchronously</param>
+                /// <returns type="Undefined" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Opens a Fly file or terrain database. Open passes the user name and password for the terrain database opened. In addition, Open can work in synchronous or asynchronous mode. In synchronous mode the method returns after the file is loaded. In asynchronous mode, the method returns immediately. You can then use ISGWorld.OnLoadFinished to be notified when the file is loaded</summary>
+                /// <param name="ProjectURL" type="String">A full path name or a URL of a Fly file to be loaded by TerraExplorer. You can also load a local terrain database file by using a full path name to an MPT file, or a terrain database from TerraGate by following the format: “TerrainDatabase.Type@TerraGateAddress:PortNumber” (e.g., washington-dc.mpt@tgate.skylinesoft.com)</param>
+                /// <param name="Asynchronous" type="Boolean">When set to TRUE, the method executes asynchronously, meaning returns immediately. When set to FALSE, the method executes synchronously</param>
+                /// <param name="User" type="String">File’s security user name. If the file is not secure, the user name is ignored</param>
+                /// <returns type="Undefined" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Opens a Fly file or terrain database. Open passes the user name and password for the terrain database opened. In addition, Open can work in synchronous or asynchronous mode. In synchronous mode the method returns after the file is loaded. In asynchronous mode, the method returns immediately. You can then use ISGWorld.OnLoadFinished to be notified when the file is loaded</summary>
+                /// <param name="ProjectURL" type="String">A full path name or a URL of a Fly file to be loaded by TerraExplorer. You can also load a local terrain database file by using a full path name to an MPT file, or a terrain database from TerraGate by following the format: “TerrainDatabase.Type@TerraGateAddress:PortNumber” (e.g., washington-dc.mpt@tgate.skylinesoft.com)</param>
+                /// <param name="Asynchronous" type="Boolean">When set to TRUE, the method executes asynchronously, meaning returns immediately. When set to FALSE, the method executes synchronously</param>
+                /// <param name="User" type="String">File’s security user name. If the file is not secure, the user name is ignored</param>
+                /// <param name="Password" type="String">Security password for the specified user. If the file is not secure, the password is ignored</param>
+                /// <returns type="Undefined" />
+                /// </signature>
+            },
+            Save: function () {
+                /// <summary>Saves the current project to a Fly file.
+                /// <para>Note: The current project must be a Fly file. If the current file is an MPT, the method fails.</para>
+                /// </summary>
+                /// <returns type="Undefined" />
+            },
+            SaveAs: function (ProjectFileName) {
+                /// <summary>Saves the current project to a Fly file with a specified name. For security reasons the file is saved to a predefined “Skyline\TerraExplorer” folder in the “Application Data” space of the current user. The full path of the saved file is provided in the method’s return value. You can also use %APPDATA% in Windows Explorer to locate the path on your computer.
+                /// <para>Note: If the folder contains a file by the same name, the existing file is overwritten without a prompt.</para>
+                /// <para>Note: The Application Data folder path changes between different users and different Windows operating systems. To find the path used by your client look at the %APPDATA% environment variable.</para>
+                /// </summary>
+                /// <param name="ProjectFileName" type="String">The name for the Fly file. If it is not specified, a FLY extension is added to the file name automatically.
+                /// <para>Note: A file name with a full path cannot be used here.</para>
+                /// </param>
+                /// <returns type="String" />
+            }
+        };
     }
     function IProjectTree() {
         return {
