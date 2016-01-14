@@ -598,7 +598,34 @@
         return {};
     }
     function IDateTime() {
-        return {};
+        return {
+            /// <field type="Date">Gets and sets the currently used global date and time</field>
+            Current: new Date(),
+            /// <field type="Number">Gets and sets the time range in seconds of the Date and Time slider</field>
+            CurrentTimeBuffer: 0,
+            /// <field type="Boolean">Gets and sets a Boolean that indicates whether the sun is used the sun as a light source</field>
+            DisplaySun: true,
+            /// <field type="Date">Gets and sets a fixed time at the viewer position. The time slider is set to this time and sunlight on the terrain corresponds to the position of the sun at this time on the current date</field>
+            FixedLocalTime: new Date(),
+            /// <field type="Date">Gets and sets the range end date and time</field>
+            TimeRangeEnd: new Date(),
+            /// <field type="Date">Gets and sets the range start date and time</field>
+            TimeRangeStart: new Date(),
+            /// <field type="String">Gets a description of the currently used time zone, e.g., "(GMT-09:00) Alaska". The string corresponds to the value of the OPTION node in the XML returned from TimeZonesXML.</field>
+            TimeZoneDisplayName: '',
+            /// <field type="String">Gets and sets a key of the used time zone, e.g., "Alaska Standard Time". The key can be one of the VALUE attributes of an OPTION node in the XML returned from TimeZonesXML</field>
+            TimeZoneKey: '',
+            /// <field type="TimeZoneType">Gets and sets the currently used time zone type</field>
+            TimeZoneMode: {},
+            /// <field type="String">Gets an XML that defines the available time zones in the operating system</field>
+            TimeZonesXML: '',
+
+            SetMode: function (Mode) {
+                /// <summary>This method sets the time and date slider mode</summary>
+                /// <param name="Mode" type="SliderDisplayMode">An enum that determines the date and time slider mode</param>
+                /// <returns type="Undefined" />
+            }
+        };
     }
     function INavigate() {
         return {};
