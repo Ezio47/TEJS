@@ -227,3 +227,24 @@ var ProjectSettingsDictionary = {
     /// <field type="String">Determines the joystick speed</field>
     'JoystickNavigationSpeed': 'JoystickNavigationSpeed'
 };
+
+var TimeZoneType = {
+    'TIME_ZONE_TYPE_MY_COMPUTER' : 0,
+    'TIME_ZONE_TYPE_UTC' : 1,
+    'TIME_ZONE_TYPE_SPECIFIC' : 2
+};
+
+var SliderDisplayMode = {
+    /// <field type="String">Reserved</field>
+    'MODE_TIME_NONE': 0,
+    /// <field type="String">Always use a fixed time at the viewer position that can be set using the FixedLocalTime property</field>
+    'MODE_FIXED_TIME': 1,
+    /// <field type="String">Always use a fixed time that can be set using the IProject.Settings.property</field>
+    'MODE_TIME': 2,
+    /// <field type="String">Use range according to project</field>
+    'MODE_RANGE_PROJECT': 4,
+    /// <field type="String">Discontinued. Do not use</field>
+    'MODE_RANGE_CUSTOM': 8,
+    /// <field type="String">Automatically adjust range to selected group. You can use this flag in combination with the MODE_FIXED_TIME or MODE_TIME values</field>
+    'MODE_ADJUST_FOR_GROUP': 16
+};
