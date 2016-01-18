@@ -64,6 +64,11 @@
     return _globe;
 }
 
+var AccuracyLevel = {
+    'ACCURACY_NORMAL ': 0,
+    'ACCURACY_BEST_FROM_MEMORY': 1,
+    'ACCURACY_FORCE_BEST_RENDERED': 2
+};
 var ActionCode = {
     /// <field type="Number">Fly to the object.</field>
     'AC_FLYTO': 0,
@@ -98,7 +103,6 @@ var ActionCode = {
     /// <field type="Number">Play the object's activation action.</field>
     'AC_PLAY': 18
 };
-
 var AltitudeTypeCode = { 
     /// <field type="Number">Places the object’s pivot point at a specified altitude above the ground</field>
     'ATC_TERRAIN_RELATIVE' : 0, 
@@ -111,32 +115,12 @@ var AltitudeTypeCode = {
     /// <field type="Number">Places the object's pivot point at a specified altitude above the 3DML layer</field>
     'ATC_3DML_RELATIVE': 4
 };
-
-var AccuracyLevel = {
-    'ACCURACY_NORMAL ': 0,
-    'ACCURACY_BEST_FROM_MEMORY': 1,
-    'ACCURACY_FORCE_BEST_RENDERED': 2
+var ContourDisplayStyle = {
+    'CDS_CONTOUR_STYLE_DEFAULT': -1,
+    'CDS_CONTOUR_STYLE_LINES': 0,
+    'CDS_CONTOUR_STYLE_COLORS': 1,
+    'CDS_CONTOUR_STYLE_LINES_AND_COLORS': 2
 };
-
-var WorldPointType = {
-    'WPT_TERRAIN': 0,
-    'WPT_MODEL': 1,
-    'WPT_LABEL': 2,
-    'WPT_PRIMITIVE': 4,
-    'WPT_ANIM': 8,
-    'WPT_BUILDING': 16,
-    'WPT_SKY': 32,
-    'WPT_ACCURATE_CPT': 64,
-    'WPT_BBOX_CPT': 128,
-    'WPT_VIDEO': 256,
-    'WPT_UNDERGROUND': 512,
-    'WPT_SCREEN_OVERLAY': 1024,
-    'WPT_SCREEN_CONTROL': 2048,
-    'WPT_SCREEN_COVERED': 4096,
-    'WPT_3DML': 8192,
-    'WPT_DEFAULT': -1
-};
-
 var controlFlags = {
     'HUD_LAYER_NONE': 0,
     'HUD_LAYER_ACTIVE_ARROWS': 1,
@@ -149,7 +133,11 @@ var controlFlags = {
     'HUD_LAYER_SCALE_BAR': 128,
     'HUD_LAYER_ZOOM_CONTROL' : 256
 };
-
+var MessageBarTextAlignment = {
+    'MBT_LEFT': 0,
+    'MBT_CENTER': 1,
+    'MBT_RIGHT': 2
+};
 var MouseInputMode = {
     'MI_FREE_FLIGHT': 0,
     'MI_COM_CLIENT': 1,
@@ -157,60 +145,14 @@ var MouseInputMode = {
     'MI_EDIT': 3,
     'MI_MEASUREMENT': 4
 };
-
-var TerrainQuality = {
-    'USE_DATA_IN_MEMORY':0,
-    'GET_BEST_RESOLUTION':1
-};
-
-var PixelFromWorldMode = {
-    'PFW_IGNORE_Z_BUFFER': 0,
-    'PFW_USE_Z_BUFFER': 1
-};
-
-var controlFlags = {
-    'HUD_LAYER_NONE': 0,
-    'HUD_LAYER_ACTIVE_ARROWS': 1,
-    'HUD_LAYER_CENTER_SIGN': 2,
-    'HUD_LAYER_TEXT_DATA': 4,
-    'HUD_LAYER_COMPASS': 8,
-    'HUD_LAYER_GRAPHIC_1': 16,
-    'HUD_LAYER_PAN_BARS': 32,
-    'HUD_LAYER_DATE_TIME': 64,
-    'HUD_LAYER_SCALE_BAR': 128,
-    'HUD_LAYER_ZOOM_CONTROL': 256
-};
-
-var MessageBarTextAlignment = {
-    'MBT_LEFT': 0,
-    'MBT_CENTER': 1,
-    'MBT_RIGHT': 2
-};
-
-var ViewshedQuality = {
-    'VSQ_QUALITY_LOW': 0,
-    'VSQ_QUALITY_MEDIUM': 1,
-    'VSQ_QUALITY_HIGH': 2
-};
-
 var MultipleViewshedAnalysisType = {
     'MVT_VIEWSHED_ON_ROUTE': 0,
     'MVT_TIMESPAN_VIEWSHED_ON_ROUTE': 1,
     'MVT_CUMULATIVE_VIEWSHED_ON_ROUTE': 2
 };
-
-var SlopeDisplayStyle = {
-    'CDS_SLOPE_STYLE_DEFAULT': -1,
-    'CDS_SLOPE_STYLE_DIRECTION': 0,
-    'CDS_SLOPE_STYLE_COLORS': 1,
-    'CDS_SLOPE_STYLE_DIRECTION_AND_COLORS': 2
-};
-
-var ContourDisplayStyle = {
-    'CDS_CONTOUR_STYLE_DEFAULT': -1,
-    'CDS_CONTOUR_STYLE_LINES': 0,
-    'CDS_CONTOUR_STYLE_COLORS': 1,
-    'CDS_CONTOUR_STYLE_LINES_AND_COLORS': 2
+var PixelFromWorldMode = {
+    'PFW_IGNORE_Z_BUFFER': 0,
+    'PFW_USE_Z_BUFFER': 1
 };
 var ProjectSettingsDictionary = {
     /// <field type="String">Determines whether all loaded models are automatically optimized by conversion to XPL2 upon loading</field>
@@ -261,13 +203,12 @@ var ProjectSettingsDictionary = {
     /// <field type="String">Determines the joystick speed</field>
     'JoystickNavigationSpeed': 'JoystickNavigationSpeed'
 };
-
-var TimeZoneType = {
-    'TIME_ZONE_TYPE_MY_COMPUTER' : 0,
-    'TIME_ZONE_TYPE_UTC' : 1,
-    'TIME_ZONE_TYPE_SPECIFIC' : 2
+var SlopeDisplayStyle = {
+    'CDS_SLOPE_STYLE_DEFAULT': -1,
+    'CDS_SLOPE_STYLE_DIRECTION': 0,
+    'CDS_SLOPE_STYLE_COLORS': 1,
+    'CDS_SLOPE_STYLE_DIRECTION_AND_COLORS': 2
 };
-
 var SliderDisplayMode = {
     /// <field type="String">Reserved</field>
     'MODE_TIME_NONE': 0,
@@ -281,4 +222,36 @@ var SliderDisplayMode = {
     'MODE_RANGE_CUSTOM': 8,
     /// <field type="String">Automatically adjust range to selected group. You can use this flag in combination with the MODE_FIXED_TIME or MODE_TIME values</field>
     'MODE_ADJUST_FOR_GROUP': 16
+};
+var TerrainQuality = {
+    'USE_DATA_IN_MEMORY':0,
+    'GET_BEST_RESOLUTION':1
+};
+var TimeZoneType = {
+    'TIME_ZONE_TYPE_MY_COMPUTER' : 0,
+    'TIME_ZONE_TYPE_UTC' : 1,
+    'TIME_ZONE_TYPE_SPECIFIC' : 2
+};
+var ViewshedQuality = {
+    'VSQ_QUALITY_LOW': 0,
+    'VSQ_QUALITY_MEDIUM': 1,
+    'VSQ_QUALITY_HIGH': 2
+};
+var WorldPointType = {
+    'WPT_TERRAIN': 0,
+    'WPT_MODEL': 1,
+    'WPT_LABEL': 2,
+    'WPT_PRIMITIVE': 4,
+    'WPT_ANIM': 8,
+    'WPT_BUILDING': 16,
+    'WPT_SKY': 32,
+    'WPT_ACCURATE_CPT': 64,
+    'WPT_BBOX_CPT': 128,
+    'WPT_VIDEO': 256,
+    'WPT_UNDERGROUND': 512,
+    'WPT_SCREEN_OVERLAY': 1024,
+    'WPT_SCREEN_CONTROL': 2048,
+    'WPT_SCREEN_COVERED': 4096,
+    'WPT_3DML': 8192,
+    'WPT_DEFAULT': -1
 };
