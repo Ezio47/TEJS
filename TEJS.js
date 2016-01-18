@@ -64,6 +64,40 @@
     return _globe;
 }
 
+var ActionCode = {
+    /// <field type="Number">Fly to the object.</field>
+    'AC_FLYTO': 0,
+    /// <field type="Number">Perform a circle flight around the object.</field>
+    'AC_CIRCLEPATTERN': 1,
+    /// <field type="Number">Perform an oval flight pattern around the object.</field>
+    'AC_OVALPATTERN': 2,
+    /// <field type="Number">Perform a tight oval flight pattern around the object.</field>
+    'AC_LINEPATTERN': 3,
+    /// <field type="Number">Perform a vertical arc flight above the object.</field>
+    'AC_ARCPATTERN': 4,
+    /// <field type="Number">View the object from behind.</field>
+    'AC_FOLLOWBEHIND': 5,
+    /// <field type="Number">View the object from above.</field>
+    'AC_FOLLOWABOVE': 6,
+    /// <field type="Number">View the object from below.</field>
+    'AC_FOLLOWBELOW': 7,
+    /// <field type="Number">View the object from the right-hand side.</field>
+    'AC_FOLLOWRIGHT': 8,
+    /// <field type="Number">View the object from the left-hand side.</field>
+    'AC_FOLLOWLEFT': 9,
+    /// <field type="Number">View the object from behind and above (45 degrees).</field>
+    'AC_FOLLOWBEHINDANDABOVE': 10,
+    /// <field type="Number">View the world from the object’s pivot point.</field>
+    'AC_FOLLOWCOCKPIT': 11,
+    /// <field type="Number">View the object from the ground.</field>
+    'AC_FOLLOWFROMGROUND': 12,
+    /// <field type="Number">Stop the flight to an object.</field>
+    'AC_STOP': 13,
+    /// <field type="Number">Jump directly to the object.</field>
+    'AC_JUMP': 14,
+    /// <field type="Number">Play the object's activation action.</field>
+    'AC_PLAY': 18
+};
 
 var AltitudeTypeCode = { 
     /// <field type="Number">Places the object’s pivot point at a specified altitude above the ground</field>
