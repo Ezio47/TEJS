@@ -592,7 +592,87 @@
         };
     }
     function ICoordServices() {
-        return {};
+        return {
+            /// <field type="ICoordinateSystem">This interface gives access to layer and MPT coordinate system information and to methods which enable conversion from one coordinate system to another. Each coordinate system is associated with its Well-Known Text (WKT) description, a simple structured, text-based format that is easy to store and share between systems</field>
+            SourceCoordinateSystem : {},
+            ChooseCSDialog: function (Title, WellKnownText)
+            {
+                /// <summary>This method opens a high-level dialog that allows the user to select, view, edit, and create a coordinate system</summary>
+                /// <param name="Title" type="String">The title of the dialog</param>
+                /// <param name="WellKnownText" type="String">The Well-Known Text that should display when opening the dialog box. This Well-Known Text sets the initial coordinate system</param>
+                /// <returns type="String" />
+            },
+            ConvertCoordinateToMGRS : function(X, Y){
+                /// <summary>This method converts a given coordinate from the coordinate system of the terrain database to Military Grid Reference System coordinates. The X and Y coordinates to be converted should be given in X and Y respectively. After the method is completed, bstrMGRS returns the converted coordinates as a string value</summary>
+                /// <param name="X" type="Double">The X- coordinate in coordinate system units</param>
+                /// <param name="Y" type="Double">The Y- coordinate in coordinate system units</param>
+                /// <returns type="String" />
+            },
+            ConvertMGRSToCoordinate: function (bstrMGRS)
+            {
+                /// <summary>Description</summary>
+                /// <param name="bstrMGRS" type="String">The MGRS coordinate as a string value</param>
+                /// <returns type="ICoord2D" />
+            },
+            CreateCoordinateSystem: function (WellKnownText)
+            {
+                /// <summary>This method creates a coordinate system from a Well-Known Text string</summary>
+                /// <param name="WellKnownText" type="String">The Well-Known Text as a string value</param>
+                /// <returns type="ICoordinateSystem" />
+            },
+            GetAimingAngles: function (From, To)
+            {
+                /// <summary>This method returns the calculated angle between two specified 3D-coordinates</summary>
+                /// <param name="From" type="IPosition">An IPosition representing the position of the first coordinate</param>
+                /// <param name="To" type="IPosition">An IPosition representing the position of the second coordinate</param>
+                /// <returns type="Number" />
+            },
+            GetDistance: function (X1, Y1, X2, Y2)
+            {
+                /// <summary>This method returns the horizontal distance between two given coordinates</summary>
+                /// <param name="X1" type="Double">X-coordinate of the first point in coordinate system units</param>
+                /// <param name="Y1" type="Double">Y-coordinate of the first point in coordinate system units</param>
+                /// <param name="X2" type="Double">X-coordinate of the second point in coordinate system units</param>
+                /// <param name="Y2" type="Double">Y-coordinate of the second point in coordinate system units</param>
+                /// <returns type="Number" />
+            },
+            GetDistance3D: function (From, To)
+            {
+                /// <summary>This method calculates the actual aerial distance between two points in the 3D World, taking into account the horizontal and vertical distance difference between the points</summary>
+                /// <param name="From" type="IPosition">An IPosition representing the position of the first coordinate</param>
+                /// <param name="To" type="IPosition">An IPosition representing the position of the second coordinate</param>
+                /// <returns type="Number" />
+            },
+            MoveCoord: function (X, Y, moveWestEast, moveSouthNorth)
+            {
+                /// <summary>This method moves a 2D-coordinate by a specified west-east and south-north offset. The X and Y coordinates to be converted should be given in X and Y respectively. After the method is completed, the pVal returns the new coordinates. This method can be used, for example, to calculate the coordinates for drawing a square on a globe database</summary>
+                /// <param name="X" type="Double">X-coordinate in coordinate system units</param>
+                /// <param name="Y" type="Double">Y-coordinate in coordinate system units</param>
+                /// <param name="moveWestEast" type="Double">The offset to move the point on the west-east axis. Positive values move the coordinate to the east, negative values move to the west</param>
+                /// <param name="moveSouthNorth" type="Double">The offset to move the point on the south-north axis. Positive values move the coordinate to the north, negative values move to the south</param>
+                /// <returns type="ICoord2D" />
+            },
+            MoveCoordEx: function (Position, moveForward, moveRight, moveUp)
+            {
+                /// <summary>With this method you can define an orientation for a coordinate system and move a 3D-coordinate along it by a specified Forward-Backward, Right-Left and Up-Down offset. To define the point and orientation, set the X and Y coordinates, altitude relative to the terrain database vertical datum base ellipsoid (absolute height), Yaw Pitch and Roll values, in the IPosition66 properties. To define the movement, set the forward, right, and up values in moveForward, moveRight and moveUp respectively. Use negative values to move in the opposite direction (e.g., negative value for moveForward performs a backward movement)
+                /// <para>Note: The rotation parameters are applied to the 3D coordinate in the following order: Roll, Pitch, Yaw</para>
+                /// </summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the 3D coordinate being moved</param>
+                /// <param name="moveForward" type="Double">The offset to move the point forward. Positive values move the forward, negative values move backwards</param>
+                /// <param name="moveRight" type="Double">The offset to move the point to the right and left. Positive values move the point to the right, negative values move the point to the left</param>
+                /// <param name="moveUp" type="Double">The offset to move the point up and down. Positive values move the point up, negative values move the point down</param>
+                /// <returns type="Undefined" />
+            },
+            Reproject: function (From, To, X, Y)
+            {
+                /// <summary>This method converts a given coordinate from one coordinate system to another</summary>
+                /// <param name="From" type="ICoordinateSystem">The coordinate system in which the coordinate is given</param>
+                /// <param name="To" type="ICoordinateSystem">The coordinate system to which you want to convert the coordinate</param>
+                /// <param name="X" type="Double">X- coordinate in coordinate system units</param>
+                /// <param name="Y" type="Double">Y- coordinate in coordinate system units</param>
+                /// <returns type="ICoord2D" />
+            }
+        };
     }
     function ICreator() {
         return {};
