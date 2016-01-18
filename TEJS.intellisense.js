@@ -708,7 +708,130 @@
         };
     }
     function INavigate() {
-        return {};
+        return {            	
+            /// <field type="Double">Gets and sets the camera field of view, in degrees. This number must be between 1° and 180°, where 1° is the maximum zoom in and 180° is the maximum zoom out. The default field of view is 53°</field>
+            FieldOfView:{},
+            /// <field type="Double">Gets and sets the speed at which the camera approaches an object</field>
+            Speed: {},
+            /// <field type="Boolean">Gets and sets a Boolean value that determines whether the underground mode is on or off. The underground navigation mode allows you to explore the subsurface of the terrain. A subsurface grid navigation aid appears when you navigate below the terrain, allowing you to navigate the same way as above ground</field>
+            UndergroundMode: {},
+            DetectCollisionToTarget: function (target)
+            {
+                /// <summary>Returns the distance to the first ground object detected on the path from the current camera position to the target parameter. The target parameter defines the direction and endpoint of this path.
+                /// <para>If there is no collision between the viewer and target, 0 is returned</para></summary>
+                /// <param name="target" type="IPosition">An IPosition representing the position of the endpoint of the path (that begins at the current camera position) that is being queried for the presence of a ground object</param>
+                /// <returns type="Number" />
+            },
+            FlyTo: function (target, Pattern)
+            {
+                /// <signature>
+                /// <summary>This method instructs the plane to fly to an object, approaching and focusing in on the object according to the value set in the Pattern parameter</summary>
+                /// <param name="target" type="">The object to fly to. This parameter can be any of the following:
+                /// <para>An object ID represented as a string.</para>
+                /// <para>ITerraExplorerObject derived object</para>
+                /// <para>ProjectTree GroupID</para>
+                /// <para>IPosition object</para>
+                /// </param>
+                /// <returns type="Undefined" />
+                /// </signature>
+                /// <signature>
+                /// <summary>This method instructs the plane to fly to an object, approaching and focusing in on the object according to the value set in the Pattern parameter</summary>
+                /// <param name="target" type="">The object to fly to. This parameter can be any of the following:
+                /// <para>An object ID represented as a string.</para>
+                /// <para>ITerraExplorerObject derived object</para>
+                /// <para>ProjectTree GroupID</para>
+                /// <para>IPosition object</para>
+                /// </param>
+                /// <param name="Pattern" type="ActionCode">An enum that instructs the plane on how to approach and focus in on the object</param>
+                /// <returns type="Undefined" />
+                /// </signature>
+            },
+            GetPosition: function (AltitudeType)
+            {
+                /// <signature>
+                /// <summary>This method returns the camera’s position and orientation</summary>
+                /// <returns type="IPosition" />
+                /// </signature>
+                /// <signature>
+                /// <summary>This method returns the camera’s position and orientation</summary>
+                /// <param name="AltitudeType" type="AltitudeTypeCode">An enum determining how the altitude is interpreted</param>
+                /// <returns type="IPosition" />
+                /// </signature>
+            },
+            JumpTo: function (target)
+            {
+                /// <summary>Instructs the camera to jump straight to the point of interest</summary>
+                /// <param name="target" type="Object">The object to jump to. This parameter can be any of the following:
+                /// <para>An object ID represented as a string.</para>
+                /// <para>ITerraExplorerObject derived object</para>
+                /// <para>ProjectTree GroupID</para>
+                /// <para>IPosition object</para>
+                /// </param>
+                /// <returns type="Undefined" />
+            },
+            SetGPSMode: function (GPSMode)
+            {
+                /// <summary>Sets the GPS mode
+                /// <para>Note: Before setting the mode to GPS_MODE_SHOW_LOCATION_INDICATOR or GPS_MODE_FOLLOW, the client should call SetGPSPosition to update the true GPS position</para>
+                ///</summary>
+                /// <param name="GPSMode" type="GPSOperationMode">An enum that can use any of the following values:</param>
+                /// <returns type="Undefined" />
+            },
+            SetGPSPosition: function (Position)
+            {
+                /// <summary>Sets the GPS position</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position of the camera, defined by its coordinates in the 3D World</param>
+                /// <returns type="Undefined" />
+            },
+            SetPosition: function (Position)
+            {
+                /// <summary>Sets the position of the camera in the 3D World</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position of the camera, defined by its coordinates in the 3D World</param>
+                /// <returns type="Undefined" />
+            },
+            Stop:function(){
+                /// <summary>Stops the camera movement</summary>
+                /// <returns type="Undefined" />
+            },
+            ZoomIn: function (delta)
+            {
+                /// <signature>
+                /// <summary>Moves the camera forward, closer to the point of interest</summary>
+                /// <returns type="Undefined" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Moves the camera forward, closer to the point of interest</summary>
+                /// <param name="delta" type="Double">Distance to move forward</param>
+                /// <returns type="Undefined" />
+                /// </signature>
+            },
+            ZoomOut: function (delta)
+            {
+                /// <signature>
+                /// <summary>Moves the camera backward, farther from the point of interest</summary>
+                /// <returns type="Undefined" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Moves the camera backward, farther from the point of interest</summary>
+                /// <param name="delta" type="Double">Distance to move backward</param>
+                /// <returns type="Undefined" />
+                /// </signature>
+            },
+            ZoomTo: function (distanceFromPOI, Flags)
+            {
+                /// <signature>
+                /// <summary>This method controls the zooming operation of the camera. The distanceFromPOI parameter specifies the distance from the ground at the center point of the 3D Window where the zoom operation stops</summary>
+                /// <param name="distanceFromPOI" type="Double">The distance from the camera to the point on the terrain that the camera center is looking at</param>
+                /// <returns type="Undefined" />
+                /// </signature>
+                /// <signature>
+                /// <summary>This method controls the zooming operation of the camera. The distanceFromPOI parameter specifies the distance from the ground at the center point of the 3D Window where the zoom operation stops</summary>
+                /// <param name="distanceFromPOI" type="Double">The distance from the camera to the point on the terrain that the camera center is looking at</param>
+                /// <param name="Flags" type="Number">Reserved. Always pass 0 (zero)</param>
+                /// <returns type="Undefined" />
+                /// </signature>
+            }
+        };
     }
     function IProject() {
         return {
