@@ -675,7 +675,248 @@
         };
     }
     function ICreator() {
-        return {};
+        return {
+            /// <field type="IGeometryCreator">An IGeometryCreator containing methods to create geometry objects</field>
+            GeometryCreator:{},
+            Create3DArrow: function (Position, Length, Style, ObjectHeight, LineColor, FillColor, GroupID, Description)
+            {
+                /// <summary>Summary Not Yet Implemented</summary>
+                /// <returns type="Undefined" />
+            },
+            Create3DPolygon: function (pIGeometry, ObjectHeight, LineColor, FillColor, AltitudeType, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateArc: function (Position, RadiusX, RadiusY, StartAngle, EndEngle, LineColor, FillColor, NumOfSegments, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateArrow: function (Position, Length, Style, LineColor, FillColor, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateBox: function (Position, ObjectWidth, ObjectDepth, ObjectHeight, LineColor, FillColor, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateBuilding: function (pIGeometry, RoofHeight, AltitudeType, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateCircle: function (Position, Radius, LineColor, FillColor, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateColor: function (Red, Green, Blue, Alpha)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateCone: function (Position, Radius, ObjectHeight, LineColor, FillColor, NumOfSegments, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateCylinder: function (Position, Radius, ObjectHeight, LineColor, FillColor, NumOfSegments, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateDynamicObject: function (Waypoints, MotionStyle, ObjectType, FileNameOrText, ScaleFactor, AltitudeType, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateEffect: function(Position, EffectsXML, GroupID, Description){
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateElevationLayer: function (ElevationFileName, UpperLeftX, UpperLeftY, LowerRightX, LowerRightY, InitParam, PlugName, GroupID, Description, HScale, HOffset)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateEllipse: function (Position, RadiusX, RadiusY, LineColor, FillColor, NumOfSegments, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateFeatureLayer: function (layerName, sConnectionString, GroupID)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateFromStream: function(){
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateHoleOnTerrain: function (pIGeometry, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateImageLabel: function (Position, ImageFileName, LabelStyle, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateImageryLayer: function (ImageryFileName, UpperLeftX, UpperLeftY, LowerRightX, LowerRightY, InitParam, PlugName, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateKMLLayer: function (Path, GroupID)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateLabel: function (Position, Text, ImageFileName, LabelStyle, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateLabelStyle: function (labelStyle)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateLocation: function (Position, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateLocationHere: function (Group, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateMeshLayerFromFile: function (FilePath, ParentGroupID)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateMeshLayerFromSFS: function (ServerPath, layerName, ParentGroupID)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateMessage: function (TargetPosition, msgData, Type, BringToFront)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateModel: function (Position, FileName, Scale, ModelType, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateNewFeatureLayer: function (layerName, LayerGeomType, sConnectionString, GroupID)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreatePointCloudModel: function (ModelFileName, Position, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreatePolygon: function (Geometry, LineColor, FillColor, AltitudeType, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreatePolygonFromArray: function (verticesArray, LineColor, FillColor, AltitudeType, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreatePolyline: function (Geometry, LineColor, AltitudeType, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreatePolylineFromArray: function (verticesArray, LineColor, AltitudeType, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreatePopupMessage: function (Caption, Src, Left, Top, Width, Height, Timeout)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreatePosition: function (X, Y, Altitude, AltitudeType, Yaw, Pitch, Roll, Distance)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreatePresentation: function (GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreatePyramid: function (Position, ObjectWidth, ObjectDepth, ObjectHeight, LineColor, FillColor, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateRectangle: function (Position, ObjectWidth, ObjectDepth, LineColor, FillColor, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateRegularPolygon: function (Position, Radius, NumOfSegments, LineColor, FillColor, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateRouteWaypoint: function (X, Y, Altitude, Speed, Yaw, Pitch, Roll, CameraDeltaYaw, CameraDeltaPitch, MessageID)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateSphere: function (Position, Radius, Style, LineColor, FillColor, SegmentDensity, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateTerrainModifier: function (pIGeometry, Mode, Flat, Feather, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateTextLabel: function (Position, Text, LabelStyle, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateTreeHotlink: function (MessageID, GroupID, Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            CreateVideoOnTerrain: function (VideoFileName,        Position,        GroupID,        Description)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            DeleteObject: function (ObjectID)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            },
+            GetObject: function (ObjectID)
+            {
+            /// <summary>Summary Not Yet Implemented</summary>
+            /// <returns type="Undefined" />
+            }
+        };
     }
     function IDateTime() {
         return {
@@ -708,7 +949,7 @@
         };
     }
     function INavigate() {
-        return {            	
+        return {                
             /// <field type="Double">Gets and sets the camera field of view, in degrees. This number must be between 1° and 180°, where 1° is the maximum zoom in and 180° is the maximum zoom out. The default field of view is 53°</field>
             FieldOfView:{},
             /// <field type="Double">Gets and sets the speed at which the camera approaches an object</field>
