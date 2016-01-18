@@ -133,6 +133,17 @@ var controlFlags = {
     'HUD_LAYER_SCALE_BAR': 128,
     'HUD_LAYER_ZOOM_CONTROL' : 256
 };
+var GPSOperationMode = {
+    /// <field type="Number">Turn GPS mode off.</field>
+    'GPS_MODE_OFF': 0,
+    /// <field type="Number">Indicate the current GPS location on the 3D Window (but don't follow the GPS position with the camera)</field>
+    'GPS_MODE_SHOW_LOCATION_INDICATOR': 2,
+    /// <field type="Number">Camera follows GPS position.</field>
+    'GPS_MODE_FOLLOW': 4,
+    /// <field type="Number">Internal use only. Client should not call SetGPSMode with this flag.</field>
+    'GPS_MODE_NONE': 999
+
+};
 var MessageBarTextAlignment = {
     'MBT_LEFT': 0,
     'MBT_CENTER': 1,
