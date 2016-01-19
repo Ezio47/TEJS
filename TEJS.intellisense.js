@@ -1127,161 +1127,615 @@
             },
             CreatePolylineFromArray: function (verticesArray, LineColor, AltitudeType, GroupID, Description)
             {
+                /// <signature>
                 /// <summary>Creates a polyline by connecting the points in an array of points</summary>
-                /// <param name="verticesArray" type="xxxxx">Description</param>
-                /// <param name="LineColor" type="xxxxx">Description</param>
-                /// <param name="AltitudeType" type="xxxxx">Description</param>
-                /// <param name="GroupID" type="xxxxx">Description</param>
-                /// <param name="Description" type="xxxxx">Description</param>
+                /// <param name="verticesArray" type="Object">An array that contains triplets of doubles. Each triplet is composed of an x-coordinate, a y-coordinate, and a height</param>
                 /// <returns type="ITerrainPolyline" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a polyline by connecting the points in an array of points</summary>
+                /// <param name="verticesArray" type="Object">An array that contains triplets of doubles. Each triplet is composed of an x-coordinate, a y-coordinate, and a height</param>
+                /// <param name="LineColor" type="LineColor">The color of the lines that make up the polyline. The color value is used to specify color and transparency values</param>
+                /// <returns type="ITerrainPolyline" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a polyline by connecting the points in an array of points</summary>
+                /// <param name="verticesArray" type="Object">An array that contains triplets of doubles. Each triplet is composed of an x-coordinate, a y-coordinate, and a height</param>
+                /// <param name="LineColor" type="LineColor">The color of the lines that make up the polyline. The color value is used to specify color and transparency values</param>
+                /// <param name="AltitudeType" type="AltitudeTypeCode">An enum that determines the altitude type to be used by the object</param>
+                /// <returns type="ITerrainPolyline" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a polyline by connecting the points in an array of points</summary>
+                /// <param name="verticesArray" type="Object">An array that contains triplets of doubles. Each triplet is composed of an x-coordinate, a y-coordinate, and a height</param>
+                /// <param name="LineColor" type="LineColor">The color of the lines that make up the polyline. The color value is used to specify color and transparency values</param>
+                /// <param name="AltitudeType" type="AltitudeTypeCode">An enum that determines the altitude type to be used by the object</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the polyline is created. If it is set to an empty string, the object is created under the root</param>
+                /// <returns type="ITerrainPolyline" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a polyline by connecting the points in an array of points</summary>
+                /// <param name="verticesArray" type="Object">An array that contains triplets of doubles. Each triplet is composed of an x-coordinate, a y-coordinate, and a height</param>
+                /// <param name="LineColor" type="LineColor">The color of the lines that make up the polyline. The color value is used to specify color and transparency values</param>
+                /// <param name="AltitudeType" type="AltitudeTypeCode">An enum that determines the altitude type to be used by the object</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the polyline is created. If it is set to an empty string, the object is created under the root</param>
+                /// <param name="Description" type="String">The name of the polyline as it appears in the Project Tree. If an empty string is passed into this parameter, TerraExplorer assigns it a unique name</param>
+                /// <returns type="ITerrainPolyline" />
+                /// </signature>
             },
             CreatePopupMessage: function (Caption, Src, Left, Top, Width, Height, Timeout)
             {
+                /// <signature>
                 /// <summary>Displays an HTML pop-up window that contains Microsoft Internet Explorer browser or simple text</summary>
-                /// <param name="Caption" type="xxxxx">Description</param>
-                /// <param name="Src" type="xxxxx">Description</param>
-                /// <param name="Left" type="xxxxx">Description</param>
-                /// <param name="Top" type="xxxxx">Description</param>
-                /// <param name="Width" type="xxxxx">Description</param>
-                /// <param name="Height" type="xxxxx">Description</param>
-                /// <param name="Timeout" type="xxxxx">Description</param>
                 /// <returns type="IPopupMessage" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Displays an HTML pop-up window that contains Microsoft Internet Explorer browser or simple text</summary>
+                /// <param name="Caption" type="String">A caption string which is displayed on the pop-up window caption area. This parameter is also used as the pop-up window identifier. When using the same Caption names, the new content replaces the content of the window with the same name</param>
+                /// <returns type="IPopupMessage" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Displays an HTML pop-up window that contains Microsoft Internet Explorer browser or simple text</summary>
+                /// <param name="Caption" type="String">A caption string which is displayed on the pop-up window caption area. This parameter is also used as the pop-up window identifier. When using the same Caption names, the new content replaces the content of the window with the same name</param>
+                /// <param name="Src" type="String">A URL that is the source HTML to be displayed in the pop-up window. If this property is undefined, the pop-up is assumed to be a simple text string</param>
+                /// <returns type="IPopupMessage" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Displays an HTML pop-up window that contains Microsoft Internet Explorer browser or simple text</summary>
+                /// <param name="Caption" type="String">A caption string which is displayed on the pop-up window caption area. This parameter is also used as the pop-up window identifier. When using the same Caption names, the new content replaces the content of the window with the same name</param>
+                /// <param name="Src" type="String">A URL that is the source HTML to be displayed in the pop-up window. If this property is undefined, the pop-up is assumed to be a simple text string</param>
+                /// <param name="Left" type="Number">The window top left X position (in pixels) relative to the 3D Window top left position</param>
+                /// <returns type="IPopupMessage" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Displays an HTML pop-up window that contains Microsoft Internet Explorer browser or simple text</summary>
+                /// <param name="Caption" type="String">A caption string which is displayed on the pop-up window caption area. This parameter is also used as the pop-up window identifier. When using the same Caption names, the new content replaces the content of the window with the same name</param>
+                /// <param name="Src" type="String">A URL that is the source HTML to be displayed in the pop-up window. If this property is undefined, the pop-up is assumed to be a simple text string</param>
+                /// <param name="Left" type="Number">The window top left X position (in pixels) relative to the 3D Window top left position</param>
+                /// <param name="Top" type="Number">The window top left Y position (in pixels) relative to the 3D Window top left position</param>
+                /// <returns type="IPopupMessage" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Displays an HTML pop-up window that contains Microsoft Internet Explorer browser or simple text</summary>
+                /// <param name="Caption" type="String">A caption string which is displayed on the pop-up window caption area. This parameter is also used as the pop-up window identifier. When using the same Caption names, the new content replaces the content of the window with the same name</param>
+                /// <param name="Src" type="String">A URL that is the source HTML to be displayed in the pop-up window. If this property is undefined, the pop-up is assumed to be a simple text string</param>
+                /// <param name="Left" type="Number">The window top left X position (in pixels) relative to the 3D Window top left position</param>
+                /// <param name="Top" type="Number">The window top left Y position (in pixels) relative to the 3D Window top left position</param>
+                /// <param name="Width" type="Number">The width of the pop-up window (in pixels). This value includes all captions and borders</param>
+                /// <returns type="IPopupMessage" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Displays an HTML pop-up window that contains Microsoft Internet Explorer browser or simple text</summary>
+                /// <param name="Caption" type="String">A caption string which is displayed on the pop-up window caption area. This parameter is also used as the pop-up window identifier. When using the same Caption names, the new content replaces the content of the window with the same name</param>
+                /// <param name="Src" type="String">A URL that is the source HTML to be displayed in the pop-up window. If this property is undefined, the pop-up is assumed to be a simple text string</param>
+                /// <param name="Left" type="Number">The window top left X position (in pixels) relative to the 3D Window top left position</param>
+                /// <param name="Top" type="Number">The window top left Y position (in pixels) relative to the 3D Window top left position</param>
+                /// <param name="Width" type="Number">The width of the pop-up window (in pixels). This value includes all captions and borders</param>
+                /// <param name="Height" type="Number">The pop-up window height (in pixels). This value includes all captions and borders</param>
+                /// <returns type="IPopupMessage" />
+                /// </signature>
             },
             CreatePosition: function (X, Y, Altitude, AltitudeType, Yaw, Pitch, Roll, Distance)
             {
+                /// <signature>
                 /// <summary>Creates a position in the 3D Window with specific coordinate information (X, Y, Altitude), orientation properties (Yaw, Pitch, Roll) and distance from which to observe the point of interest</summary>
-                /// <param name="X" type="xxxxx">Description</param>
-                /// <param name="Y" type="xxxxx">Description</param>
-                /// <param name="Altitude" type="xxxxx">Description</param>
-                /// <param name="AltitudeType" type="xxxxx">Description</param>
-                /// <param name="Yaw" type="xxxxx">Description</param>
-                /// <param name="Pitch" type="xxxxx">Description</param>
-                /// <param name="Roll" type="xxxxx">Description</param>
-                /// <param name="Distance" type="xxxxx">Description</param>
+                /// <param name="X" type="Double">The West-East coordinate of the location of interest represented in the project’s coordinate system units. You can use the ITerrain66 interface to retrieve information about the project’s coordinate system units</param>
+                /// <param name="Y" type="Double">The North-South coordinate of the location of interest represented in coordinate system units. You can use the ITerrain66 interface to retrieve information about the project’s coordinate system units</param>
                 /// <returns type="IPosition" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a position in the 3D Window with specific coordinate information (X, Y, Altitude), orientation properties (Yaw, Pitch, Roll) and distance from which to observe the point of interest</summary>
+                /// <param name="X" type="Double">The West-East coordinate of the location of interest represented in the project’s coordinate system units. You can use the ITerrain66 interface to retrieve information about the project’s coordinate system units</param>
+                /// <param name="Y" type="Double">The North-South coordinate of the location of interest represented in coordinate system units. You can use the ITerrain66 interface to retrieve information about the project’s coordinate system units</param>
+                /// <param name="Altitude" type="Double">The elevation of the location of interest relative to the terrain</param>
+                /// <returns type="IPosition" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a position in the 3D Window with specific coordinate information (X, Y, Altitude), orientation properties (Yaw, Pitch, Roll) and distance from which to observe the point of interest</summary>
+                /// <param name="X" type="Double">The West-East coordinate of the location of interest represented in the project’s coordinate system units. You can use the ITerrain66 interface to retrieve information about the project’s coordinate system units</param>
+                /// <param name="Y" type="Double">The North-South coordinate of the location of interest represented in coordinate system units. You can use the ITerrain66 interface to retrieve information about the project’s coordinate system units</param>
+                /// <param name="Altitude" type="Double">The elevation of the location of interest relative to the terrain</param>
+                /// <param name="AltitudeType" type="AltitudeTypeCode">An enum that determines the altitude type to be used by the object</param>
+                /// <returns type="IPosition" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a position in the 3D Window with specific coordinate information (X, Y, Altitude), orientation properties (Yaw, Pitch, Roll) and distance from which to observe the point of interest</summary>
+                /// <param name="X" type="Double">The West-East coordinate of the location of interest represented in the project’s coordinate system units. You can use the ITerrain66 interface to retrieve information about the project’s coordinate system units</param>
+                /// <param name="Y" type="Double">The North-South coordinate of the location of interest represented in coordinate system units. You can use the ITerrain66 interface to retrieve information about the project’s coordinate system units</param>
+                /// <param name="Altitude" type="Double">The elevation of the location of interest relative to the terrain</param>
+                /// <param name="AltitudeType" type="AltitudeTypeCode">An enum that determines the altitude type to be used by the object</param>
+                /// <param name="Yaw" type="Double">The Yaw angle between the viewer and the point of interest. Range from 0 to 360 where 0=North, 90=East, 180=South and 270=West</param>
+                /// <returns type="IPosition" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a position in the 3D Window with specific coordinate information (X, Y, Altitude), orientation properties (Yaw, Pitch, Roll) and distance from which to observe the point of interest</summary>
+                /// <param name="X" type="Double">The West-East coordinate of the location of interest represented in the project’s coordinate system units. You can use the ITerrain66 interface to retrieve information about the project’s coordinate system units</param>
+                /// <param name="Y" type="Double">The North-South coordinate of the location of interest represented in coordinate system units. You can use the ITerrain66 interface to retrieve information about the project’s coordinate system units</param>
+                /// <param name="Altitude" type="Double">The elevation of the location of interest relative to the terrain</param>
+                /// <param name="AltitudeType" type="AltitudeTypeCode">An enum that determines the altitude type to be used by the object</param>
+                /// <param name="Yaw" type="Double">The Yaw angle between the viewer and the point of interest. Range from 0 to 360 where 0=North, 90=East, 180=South and 270=West</param>
+                /// <param name="Pitch" type="Double">The Pitch angle between the viewer and the point of interest. Range from -90 to +90 where 0 = Horizon, +90 = straight up and –90 = straight down</param>
+                /// <returns type="IPosition" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a position in the 3D Window with specific coordinate information (X, Y, Altitude), orientation properties (Yaw, Pitch, Roll) and distance from which to observe the point of interest</summary>
+                /// <param name="X" type="Double">The West-East coordinate of the location of interest represented in the project’s coordinate system units. You can use the ITerrain66 interface to retrieve information about the project’s coordinate system units</param>
+                /// <param name="Y" type="Double">The North-South coordinate of the location of interest represented in coordinate system units. You can use the ITerrain66 interface to retrieve information about the project’s coordinate system units</param>
+                /// <param name="Altitude" type="Double">The elevation of the location of interest relative to the terrain</param>
+                /// <param name="AltitudeType" type="AltitudeTypeCode">An enum that determines the altitude type to be used by the object</param>
+                /// <param name="Yaw" type="Double">The Yaw angle between the viewer and the point of interest. Range from 0 to 360 where 0=North, 90=East, 180=South and 270=West</param>
+                /// <param name="Pitch" type="Double">The Pitch angle between the viewer and the point of interest. Range from -90 to +90 where 0 = Horizon, +90 = straight up and –90 = straight down</param>
+                /// <param name="Roll" type="Double">The Roll angle between the viewer and the point of interest. Range from -90 to +90 where 0 = Horizon, +90 = Full roll right and –90 = Full roll left</param>
+                /// <returns type="IPosition" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a position in the 3D Window with specific coordinate information (X, Y, Altitude), orientation properties (Yaw, Pitch, Roll) and distance from which to observe the point of interest</summary>
+                /// <param name="X" type="Double">The West-East coordinate of the location of interest represented in the project’s coordinate system units. You can use the ITerrain66 interface to retrieve information about the project’s coordinate system units</param>
+                /// <param name="Y" type="Double">The North-South coordinate of the location of interest represented in coordinate system units. You can use the ITerrain66 interface to retrieve information about the project’s coordinate system units</param>
+                /// <param name="Altitude" type="Double">The elevation of the location of interest relative to the terrain</param>
+                /// <param name="AltitudeType" type="AltitudeTypeCode">An enum that determines the altitude type to be used by the object</param>
+                /// <param name="Yaw" type="Double">The Yaw angle between the viewer and the point of interest. Range from 0 to 360 where 0=North, 90=East, 180=South and 270=West</param>
+                /// <param name="Pitch" type="Double">The Pitch angle between the viewer and the point of interest. Range from -90 to +90 where 0 = Horizon, +90 = straight up and –90 = straight down</param>
+                /// <param name="Roll" type="Double">The Roll angle between the viewer and the point of interest. Range from -90 to +90 where 0 = Horizon, +90 = Full roll right and –90 = Full roll left</param>
+                /// <param name="Distance" type="Double">The distance from which the x, y and height coordinates must be viewed</param>
+                /// <returns type="IPosition" />
+                /// </signature>
             },
             CreatePresentation: function (GroupID, Description)
             {
+                /// <signature>
                 /// <summary>The CreatePresentation method enables you to create an empty presentation. You can then add the steps to the presentation and set caption and playback properties using the IPresentation interface</summary>
-                /// <param name="GroupID" type="xxxxx">Description</param>
-                /// <param name="Description" type="xxxxx">Description</param>
                 /// <returns type="IPresentation" />
+                /// </signature>
+                /// <signature>
+                /// <summary>The CreatePresentation method enables you to create an empty presentation. You can then add the steps to the presentation and set caption and playback properties using the IPresentation interface</summary>
+                /// <param name="GroupID" type="String">The Project Tree group in which the presentation is created. If it is set to zero, the presentation is created under the root</param>
+                /// <returns type="IPresentation" />
+                /// </signature>
+                /// <signature>
+                /// <summary>The CreatePresentation method enables you to create an empty presentation. You can then add the steps to the presentation and set caption and playback properties using the IPresentation interface</summary>
+                /// <param name="GroupID" type="String">The Project Tree group in which the presentation is created. If it is set to zero, the presentation is created under the root</param>
+                /// <param name="Description" type="String">The name of the presentation as it appears in the Project Tree. If an empty string is passed into this parameter, TerraExplorer assigns it a unique name</param>
+                /// <returns type="IPresentation" />
+                /// </signature>
             },
             CreatePyramid: function (Position, ObjectWidth, ObjectDepth, ObjectHeight, LineColor, FillColor, GroupID, Description)
             {
+                /// <signature>
                 /// <summary>Creates a pyramid in the 3D Window</summary>
-                /// <param name="Position" type="xxxxx">Description</param>
-                /// <param name="ObjectWidth" type="xxxxx">Description</param>
-                /// <param name="ObjectDepth" type="xxxxx">Description</param>
-                /// <param name="ObjectHeight" type="xxxxx">Description</param>
-                /// <param name="LineColor" type="xxxxx">Description</param>
-                /// <param name="FillColor" type="xxxxx">Description</param>
-                /// <param name="GroupID" type="xxxxx">Description</param>
-                /// <param name="Description" type="xxxxx">Description</param>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the pyramid on the terrain</param>
+                /// <param name="ObjectWidth" type="Double">The width of the pyramid in meters</param>
+                /// <param name="ObjectDepth" type="Double">The depth of the pyramid in meters</param>
+                /// <param name="ObjectHeight" type="Double">The height of the pyramid in meters</param>
                 /// <returns type="ITerrain3DRectBase" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a pyramid in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the pyramid on the terrain</param>
+                /// <param name="ObjectWidth" type="Double">The width of the pyramid in meters</param>
+                /// <param name="ObjectDepth" type="Double">The depth of the pyramid in meters</param>
+                /// <param name="ObjectHeight" type="Double">The height of the pyramid in meters</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the pyramid. The color value is used to specify color and transparency values</param>
+                /// <returns type="ITerrain3DRectBase" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a pyramid in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the pyramid on the terrain</param>
+                /// <param name="ObjectWidth" type="Double">The width of the pyramid in meters</param>
+                /// <param name="ObjectDepth" type="Double">The depth of the pyramid in meters</param>
+                /// <param name="ObjectHeight" type="Double">The height of the pyramid in meters</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the pyramid. The color value is used to specify color and transparency values</param>
+                /// <param name="FillColor" type="Object">The color which fills the pyramid, if the alpha value is greater than zero. The color value is used to specify color and transparency values</param>
+                /// <returns type="ITerrain3DRectBase" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a pyramid in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the pyramid on the terrain</param>
+                /// <param name="ObjectWidth" type="Double">The width of the pyramid in meters</param>
+                /// <param name="ObjectDepth" type="Double">The depth of the pyramid in meters</param>
+                /// <param name="ObjectHeight" type="Double">The height of the pyramid in meters</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the pyramid. The color value is used to specify color and transparency values</param>
+                /// <param name="FillColor" type="Object">The color which fills the pyramid, if the alpha value is greater than zero. The color value is used to specify color and transparency values</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the pyramid is created. If it is set to an empty string, the object is created under the root</param>
+                /// <returns type="ITerrain3DRectBase" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a pyramid in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the pyramid on the terrain</param>
+                /// <param name="ObjectWidth" type="Double">The width of the pyramid in meters</param>
+                /// <param name="ObjectDepth" type="Double">The depth of the pyramid in meters</param>
+                /// <param name="ObjectHeight" type="Double">The height of the pyramid in meters</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the pyramid. The color value is used to specify color and transparency values</param>
+                /// <param name="FillColor" type="Object">The color which fills the pyramid, if the alpha value is greater than zero. The color value is used to specify color and transparency values</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the pyramid is created. If it is set to an empty string, the object is created under the root</param>
+                /// <param name="Description" type="String">The name of the pyramid as it appears in the Project Tree. If an empty string is passed into this parameter, TerraExplorer assigns it a unique name</param>
+                /// <returns type="ITerrain3DRectBase" />
+                /// </signature>
             },
             CreateRectangle: function (Position, ObjectWidth, ObjectDepth, LineColor, FillColor, GroupID, Description)
             {
+                /// <signature>
                 /// <summary>Creates a rectangle in the 3D Window</summary>
-                /// <param name="Position" type="xxxxx">Description</param>
-                /// <param name="ObjectWidth" type="xxxxx">Description</param>
-                /// <param name="ObjectDepth" type="xxxxx">Description</param>
-                /// <param name="LineColor" type="xxxxx">Description</param>
-                /// <param name="FillColor" type="xxxxx">Description</param>
-                /// <param name="GroupID" type="xxxxx">Description</param>
-                /// <param name="Description" type="xxxxx">Description</param>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the rectangle on the terrain</param>
+                /// <param name="ObjectWidth" type="Double">The width of the rectangle in meters</param>
+                /// <param name="ObjectDepth" type="Double">The depth of the rectangle in meters</param>
                 /// <returns type="ITerrainRectangle" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a rectangle in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the rectangle on the terrain</param>
+                /// <param name="ObjectWidth" type="Double">The width of the rectangle in meters</param>
+                /// <param name="ObjectDepth" type="Double">The depth of the rectangle in meters</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the rectangle. The color value is used to specify color and transparency values</param>
+                /// <returns type="ITerrainRectangle" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a rectangle in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the rectangle on the terrain</param>
+                /// <param name="ObjectWidth" type="Double">The width of the rectangle in meters</param>
+                /// <param name="ObjectDepth" type="Double">The depth of the rectangle in meters</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the rectangle. The color value is used to specify color and transparency values</param>
+                /// <param name="FillColor" type="Object">The color which fills the rectangle, if the alpha value is greater than zero. The color value is used to specify color and transparency values</param>
+                /// <returns type="ITerrainRectangle" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a rectangle in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the rectangle on the terrain</param>
+                /// <param name="ObjectWidth" type="Double">The width of the rectangle in meters</param>
+                /// <param name="ObjectDepth" type="Double">The depth of the rectangle in meters</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the rectangle. The color value is used to specify color and transparency values</param>
+                /// <param name="FillColor" type="Object">The color which fills the rectangle, if the alpha value is greater than zero. The color value is used to specify color and transparency values</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the rectangle is created. If it is set to an empty string, the object is created under the root</param>
+                /// <returns type="ITerrainRectangle" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a rectangle in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the rectangle on the terrain</param>
+                /// <param name="ObjectWidth" type="Double">The width of the rectangle in meters</param>
+                /// <param name="ObjectDepth" type="Double">The depth of the rectangle in meters</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the rectangle. The color value is used to specify color and transparency values</param>
+                /// <param name="FillColor" type="Object">The color which fills the rectangle, if the alpha value is greater than zero. The color value is used to specify color and transparency values</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the rectangle is created. If it is set to an empty string, the object is created under the root</param>
+                /// <param name="Description" type="String">The name of the rectangle as it appears in the Project Tree. If an empty string is passed into this parameter, TerraExplorer assigns it a unique name</param>
+                /// <returns type="ITerrainRectangle" />
+                /// </signature>
             },
             CreateRegularPolygon: function (Position, Radius, NumOfSegments, LineColor, FillColor, GroupID, Description)
             {
+                /// <signature>
                 /// <summary>Creates a polygon with equal-length segments in the 3D Window</summary>
-                /// <param name="Position" type="xxxxx">Description</param>
-                /// <param name="Radius" type="xxxxx">Description</param>
-                /// <param name="NumOfSegments" type="xxxxx">Description</param>
-                /// <param name="LineColor" type="xxxxx">Description</param>
-                /// <param name="FillColor" type="xxxxx">Description</param>
-                /// <param name="GroupID" type="xxxxx">Description</param>
-                /// <param name="Description" type="xxxxx">Description</param>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the polygon on the terrain</param>
+                /// <param name="Radius" type="Double">The radius of the regular polygon in meters</param>
+                /// <param name="NumOfSegments" type="Number">The number of segments the regular polygon has. The more segments, the smoother and more circular it appears</param>
                 /// <returns type="ITerrainRegularPolygon" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a polygon with equal-length segments in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the polygon on the terrain</param>
+                /// <param name="Radius" type="Double">The radius of the regular polygon in meters</param>
+                /// <param name="NumOfSegments" type="Number">The number of segments the regular polygon has. The more segments, the smoother and more circular it appears</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the regular polygon. The color value is used to specify color and transparency values</param>
+                /// <returns type="ITerrainRegularPolygon" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a polygon with equal-length segments in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the polygon on the terrain</param>
+                /// <param name="Radius" type="Double">The radius of the regular polygon in meters</param>
+                /// <param name="NumOfSegments" type="Number">The number of segments the regular polygon has. The more segments, the smoother and more circular it appears</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the regular polygon. The color value is used to specify color and transparency values</param>
+                /// <param name="FillColor" type="Object">The color which fills the regular polygon, if the alpha value is greater than zero</param>
+                /// <returns type="ITerrainRegularPolygon" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a polygon with equal-length segments in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the polygon on the terrain</param>
+                /// <param name="Radius" type="Double">The radius of the regular polygon in meters</param>
+                /// <param name="NumOfSegments" type="Number">The number of segments the regular polygon has. The more segments, the smoother and more circular it appears</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the regular polygon. The color value is used to specify color and transparency values</param>
+                /// <param name="FillColor" type="Object">The color which fills the regular polygon, if the alpha value is greater than zero</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the regular polygon is created. If it is set to an empty string, the object is created under the root</param>
+                /// <returns type="ITerrainRegularPolygon" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a polygon with equal-length segments in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the polygon on the terrain</param>
+                /// <param name="Radius" type="Double">The radius of the regular polygon in meters</param>
+                /// <param name="NumOfSegments" type="Number">The number of segments the regular polygon has. The more segments, the smoother and more circular it appears</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the regular polygon. The color value is used to specify color and transparency values</param>
+                /// <param name="FillColor" type="Object">The color which fills the regular polygon, if the alpha value is greater than zero</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the regular polygon is created. If it is set to an empty string, the object is created under the root</param>
+                /// <param name="Description" type="String">The name of the regular polygon as it appears in the Project Tree. If an empty string is passed into this parameter, TerraExplorer assigns it a unique name</param>
+                /// <returns type="ITerrainRegularPolygon" />
+                /// </signature>
             },
             CreateRouteWaypoint: function (X, Y, Altitude, Speed, Yaw, Pitch, Roll, CameraDeltaYaw, CameraDeltaPitch, MessageID)
             {
+                /// <signature>
                 /// <summary>You can generate a route for dynamic objects by creating a list of waypoints. Each waypoint defines the position of the camera and its speed at that waypoint. If you define a route using individual waypoints, TerraExplorer Pro generates the route by computing a line that passes through each location</summary>
-                /// <param name="X" type="xxxxx">Description</param>
-                /// <param name="Y" type="xxxxx">Description</param>
-                /// <param name="Altitude" type="xxxxx">Description</param>
-                /// <param name="Speed" type="xxxxx">Description</param>
-                /// <param name="Yaw" type="xxxxx">Description</param>
-                /// <param name="Pitch" type="xxxxx">Description</param>
-                /// <param name="Roll" type="xxxxx">Description</param>
-                /// <param name="CameraDeltaYaw" type="xxxxx">Description</param>
-                /// <param name="CameraDeltaPitch" type="xxxxx">Description</param>
-                /// <param name="MessageID" type="xxxxx">Description</param>
+                /// <param name="X" type="Double">The West-East coordinate of the location of interest represented in coordinate system units. You can use the ITerrain interface to retrieve information about the coordinate system units</param>
+                /// <param name="Y" type="Double">The North-South coordinate of the location of interest represented in coordinate system units. You can use the ITerrain interface to retrieve information about the coordinate system units</param>
                 /// <returns type="IRouteWaypoint" />
+                /// </signature>
+                /// <signature>
+                /// <summary>You can generate a route for dynamic objects by creating a list of waypoints. Each waypoint defines the position of the camera and its speed at that waypoint. If you define a route using individual waypoints, TerraExplorer Pro generates the route by computing a line that passes through each location</summary>
+                /// <param name="X" type="Double">The West-East coordinate of the location of interest represented in coordinate system units. You can use the ITerrain interface to retrieve information about the coordinate system units</param>
+                /// <param name="Y" type="Double">The North-South coordinate of the location of interest represented in coordinate system units. You can use the ITerrain interface to retrieve information about the coordinate system units</param>
+                /// <param name="Altitude" type="Double">The elevation of the location of interest relative to the terrain</param>
+                /// <returns type="IRouteWaypoint" />
+                /// </signature>
+                /// <signature>
+                /// <summary>You can generate a route for dynamic objects by creating a list of waypoints. Each waypoint defines the position of the camera and its speed at that waypoint. If you define a route using individual waypoints, TerraExplorer Pro generates the route by computing a line that passes through each location</summary>
+                /// <param name="X" type="Double">The West-East coordinate of the location of interest represented in coordinate system units. You can use the ITerrain interface to retrieve information about the coordinate system units</param>
+                /// <param name="Y" type="Double">The North-South coordinate of the location of interest represented in coordinate system units. You can use the ITerrain interface to retrieve information about the coordinate system units</param>
+                /// <param name="Altitude" type="Double">The elevation of the location of interest relative to the terrain</param>
+                /// <param name="Speed" type="Double">The speed of the camera</param>
+                /// <returns type="IRouteWaypoint" />
+                /// </signature>
+                /// <signature>
+                /// <summary>You can generate a route for dynamic objects by creating a list of waypoints. Each waypoint defines the position of the camera and its speed at that waypoint. If you define a route using individual waypoints, TerraExplorer Pro generates the route by computing a line that passes through each location</summary>
+                /// <param name="X" type="Double">The West-East coordinate of the location of interest represented in coordinate system units. You can use the ITerrain interface to retrieve information about the coordinate system units</param>
+                /// <param name="Y" type="Double">The North-South coordinate of the location of interest represented in coordinate system units. You can use the ITerrain interface to retrieve information about the coordinate system units</param>
+                /// <param name="Altitude" type="Double">The elevation of the location of interest relative to the terrain</param>
+                /// <param name="Speed" type="Double">The speed of the camera</param>
+                /// <param name="Yaw" type="Double">The Yaw angle between the viewer and the point of interest. Range from 0 to 360 where 0=North, 90=East, 180=South and 270=West</param>
+                /// <returns type="IRouteWaypoint" />
+                /// </signature>
+                /// <signature>
+                /// <summary>You can generate a route for dynamic objects by creating a list of waypoints. Each waypoint defines the position of the camera and its speed at that waypoint. If you define a route using individual waypoints, TerraExplorer Pro generates the route by computing a line that passes through each location</summary>
+                /// <param name="X" type="Double">The West-East coordinate of the location of interest represented in coordinate system units. You can use the ITerrain interface to retrieve information about the coordinate system units</param>
+                /// <param name="Y" type="Double">The North-South coordinate of the location of interest represented in coordinate system units. You can use the ITerrain interface to retrieve information about the coordinate system units</param>
+                /// <param name="Altitude" type="Double">The elevation of the location of interest relative to the terrain</param>
+                /// <param name="Speed" type="Double">The speed of the camera</param>
+                /// <param name="Yaw" type="Double">The Yaw angle between the viewer and the point of interest. Range from 0 to 360 where 0=North, 90=East, 180=South and 270=West</param>
+                /// <param name="Pitch" type="Double">The Pitch angle between the viewer and the point of interest. Range from -90 to +90 where 0 = Horizon, +90 = straight up and –90 = straight down</param>
+                /// <returns type="IRouteWaypoint" />
+                /// </signature>
+                /// <signature>
+                /// <summary>You can generate a route for dynamic objects by creating a list of waypoints. Each waypoint defines the position of the camera and its speed at that waypoint. If you define a route using individual waypoints, TerraExplorer Pro generates the route by computing a line that passes through each location</summary>
+                /// <param name="X" type="Double">The West-East coordinate of the location of interest represented in coordinate system units. You can use the ITerrain interface to retrieve information about the coordinate system units</param>
+                /// <param name="Y" type="Double">The North-South coordinate of the location of interest represented in coordinate system units. You can use the ITerrain interface to retrieve information about the coordinate system units</param>
+                /// <param name="Altitude" type="Double">The elevation of the location of interest relative to the terrain</param>
+                /// <param name="Speed" type="Double">The speed of the camera</param>
+                /// <param name="Yaw" type="Double">The Yaw angle between the viewer and the point of interest. Range from 0 to 360 where 0=North, 90=East, 180=South and 270=West</param>
+                /// <param name="Pitch" type="Double">The Pitch angle between the viewer and the point of interest. Range from -90 to +90 where 0 = Horizon, +90 = straight up and –90 = straight down</param>
+                /// <param name="Roll" type="Double">The Roll angle between the viewer and the point of interest. Range from -90 to +90 where 0 = Horizon, +90 = Full roll right and –90 = Full roll left</param>
+                /// <returns type="IRouteWaypoint" />
+                /// </signature>
+                /// <signature>
+                /// <summary>You can generate a route for dynamic objects by creating a list of waypoints. Each waypoint defines the position of the camera and its speed at that waypoint. If you define a route using individual waypoints, TerraExplorer Pro generates the route by computing a line that passes through each location</summary>
+                /// <param name="X" type="Double">The West-East coordinate of the location of interest represented in coordinate system units. You can use the ITerrain interface to retrieve information about the coordinate system units</param>
+                /// <param name="Y" type="Double">The North-South coordinate of the location of interest represented in coordinate system units. You can use the ITerrain interface to retrieve information about the coordinate system units</param>
+                /// <param name="Altitude" type="Double">The elevation of the location of interest relative to the terrain</param>
+                /// <param name="Speed" type="Double">The speed of the camera</param>
+                /// <param name="Yaw" type="Double">The Yaw angle between the viewer and the point of interest. Range from 0 to 360 where 0=North, 90=East, 180=South and 270=West</param>
+                /// <param name="Pitch" type="Double">The Pitch angle between the viewer and the point of interest. Range from -90 to +90 where 0 = Horizon, +90 = straight up and –90 = straight down</param>
+                /// <param name="Roll" type="Double">The Roll angle between the viewer and the point of interest. Range from -90 to +90 where 0 = Horizon, +90 = Full roll right and –90 = Full roll left</param>
+                /// <param name="CameraDeltaYaw" type="Double">The offset between the camera yaw and the plane yaw</param>
+                /// <returns type="IRouteWaypoint" />
+                /// </signature>
+                /// <signature>
+                /// <summary>You can generate a route for dynamic objects by creating a list of waypoints. Each waypoint defines the position of the camera and its speed at that waypoint. If you define a route using individual waypoints, TerraExplorer Pro generates the route by computing a line that passes through each location</summary>
+                /// <param name="X" type="Double">The West-East coordinate of the location of interest represented in coordinate system units. You can use the ITerrain interface to retrieve information about the coordinate system units</param>
+                /// <param name="Y" type="Double">The North-South coordinate of the location of interest represented in coordinate system units. You can use the ITerrain interface to retrieve information about the coordinate system units</param>
+                /// <param name="Altitude" type="Double">The elevation of the location of interest relative to the terrain</param>
+                /// <param name="Speed" type="Double">The speed of the camera</param>
+                /// <param name="Yaw" type="Double">The Yaw angle between the viewer and the point of interest. Range from 0 to 360 where 0=North, 90=East, 180=South and 270=West</param>
+                /// <param name="Pitch" type="Double">The Pitch angle between the viewer and the point of interest. Range from -90 to +90 where 0 = Horizon, +90 = straight up and –90 = straight down</param>
+                /// <param name="Roll" type="Double">The Roll angle between the viewer and the point of interest. Range from -90 to +90 where 0 = Horizon, +90 = Full roll right and –90 = Full roll left</param>
+                /// <param name="CameraDeltaYaw" type="Double">The offset between the camera yaw and the plane yaw</param>
+                /// <param name="CameraDeltaPitch" type="Double">The offset between the camera pitch and the plane pitch</param>
+                /// <returns type="IRouteWaypoint" />
+                /// </signature>
+                /// <signature>
+                /// <summary>You can generate a route for dynamic objects by creating a list of waypoints. Each waypoint defines the position of the camera and its speed at that waypoint. If you define a route using individual waypoints, TerraExplorer Pro generates the route by computing a line that passes through each location</summary>
+                /// <param name="X" type="Double">The West-East coordinate of the location of interest represented in coordinate system units. You can use the ITerrain interface to retrieve information about the coordinate system units</param>
+                /// <param name="Y" type="Double">The North-South coordinate of the location of interest represented in coordinate system units. You can use the ITerrain interface to retrieve information about the coordinate system units</param>
+                /// <param name="Altitude" type="Double">The elevation of the location of interest relative to the terrain</param>
+                /// <param name="Speed" type="Double">The speed of the camera</param>
+                /// <param name="Yaw" type="Double">The Yaw angle between the viewer and the point of interest. Range from 0 to 360 where 0=North, 90=East, 180=South and 270=West</param>
+                /// <param name="Pitch" type="Double">The Pitch angle between the viewer and the point of interest. Range from -90 to +90 where 0 = Horizon, +90 = straight up and –90 = straight down</param>
+                /// <param name="Roll" type="Double">The Roll angle between the viewer and the point of interest. Range from -90 to +90 where 0 = Horizon, +90 = Full roll right and –90 = Full roll left</param>
+                /// <param name="CameraDeltaYaw" type="Double">The offset between the camera yaw and the plane yaw</param>
+                /// <param name="CameraDeltaPitch" type="Double">The offset between the camera pitch and the plane pitch</param>
+                /// <param name="MessageID" type="String">The ID of the message object to activate when this waypoint is reached</param>
+                /// <returns type="IRouteWaypoint" />
+                /// </signature>
             },
             CreateSphere: function (Position, Radius, Style, LineColor, FillColor, SegmentDensity, GroupID, Description)
             {
+                /// <signature>
                 /// <summary>Creates a sphere in the 3D Window</summary>
-                /// <param name="Position" type="xxxxx">Description</param>
-                /// <param name="Radius" type="xxxxx">Description</param>
-                /// <param name="Style" type="xxxxx">Description</param>
-                /// <param name="LineColor" type="xxxxx">Description</param>
-                /// <param name="FillColor" type="xxxxx">Description</param>
-                /// <param name="SegmentDensity" type="xxxxx">Description</param>
-                /// <param name="GroupID" type="xxxxx">Description</param>
-                /// <param name="Description" type="xxxxx">Description</param>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the sphere on the terrain</param>
+                /// <param name="Radius" type="Double">The radius of the sphere in meters</param>
                 /// <returns type="ITerrainSphere" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a sphere in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the sphere on the terrain</param>
+                /// <param name="Radius" type="Double">The radius of the sphere in meters</param>
+                /// <param name="Style" type="SphereStyle">An enum that determines which part of the sphere is visible</param>
+                /// <returns type="ITerrainSphere" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a sphere in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the sphere on the terrain</param>
+                /// <param name="Radius" type="Double">The radius of the sphere in meters</param>
+                /// <param name="Style" type="SphereStyle">An enum that determines which part of the sphere is visible</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the sphere. The color value is used to specify color and transparency values</param>
+                /// <returns type="ITerrainSphere" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a sphere in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the sphere on the terrain</param>
+                /// <param name="Radius" type="Double">The radius of the sphere in meters</param>
+                /// <param name="Style" type="SphereStyle">An enum that determines which part of the sphere is visible</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the sphere. The color value is used to specify color and transparency values</param>
+                /// <param name="FillColor" type="Object">The color which fills the sphere, if the alpha value is greater than zero. The color value is used to specify color and transparency values</param>
+                /// <returns type="ITerrainSphere" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a sphere in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the sphere on the terrain</param>
+                /// <param name="Radius" type="Double">The radius of the sphere in meters</param>
+                /// <param name="Style" type="SphereStyle">An enum that determines which part of the sphere is visible</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the sphere. The color value is used to specify color and transparency values</param>
+                /// <param name="FillColor" type="Object">The color which fills the sphere, if the alpha value is greater than zero. The color value is used to specify color and transparency values</param>
+                /// <param name="SegmentDensity" type="Number">Determines the density of the mesh that composes the sphere. The density can be any number between 1 and 10</param>
+                /// <returns type="ITerrainSphere" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a sphere in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the sphere on the terrain</param>
+                /// <param name="Radius" type="Double">The radius of the sphere in meters</param>
+                /// <param name="Style" type="SphereStyle">An enum that determines which part of the sphere is visible</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the sphere. The color value is used to specify color and transparency values</param>
+                /// <param name="FillColor" type="Object">The color which fills the sphere, if the alpha value is greater than zero. The color value is used to specify color and transparency values</param>
+                /// <param name="SegmentDensity" type="Number">Determines the density of the mesh that composes the sphere. The density can be any number between 1 and 10</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the sphere is created. If it is set to an empty string, the object is created under the root</param>
+                /// <returns type="ITerrainSphere" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a sphere in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the sphere on the terrain</param>
+                /// <param name="Radius" type="Double">The radius of the sphere in meters</param>
+                /// <param name="Style" type="SphereStyle">An enum that determines which part of the sphere is visible</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the sphere. The color value is used to specify color and transparency values</param>
+                /// <param name="FillColor" type="Object">The color which fills the sphere, if the alpha value is greater than zero. The color value is used to specify color and transparency values</param>
+                /// <param name="SegmentDensity" type="Number">Determines the density of the mesh that composes the sphere. The density can be any number between 1 and 10</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the sphere is created. If it is set to an empty string, the object is created under the root</param>
+                /// <param name="Description" type="String">The name of the sphere as it appears in the Project Tree. If an empty string is passed into this parameter, TerraExplorer assigns it a unique name</param>
+                /// <returns type="ITerrainSphere" />
+                /// </signature>
             },
             CreateTerrainModifier: function (pIGeometry, Mode, Flat, Feather, GroupID, Description)
             {
+                /// <signature>
                 /// <summary>A terrain modifier object is a unique polygon in the TerraExplorer world that changes the elevation values of the terrain based on a polygon</summary>
-                /// <param name="pIGeometry" type="xxxxx">Description</param>
-                /// <param name="Mode" type="xxxxx">Description</param>
-                /// <param name="Flat" type="xxxxx">Description</param>
-                /// <param name="Feather" type="xxxxx">Description</param>
-                /// <param name="GroupID" type="xxxxx">Description</param>
-                /// <param name="Description" type="xxxxx">Description</param>
+                /// <param name="pIGeometry" type="IGeometry">An IGeometry representing geometric properties of the terrain modifier polygon</param>
                 /// <returns type="ITerrainModifier" />
+                /// </signature>
+                /// <signature>
+                /// <summary>A terrain modifier object is a unique polygon in the TerraExplorer world that changes the elevation values of the terrain based on a polygon</summary>
+                /// <param name="pIGeometry" type="IGeometry">An IGeometry representing geometric properties of the terrain modifier polygon</param>
+                /// <param name="Mode" type="ElevationBehaviorMode">An enum determining the elevation behavior mode</param>
+                /// <returns type="ITerrainModifier" />
+                /// </signature>
+                /// <signature>
+                /// <summary>A terrain modifier object is a unique polygon in the TerraExplorer world that changes the elevation values of the terrain based on a polygon</summary>
+                /// <param name="pIGeometry" type="IGeometry">An IGeometry representing geometric properties of the terrain modifier polygon</param>
+                /// <param name="Mode" type="ElevationBehaviorMode">An enum determining the elevation behavior mode</param>
+                /// <param name="Flat" type="Boolean">A Boolean that determines if the modified terrain creates a flat surface</param>
+                /// <returns type="ITerrainModifier" />
+                /// </signature>
+                /// <signature>
+                /// <summary>A terrain modifier object is a unique polygon in the TerraExplorer world that changes the elevation values of the terrain based on a polygon</summary>
+                /// <param name="pIGeometry" type="IGeometry">An IGeometry representing geometric properties of the terrain modifier polygon</param>
+                /// <param name="Mode" type="ElevationBehaviorMode">An enum determining the elevation behavior mode</param>
+                /// <param name="Flat" type="Boolean">A Boolean that determines if the modified terrain creates a flat surface</param>
+                /// <param name="Feather" type="Double">The size of the feather radius in meters</param>
+                /// <returns type="ITerrainModifier" />
+                /// </signature>
+                /// <signature>
+                /// <summary>A terrain modifier object is a unique polygon in the TerraExplorer world that changes the elevation values of the terrain based on a polygon</summary>
+                /// <param name="pIGeometry" type="IGeometry">An IGeometry representing geometric properties of the terrain modifier polygon</param>
+                /// <param name="Mode" type="ElevationBehaviorMode">An enum determining the elevation behavior mode</param>
+                /// <param name="Flat" type="Boolean">A Boolean that determines if the modified terrain creates a flat surface</param>
+                /// <param name="Feather" type="Double">The size of the feather radius in meters</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the terrain modifier is created. If it is set to an empty string, the object is created under the root</param>
+                /// <returns type="ITerrainModifier" />
+                /// </signature>
+                /// <signature>
+                /// <summary>A terrain modifier object is a unique polygon in the TerraExplorer world that changes the elevation values of the terrain based on a polygon</summary>
+                /// <param name="pIGeometry" type="IGeometry">An IGeometry representing geometric properties of the terrain modifier polygon</param>
+                /// <param name="Mode" type="ElevationBehaviorMode">An enum determining the elevation behavior mode</param>
+                /// <param name="Flat" type="Boolean">A Boolean that determines if the modified terrain creates a flat surface</param>
+                /// <param name="Feather" type="Double">The size of the feather radius in meters</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the terrain modifier is created. If it is set to an empty string, the object is created under the root</param>
+                /// <param name="Description" type="String">The name of the terrain modifier as it appears in the Project Tree. If an empty string is passed into this parameter, TerraExplorer assigns it a unique name</param>
+                /// <returns type="ITerrainModifier" />
+                /// </signature>
             },
             CreateTextLabel: function (Position, Text, LabelStyle, GroupID, Description)
             {
+                /// <signature>
                 /// <summary>Creates a text label in the 3D Window
                 /// <para>Note: If you want to create an image label, use the CreateLabel or CreateImageLabel methods</para>
                 /// </summary>
-                /// <param name="Position" type="xxxxx">Description</param>
-                /// <param name="Text" type="xxxxx">Description</param>
-                /// <param name="LabelStyle" type="xxxxx">Description</param>
-                /// <param name="GroupID" type="xxxxx">Description</param>
-                /// <param name="Description" type="xxxxx">Description</param>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the label on the terrain</param>
+                /// <param name="Text" type="String">The label text</param>
                 /// <returns type="ITerrainLabel" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a text label in the 3D Window
+                /// <para>Note: If you want to create an image label, use the CreateLabel or CreateImageLabel methods</para>
+                /// </summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the label on the terrain</param>
+                /// <param name="Text" type="String">The label text</param>
+                /// <param name="LabelStyle" type="ILabelStyle">An ILabelStyle representing the label style (e.g. color, font and viewing distance properties).</param>
+                /// <returns type="ITerrainLabel" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a text label in the 3D Window
+                /// <para>Note: If you want to create an image label, use the CreateLabel or CreateImageLabel methods</para>
+                /// </summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the label on the terrain</param>
+                /// <param name="Text" type="String">The label text</param>
+                /// <param name="LabelStyle" type="ILabelStyle">An ILabelStyle representing the label style (e.g. color, font and viewing distance properties).</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the label is created. If it is set to an empty string, the object is created under the root</param>
+                /// <returns type="ITerrainLabel" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a text label in the 3D Window
+                /// <para>Note: If you want to create an image label, use the CreateLabel or CreateImageLabel methods</para>
+                /// </summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the label on the terrain</param>
+                /// <param name="Text" type="String">The label text</param>
+                /// <param name="LabelStyle" type="ILabelStyle">An ILabelStyle representing the label style (e.g. color, font and viewing distance properties).</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the label is created. If it is set to an empty string, the object is created under the root</param>
+                /// <param name="Description" type="String">The name of the label as it appears in the Project Tree. If an empty string is passed into this parameter, TerraExplorer assigns it a unique name</param>
+                /// <returns type="ITerrainLabel" />
+                /// </signature>
             },
             CreateTreeHotlink: function (MessageID, GroupID, Description)
             {
+                /// <signature>
                 /// <summary>Creates a Project Tree entry that has only a hotlink that is not attached to a terrain object. In most cases, if an entry in the Project Tree is not a group, it usually represents an object on the terrain. It is, however, sometimes necessary to create an entry in the Project Tree that can be linked to a web page, for example, without the link actually being related to a terrain object. To create a Tree hotlink, you should first create a message object (using the CreateMessage method) and then pass the ID of that message object to the CreateTreeHotlink method</summary>
-                /// <param name="name" type="xxxxx">Description</param>
-                /// <param name="GroupID" type="xxxxx">Description</param>
-                /// <param name="Description" type="xxxxx">Description</param>
+                /// <param name="MessageID" type="String">The ID of the message object that the client wants to have activated once the user clicks on the hotlink in the Project Tree.</param>
                 /// <returns type="ITreeHotlink" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a Project Tree entry that has only a hotlink that is not attached to a terrain object. In most cases, if an entry in the Project Tree is not a group, it usually represents an object on the terrain. It is, however, sometimes necessary to create an entry in the Project Tree that can be linked to a web page, for example, without the link actually being related to a terrain object. To create a Tree hotlink, you should first create a message object (using the CreateMessage method) and then pass the ID of that message object to the CreateTreeHotlink method</summary>
+                /// <param name="MessageID" type="String">The ID of the message object that the client wants to have activated once the user clicks on the hotlink in the Project Tree.</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the hotlink is created. If it is set to zero, the object created in the route</param>
+                /// <returns type="ITreeHotlink" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a Project Tree entry that has only a hotlink that is not attached to a terrain object. In most cases, if an entry in the Project Tree is not a group, it usually represents an object on the terrain. It is, however, sometimes necessary to create an entry in the Project Tree that can be linked to a web page, for example, without the link actually being related to a terrain object. To create a Tree hotlink, you should first create a message object (using the CreateMessage method) and then pass the ID of that message object to the CreateTreeHotlink method</summary>
+                /// <param name="MessageID" type="String">The ID of the message object that the client wants to have activated once the user clicks on the hotlink in the Project Tree.</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the hotlink is created. If it is set to zero, the object created in the route</param>
+                /// <param name="Description" type="String">The name of the hotlink as it appears in the Project Tree. If an empty string is passed into this parameter, TerraExplorer assigns it a unique name</param>
+                /// <returns type="ITreeHotlink" />
+                /// </signature>
             },
             CreateVideoOnTerrain: function (VideoFileName, Position, GroupID, Description)
             {
                 /// <summary>Plays a movie draped on the terrain</summary>
-                /// <param name="VideoFileName" type="xxxxx">Description</param>
-                /// <param name="Position" type="xxxxx">Description</param>
-                /// <param name="GroupID" type="xxxxx">Description</param>
-                /// <param name="Description" type="xxxxx">Description</param>
+                /// <param name="VideoFileName" type="String">A full path name or a URL to the video file that you would like to import to the terrain</param>
+                /// <param name="Position" type="IPosition">An IPosition representing the position and orientation of the video object on the terrain</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the video on terrain is created. If it is set to an empty string, the object is created under the root</param>
+                /// <param name="Description" type="String">The name of the video on terrain object as it appears in the Project Tree. If an empty string is passed into this parameter, TerraExplorer assigns it a unique name</param>
                 /// <returns type="ITerrainVideo" />
             },
             DeleteObject: function (ObjectID)
             {
                 /// <summary>Deletes an object from the terrain</summary>
-                /// <param name="ObjectID" type="xxxxx">Description</param>
+                /// <param name="ObjectID" type="String">The ID of the object to be deleted</param>
                 /// <returns type="Undefined" />
             },
             GetObject: function (ObjectID)
             {
                 /// <summary>Returns an interface to the object based on the object ID.</summary>
-                /// <param name="ObjectID" type="xxxxx">Description</param>
+                /// <param name="ObjectID" type="String">The ID of the object requested</param>
                 /// <returns type="ITerraExplorerObject" />
             }
         };
