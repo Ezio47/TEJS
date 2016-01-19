@@ -674,247 +674,516 @@
             }
         };
     }
-    function ICreator() {
+    function ICreator()
+    {
         return {
             /// <field type="IGeometryCreator">An IGeometryCreator containing methods to create geometry objects</field>
-            GeometryCreator:{},
+            GeometryCreator: {},
             Create3DArrow: function (Position, Length, Style, ObjectHeight, LineColor, FillColor, GroupID, Description)
             {
-                /// <summary>Summary Not Yet Implemented</summary>
+                /// <summary>Creates a 3-dimensional arrow and places it in the 3D Window</summary>
+                /// <param name="Position" type="xxxxx">Description</param>
+                /// <param name="Length" type="xxxxx">Description</param>
+                /// <param name="Style" type="xxxxx">Description</param>
+                /// <param name="ObjectHeight" type="xxxxx">Description</param>
+                /// <param name="LineColor" type="xxxxx">Description</param>
+                /// <param name="FillColor" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
                 /// <returns type="Undefined" />
             },
             Create3DPolygon: function (pIGeometry, ObjectHeight, LineColor, FillColor, AltitudeType, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates an ITerrain3DPolygon object</summary>
+                /// <param name="pIGeometry" type="xxxxx">Description</param>
+                /// <param name="ObjectHeight" type="xxxxx">Description</param>
+                /// <param name="LineColor" type="xxxxx">Description</param>
+                /// <param name="FillColor" type="xxxxx">Description</param>
+                /// <param name="AltitudeType" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateArc: function (Position, RadiusX, RadiusY, StartAngle, EndEngle, LineColor, FillColor, NumOfSegments, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates an arc in the 3D Window</summary>
+                /// <param name="Position" type="xxxxx">Description</param>
+                /// <param name="RadiusX" type="xxxxx">Description</param>
+                /// <param name="RadiusY" type="xxxxx">Description</param>
+                /// <param name="StartAngle" type="xxxxx">Description</param>
+                /// <param name="EndEngle" type="xxxxx">Description</param>
+                /// <param name="LineColor" type="xxxxx">Description</param>
+                /// <param name="FillColor" type="xxxxx">Description</param>
+                /// <param name="NumOfSegments" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateArrow: function (Position, Length, Style, LineColor, FillColor, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a 2-dimensional arrow and places it in the 3D Window</summary>
+                /// <param name="Position" type="xxxxx">Description</param>
+                /// <param name="Length" type="xxxxx">Description</param>
+                /// <param name="Style" type="xxxxx">Description</param>
+                /// <param name="LineColor" type="xxxxx">Description</param>
+                /// <param name="FillColor" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateBox: function (Position, ObjectWidth, ObjectDepth, ObjectHeight, LineColor, FillColor, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a box in the 3D Window</summary>
+                /// <param name="Position" type="xxxxx">Description</param>
+                /// <param name="ObjectWidth" type="xxxxx">Description</param>
+                /// <param name="ObjectDepth" type="xxxxx">Description</param>
+                /// <param name="ObjectHeight" type="xxxxx">Description</param>
+                /// <param name="LineColor" type="xxxxx">Description</param>
+                /// <param name="FillColor" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateBuilding: function (pIGeometry, RoofHeight, AltitudeType, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a building in the 3D Window</summary>
+                /// <param name="pIGeometry" type="xxxxx">Description</param>
+                /// <param name="RoofHeight" type="xxxxx">Description</param>
+                /// <param name="AltitudeType" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateCircle: function (Position, Radius, LineColor, FillColor, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a circle in the 3D Window</summary>
+                /// <param name="Position" type="xxxxx">Description</param>
+                /// <param name="Radius" type="xxxxx">Description</param>
+                /// <param name="LineColor" type="xxxxx">Description</param>
+                /// <param name="FillColor" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateColor: function (Red, Green, Blue, Alpha)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a custom color by defining the red, green, blue and alpha values</summary>
+                /// <param name="Red" type="xxxxx">Description</param>
+                /// <param name="Green" type="xxxxx">Description</param>
+                /// <param name="Blue" type="xxxxx">Description</param>
+                /// <param name="Alpha" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateCone: function (Position, Radius, ObjectHeight, LineColor, FillColor, NumOfSegments, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a cone in the 3D Window</summary>
+                /// <param name="Position" type="xxxxx">Description</param>
+                /// <param name="Radius" type="xxxxx">Description</param>
+                /// <param name="ObjectHeight" type="xxxxx">Description</param>
+                /// <param name="LineColor" type="xxxxx">Description</param>
+                /// <param name="FillColor" type="xxxxx">Description</param>
+                /// <param name="NumOfSegments" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateCylinder: function (Position, Radius, ObjectHeight, LineColor, FillColor, NumOfSegments, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a cylinder in the 3D Window</summary>
+                /// <param name="Position" type="xxxxx">Description</param>
+                /// <param name="Radius" type="xxxxx">Description</param>
+                /// <param name="ObjectHeight" type="xxxxx">Description</param>
+                /// <param name="LineColor" type="xxxxx">Description</param>
+                /// <param name="FillColor" type="xxxxx">Description</param>
+                /// <param name="NumOfSegments" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateDynamicObject: function (Waypoints, MotionStyle, ObjectType, FileNameOrText, ScaleFactor, AltitudeType, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a dynamic object with waypoints</summary>
+                /// <param name="Waypoints" type="xxxxx">Description</param>
+                /// <param name="MotionStyle" type="xxxxx">Description</param>
+                /// <param name="ObjectType" type="xxxxx">Description</param>
+                /// <param name="FileNameOrText" type="xxxxx">Description</param>
+                /// <param name="ScaleFactor" type="xxxxx">Description</param>
+                /// <param name="AltitudeType" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
-            CreateEffect: function(Position, EffectsXML, GroupID, Description){
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+            CreateEffect: function (Position, EffectsXML, GroupID, Description)
+            {
+                /// <summary>Creates an ITerrainEffect animated effect object</summary>
+                /// <param name="Position" type="xxxxx">Description</param>
+                /// <param name="EffectsXML" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateElevationLayer: function (ElevationFileName, UpperLeftX, UpperLeftY, LowerRightX, LowerRightY, InitParam, PlugName, GroupID, Description, HScale, HOffset)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Loads an elevation layer into the project. Adding the elevation source uses a set of plugins that support multiple file formats. The coordinates of the source can be passed via the UpperLeftX/Y and LowerRightX/Y parameters. If all four coordinate field values are zero, the coordinate information, if available, is read from the file. If the source file coordinate system is not the same as the MPT file Terrain Coordinate system, you can reproject it using ITerrainRasterLayer. CoordinateSystem</summary>
+                /// <param name="ElevationFileName" type="xxxxx">Description</param>
+                /// <param name="UpperLeftX" type="xxxxx">Description</param>
+                /// <param name="UpperLeftY" type="xxxxx">Description</param>
+                /// <param name="LowerRightX" type="xxxxx">Description</param>
+                /// <param name="LowerRightY" type="xxxxx">Description</param>
+                /// <param name="InitParam" type="xxxxx">Description</param>
+                /// <param name="PlugName" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <param name="HScale" type="xxxxx">Description</param>
+                /// <param name="HOffset" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateEllipse: function (Position, RadiusX, RadiusY, LineColor, FillColor, NumOfSegments, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates an ellipse in the 3D Window</summary>
+                /// <param name="Position" type="xxxxx">Description</param>
+                /// <param name="RadiusX" type="xxxxx">Description</param>
+                /// <param name="RadiusY" type="xxxxx">Description</param>
+                /// <param name="LineColor" type="xxxxx">Description</param>
+                /// <param name="FillColor" type="xxxxx">Description</param>
+                /// <param name="NumOfSegments" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateFeatureLayer: function (layerName, sConnectionString, GroupID)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>CreateFeatureLayer loads a feature layer into the project. A feature layer is a visual representation of a geographic data set like roads, national parks, political boundaries, and rivers using geographic objects such as points, lines, and polygons and optional corresponding annotation objects</summary>
+                /// <param name="layerName" type="xxxxx">Description</param>
+                /// <param name="sConnectionString" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
-            CreateFromStream: function(){
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+            CreateFromStream: function ()
+            {
+                /// <summary>xxxx</summary>
+                /// <returns type="Undefined" />
             },
             CreateHoleOnTerrain: function (pIGeometry, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a hole on terrain object in the 3D Window</summary>
+                /// <param name="pIGeometry" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateImageLabel: function (Position, ImageFileName, LabelStyle, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates an image label in the 3D Window
+                /// <para>Note: If no text is being added to the label, it is preferable to use this method rather than the generic CreateLabel method</para>
+                /// </summary>
+                /// <param name="Position" type="xxxxx">Description</param>
+                /// <param name="ImageFileName" type="xxxxx">Description</param>
+                /// <param name="LabelStyle" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateImageryLayer: function (ImageryFileName, UpperLeftX, UpperLeftY, LowerRightX, LowerRightY, InitParam, PlugName, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Loads an imagery layer into the project. Adding the image uses a set of plugins that support multiple file formats. The coordinates of the source can be passed via the UpperLeftX/Y and LowerRightX/Y parameters. If all four coordinate field values are zero, the coordinate information, if available, is read from the file. If the source file coordinate system is not the same as the MPT file Terrain Coordinate system, you can reproject it using ITerrainRasterLayer. CoordinateSystem.</summary>
+                /// <param name="ImageryFileName" type="xxxxx">Description</param>
+                /// <param name="UpperLeftX" type="xxxxx">Description</param>
+                /// <param name="UpperLeftY" type="xxxxx">Description</param>
+                /// <param name="LowerRightX" type="xxxxx">Description</param>
+                /// <param name="LowerRightY" type="xxxxx">Description</param>
+                /// <param name="InitParam" type="xxxxx">Description</param>
+                /// <param name="PlugName" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateKMLLayer: function (Path, GroupID)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Loads a KML layer into the project. KML layers loaded into a project are always read directly from the local or remote data source. KML is an XML grammar and file format for modeling and storing geographic features such as points, lines, images and polygons. KML is an OGC standard that is publically defined. See: http://www.opengeospatial.org/standards/kml.</summary>
+                /// <param name="Path" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateLabel: function (Position, Text, ImageFileName, LabelStyle, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a label in the 3D Window. The method offers an optimization point in the LabelStyle parameter. The parameter allows the client to set all of the label’s style properties at the label creation time. When creating a large numbers of labels at once, the use of ILabelStyle avoids unnecessary round-trips between the client and TerraExplorer and therefore gains in performance</summary>
+                /// <param name="Position" type="xxxxx">Description</param>
+                /// <param name="Text" type="xxxxx">Description</param>
+                /// <param name="ImageFileName" type="xxxxx">Description</param>
+                /// <param name="LabelStyle" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
-            CreateLabelStyle: function (labelStyle)
+            CreateLabelStyle: function (LabelStyle)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a text and image label style that defines all label style properties. This style can be applied to any ITerrainLabel or ITerrainImageLabel object</summary>
+                /// <param name="LabelStyle" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateLocation: function (Position, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>In TerraExplorer, a location is defined as a point of interest (X, Y, Height). The camera is given a direction and distance from which this point of interest is viewed. For example, if you chose the White House as your point of interest, you would need to find the x- and y-coordinates of the White House and pass those coordinates to the CreateLocation method</summary>
+                /// <param name="Position" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateLocationHere: function (Group, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a location in the current camera position. A location defines the geographical coordinates of a point on the terrain as well as the position from which the point is to be viewed. By clicking on a location name in the Project Tree the camera can fly or jump to the location or play one of the predefined patterns (circle, oval, line or arc)</summary>
+                /// <param name="Group" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateMeshLayerFromFile: function (FilePath, ParentGroupID)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Loads from a file an IMeshLayer representing a unified, stream optimized 3D Mesh Layer (3DML) database</summary>
+                /// <param name="FilePath" type="xxxxx">Description</param>
+                /// <param name="ParentGroupID" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateMeshLayerFromSFS: function (ServerPath, layerName, ParentGroupID)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Loads from TerraGate SFS an IMeshLayer representing a unified, stream optimized 3D Mesh Layer (3DML) database</summary>
+                /// <param name="ServerPath" type="xxxxx">Description</param>
+                /// <param name="layerName" type="xxxxx">Description</param>
+                /// <param name="ParentGroupID" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateMessage: function (TargetPosition, msgData, Type, BringToFront)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a message object that is displayed in a container or floating popup. The message can be a text string, HTML page, image, script code, multiple links or any other file</summary>
+                /// <param name="TargetPosition" type="xxxxx">Description</param>
+                /// <param name="msgData" type="xxxxx">Description</param>
+                /// <param name="Type" type="xxxxx">Description</param>
+                /// <param name="BringToFront" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateModel: function (Position, FileName, Scale, ModelType, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Loads an object from a file and places it in the 3D Window. Currently, TerraExplorer supports X and FLT formats (.x, .xpc, .flt, .fpc, .3ds, .xpl, .xpl2 or .dae)</summary>
+                /// <param name="Position" type="xxxxx">Description</param>
+                /// <param name="FileName" type="xxxxx">Description</param>
+                /// <param name="Scale" type="xxxxx">Description</param>
+                /// <param name="ModelType" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateNewFeatureLayer: function (layerName, LayerGeomType, sConnectionString, GroupID)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>The CreateNewFeatureLayer method enables you to create a new feature layer directly from TerraExplorer. The layer can be saved as a shapefile (.shp) or SQLite (.sqlite). For a shapefile, the connection string must include “TEPlugName=OGR” and “FileName=NameOfShapeFile.shp”. When saving as SQLite, the connection string must include “TEPlugName=OGR” and “FileName=NameOfSQLiteFile.sqlite” and “LayerName=newlayername”</summary>
+                /// <param name="layerName" type="xxxxx">Description</param>
+                /// <param name="LayerGeomType" type="xxxxx">Description</param>
+                /// <param name="sConnectionString" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreatePointCloudModel: function (ModelFileName, Position, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Imports a Point Cloud object from a file and places it in the 3D Window. These models are created from a list of points in a 3D area that are collected by various 3D scanners. Currently, TerraExplorer supports Skyline’s proprietary Point Cloud files (CPT)</summary>
+                /// <param name="ModelFileName" type="xxxxx">Description</param>
+                /// <param name="Position" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreatePolygon: function (Geometry, LineColor, FillColor, AltitudeType, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Create a polygon in the 3D Window
+                /// <para>Note: To polygonize the resulting polygon (in order to find and resolve any intersecting lines) call StartEdit() followed by EndEdit()</para>
+                /// </summary>
+                /// <param name="Geometry" type="xxxxx">Description</param>
+                /// <param name="LineColor" type="xxxxx">Description</param>
+                /// <param name="FillColor" type="xxxxx">Description</param>
+                /// <param name="AltitudeType" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreatePolygonFromArray: function (verticesArray, LineColor, FillColor, AltitudeType, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a polygon from an array of points
+                /// <para>Note: To polygonize the resulting polygon (in order to find and resolve any intersecting lines) call StartEdit() followed by EndEdit()</para>
+                /// </summary>
+                /// <param name="verticesArray" type="xxxxx">Description</param>
+                /// <param name="LineColor" type="xxxxx">Description</param>
+                /// <param name="FillColor" type="xxxxx">Description</param>
+                /// <param name="AltitudeType" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreatePolyline: function (Geometry, LineColor, AltitudeType, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a polyline in the 3D Window</summary>
+                /// <param name="Geometry" type="xxxxx">Description</param>
+                /// <param name="LineColor" type="xxxxx">Description</param>
+                /// <param name="AltitudeType" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreatePolylineFromArray: function (verticesArray, LineColor, AltitudeType, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a polyline by connecting the points in an array of points</summary>
+                /// <param name="verticesArray" type="xxxxx">Description</param>
+                /// <param name="LineColor" type="xxxxx">Description</param>
+                /// <param name="AltitudeType" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreatePopupMessage: function (Caption, Src, Left, Top, Width, Height, Timeout)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Displays an HTML pop-up window that contains Microsoft Internet Explorer browser or simple text</summary>
+                /// <param name="Caption" type="xxxxx">Description</param>
+                /// <param name="Src" type="xxxxx">Description</param>
+                /// <param name="Left" type="xxxxx">Description</param>
+                /// <param name="Top" type="xxxxx">Description</param>
+                /// <param name="Width" type="xxxxx">Description</param>
+                /// <param name="Height" type="xxxxx">Description</param>
+                /// <param name="Timeout" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreatePosition: function (X, Y, Altitude, AltitudeType, Yaw, Pitch, Roll, Distance)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a position in the 3D Window with specific coordinate information (X, Y, Altitude), orientation properties (Yaw, Pitch, Roll) and distance from which to observe the point of interest</summary>
+                /// <param name="X" type="xxxxx">Description</param>
+                /// <param name="Y" type="xxxxx">Description</param>
+                /// <param name="Altitude" type="xxxxx">Description</param>
+                /// <param name="AltitudeType" type="xxxxx">Description</param>
+                /// <param name="Yaw" type="xxxxx">Description</param>
+                /// <param name="Pitch" type="xxxxx">Description</param>
+                /// <param name="Roll" type="xxxxx">Description</param>
+                /// <param name="Distance" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreatePresentation: function (GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>The CreatePresentation method enables you to create an empty presentation. You can then add the steps to the presentation and set caption and playback properties using the IPresentation interface</summary>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreatePyramid: function (Position, ObjectWidth, ObjectDepth, ObjectHeight, LineColor, FillColor, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a pyramid in the 3D Window</summary>
+                /// <param name="Position" type="xxxxx">Description</param>
+                /// <param name="ObjectWidth" type="xxxxx">Description</param>
+                /// <param name="ObjectDepth" type="xxxxx">Description</param>
+                /// <param name="ObjectHeight" type="xxxxx">Description</param>
+                /// <param name="LineColor" type="xxxxx">Description</param>
+                /// <param name="FillColor" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateRectangle: function (Position, ObjectWidth, ObjectDepth, LineColor, FillColor, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a rectangle in the 3D Window</summary>
+                /// <param name="Position" type="xxxxx">Description</param>
+                /// <param name="ObjectWidth" type="xxxxx">Description</param>
+                /// <param name="ObjectDepth" type="xxxxx">Description</param>
+                /// <param name="LineColor" type="xxxxx">Description</param>
+                /// <param name="FillColor" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateRegularPolygon: function (Position, Radius, NumOfSegments, LineColor, FillColor, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a polygon with equal-length segments in the 3D Window</summary>
+                /// <param name="Position" type="xxxxx">Description</param>
+                /// <param name="Radius" type="xxxxx">Description</param>
+                /// <param name="NumOfSegments" type="xxxxx">Description</param>
+                /// <param name="LineColor" type="xxxxx">Description</param>
+                /// <param name="FillColor" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateRouteWaypoint: function (X, Y, Altitude, Speed, Yaw, Pitch, Roll, CameraDeltaYaw, CameraDeltaPitch, MessageID)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>You can generate a route for dynamic objects by creating a list of waypoints. Each waypoint defines the position of the camera and its speed at that waypoint. If you define a route using individual waypoints, TerraExplorer Pro generates the route by computing a line that passes through each location</summary>
+                /// <param name="X" type="xxxxx">Description</param>
+                /// <param name="Y" type="xxxxx">Description</param>
+                /// <param name="Altitude" type="xxxxx">Description</param>
+                /// <param name="Speed" type="xxxxx">Description</param>
+                /// <param name="Yaw" type="xxxxx">Description</param>
+                /// <param name="Pitch" type="xxxxx">Description</param>
+                /// <param name="Roll" type="xxxxx">Description</param>
+                /// <param name="CameraDeltaYaw" type="xxxxx">Description</param>
+                /// <param name="CameraDeltaPitch" type="xxxxx">Description</param>
+                /// <param name="MessageID" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateSphere: function (Position, Radius, Style, LineColor, FillColor, SegmentDensity, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a sphere in the 3D Window</summary>
+                /// <param name="Position" type="xxxxx">Description</param>
+                /// <param name="Radius" type="xxxxx">Description</param>
+                /// <param name="Style" type="xxxxx">Description</param>
+                /// <param name="LineColor" type="xxxxx">Description</param>
+                /// <param name="FillColor" type="xxxxx">Description</param>
+                /// <param name="SegmentDensity" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateTerrainModifier: function (pIGeometry, Mode, Flat, Feather, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>A terrain modifier object is a unique polygon in the TerraExplorer world that changes the elevation values of the terrain based on a polygon</summary>
+                /// <param name="pIGeometry" type="xxxxx">Description</param>
+                /// <param name="Mode" type="xxxxx">Description</param>
+                /// <param name="Flat" type="xxxxx">Description</param>
+                /// <param name="Feather" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateTextLabel: function (Position, Text, LabelStyle, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a text label in the 3D Window
+                /// <para>Note: If you want to create an image label, use the CreateLabel or CreateImageLabel methods</para>
+                /// </summary>
+                /// <param name="Position" type="xxxxx">Description</param>
+                /// <param name="Text" type="xxxxx">Description</param>
+                /// <param name="LabelStyle" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             CreateTreeHotlink: function (MessageID, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Creates a Project Tree entry that has only a hotlink that is not attached to a terrain object. In most cases, if an entry in the Project Tree is not a group, it usually represents an object on the terrain. It is, however, sometimes necessary to create an entry in the Project Tree that can be linked to a web page, for example, without the link actually being related to a terrain object. To create a Tree hotlink, you should first create a message object (using the CreateMessage method) and then pass the ID of that message object to the CreateTreeHotlink method</summary>
+                /// <param name="name" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
-            CreateVideoOnTerrain: function (VideoFileName,        Position,        GroupID,        Description)
+            CreateVideoOnTerrain: function (VideoFileName, Position, GroupID, Description)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Plays a movie draped on the terrain</summary>
+                /// <param name="VideoFileName" type="xxxxx">Description</param>
+                /// <param name="Position" type="xxxxx">Description</param>
+                /// <param name="GroupID" type="xxxxx">Description</param>
+                /// <param name="Description" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             DeleteObject: function (ObjectID)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Deletes an object from the terrain</summary>
+                /// <param name="ObjectID" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             },
             GetObject: function (ObjectID)
             {
-            /// <summary>Summary Not Yet Implemented</summary>
-            /// <returns type="Undefined" />
+                /// <summary>Returns an interface to the object based on the object ID.</summary>
+                /// <param name="ObjectID" type="xxxxx">Description</param>
+                /// <returns type="Undefined" />
             }
         };
     }
