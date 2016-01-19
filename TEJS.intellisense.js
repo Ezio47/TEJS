@@ -681,43 +681,143 @@
             GeometryCreator: {},
             Create3DArrow: function (Position, Length, Style, ObjectHeight, LineColor, FillColor, GroupID, Description)
             {
+                /// <signature>
                 /// <summary>Creates a 3-dimensional arrow and places it in the 3D Window</summary>
-                /// <param name="Position" type="xxxxx">Description</param>
-                /// <param name="Length" type="xxxxx">Description</param>
-                /// <param name="Style" type="xxxxx">Description</param>
-                /// <param name="ObjectHeight" type="xxxxx">Description</param>
-                /// <param name="LineColor" type="xxxxx">Description</param>
-                /// <param name="FillColor" type="xxxxx">Description</param>
-                /// <param name="GroupID" type="xxxxx">Description</param>
-                /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <param name="Position" type="IPosition">An IPosition representing the 3D arrow’s head position and the orientation of the object on the terrain</param>
+                /// <param name="Length" type="Double">The length of the 3-dimensional arrow from head to tail in meters</param>
+                /// <returns type="ITerrain3DArrow" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a 3-dimensional arrow and places it in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the 3D arrow’s head position and the orientation of the object on the terrain</param>
+                /// <param name="Length" type="Double">The length of the 3-dimensional arrow from head to tail in meters</param>
+                /// <param name="Style" type="Number">The style of the 3-dimensional arrow. Can be one of the following when looking at the arrow from a top-view: 0 or 1</param>
+                /// <returns type="ITerrain3DArrow" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a 3-dimensional arrow and places it in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the 3D arrow’s head position and the orientation of the object on the terrain</param>
+                /// <param name="Length" type="Double">The length of the 3-dimensional arrow from head to tail in meters</param>
+                /// <param name="Style" type="Number">The style of the 3-dimensional arrow. Can be one of the following when looking at the arrow from a top-view: 0 or 1</param>
+                /// <param name="ObjectHeight" type="Double">The height of the 3-dimensional arrow in meters</param>
+                /// <returns type="ITerrain3DArrow" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a 3-dimensional arrow and places it in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the 3D arrow’s head position and the orientation of the object on the terrain</param>
+                /// <param name="Length" type="Double">The length of the 3-dimensional arrow from head to tail in meters</param>
+                /// <param name="Style" type="Number">The style of the 3-dimensional arrow. Can be one of the following when looking at the arrow from a top-view: 0 or 1</param>
+                /// <param name="ObjectHeight" type="Double">The height of the 3-dimensional arrow in meters</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the 3-dimensional arrow. The color value is used to specify color and transparency values</param>
+                /// <returns type="ITerrain3DArrow" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a 3-dimensional arrow and places it in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the 3D arrow’s head position and the orientation of the object on the terrain</param>
+                /// <param name="Length" type="Double">The length of the 3-dimensional arrow from head to tail in meters</param>
+                /// <param name="Style" type="Number">The style of the 3-dimensional arrow. Can be one of the following when looking at the arrow from a top-view: 0 or 1</param>
+                /// <param name="ObjectHeight" type="Double">The height of the 3-dimensional arrow in meters</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the 3-dimensional arrow. The color value is used to specify color and transparency values</param>
+                /// <param name="FillColor" type="Object">The color which fills the 3-dimensional arrow, if the alpha value is greater than zero. The color value is used to specify color and transparency values</param>
+                /// <returns type="ITerrain3DArrow" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a 3-dimensional arrow and places it in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the 3D arrow’s head position and the orientation of the object on the terrain</param>
+                /// <param name="Length" type="Double">The length of the 3-dimensional arrow from head to tail in meters</param>
+                /// <param name="Style" type="Number">The style of the 3-dimensional arrow. Can be one of the following when looking at the arrow from a top-view: 0 or 1</param>
+                /// <param name="ObjectHeight" type="Double">The height of the 3-dimensional arrow in meters</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the 3-dimensional arrow. The color value is used to specify color and transparency values</param>
+                /// <param name="FillColor" type="Object">The color which fills the 3-dimensional arrow, if the alpha value is greater than zero. The color value is used to specify color and transparency values</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the 3-dimensional arrow is created. If it is set to zero, the arrow is created under the root</param>
+                /// <returns type="ITerrain3DArrow" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates a 3-dimensional arrow and places it in the 3D Window</summary>
+                /// <param name="Position" type="IPosition">An IPosition representing the 3D arrow’s head position and the orientation of the object on the terrain</param>
+                /// <param name="Length" type="Double">The length of the 3-dimensional arrow from head to tail in meters</param>
+                /// <param name="Style" type="Number">The style of the 3-dimensional arrow. Can be one of the following when looking at the arrow from a top-view: 0 or 1</param>
+                /// <param name="ObjectHeight" type="Double">The height of the 3-dimensional arrow in meters</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the 3-dimensional arrow. The color value is used to specify color and transparency values</param>
+                /// <param name="FillColor" type="Object">The color which fills the 3-dimensional arrow, if the alpha value is greater than zero. The color value is used to specify color and transparency values</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the 3-dimensional arrow is created. If it is set to zero, the arrow is created under the root</param>
+                /// <param name="Description" type="String">The name of the 3-dimensional arrow as it appears in the Project Tree. If an empty string is passed into this parameter, TerraExplorer assigns it a unique name</param>
+                /// <returns type="ITerrain3DArrow" />
+                /// </signature>
             },
             Create3DPolygon: function (pIGeometry, ObjectHeight, LineColor, FillColor, AltitudeType, GroupID, Description)
             {
+                /// <signature>
                 /// <summary>Creates an ITerrain3DPolygon object</summary>
-                /// <param name="pIGeometry" type="xxxxx">Description</param>
-                /// <param name="ObjectHeight" type="xxxxx">Description</param>
-                /// <param name="LineColor" type="xxxxx">Description</param>
-                /// <param name="FillColor" type="xxxxx">Description</param>
-                /// <param name="AltitudeType" type="xxxxx">Description</param>
-                /// <param name="GroupID" type="xxxxx">Description</param>
-                /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <param name="pIGeometry" type="IGeometry">An IGeometry representing the geometric properties and behavior of the object</param>
+                /// <returns type="ITerrain3DPolygon" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates an ITerrain3DPolygon object</summary>
+                /// <param name="pIGeometry" type="IGeometry">An IGeometry representing the geometric properties and behavior of the object</param>
+                /// <param name="ObjectHeight" type="Double">The height of the 3-dimensional polygon in meters</param>
+                /// <returns type="ITerrain3DPolygon" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates an ITerrain3DPolygon object</summary>
+                /// <param name="pIGeometry" type="IGeometry">An IGeometry representing the geometric properties and behavior of the object</param>
+                /// <param name="ObjectHeight" type="Double">The height of the 3-dimensional polygon in meters</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the 3-dimensional polygon. The color value is used to specify color and transparency values</param>
+                /// <returns type="ITerrain3DPolygon" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates an ITerrain3DPolygon object</summary>
+                /// <param name="pIGeometry" type="IGeometry">An IGeometry representing the geometric properties and behavior of the object</param>
+                /// <param name="ObjectHeight" type="Double">The height of the 3-dimensional polygon in meters</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the 3-dimensional polygon. The color value is used to specify color and transparency values</param>
+                /// <param name="FillColor" type="Object">The color which fills the 3-dimensional polygon, if the alpha value is greater than zero. The color value is used to specify color and transparency values</param>
+                /// <returns type="ITerrain3DPolygon" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates an ITerrain3DPolygon object</summary>
+                /// <param name="pIGeometry" type="IGeometry">An IGeometry representing the geometric properties and behavior of the object</param>
+                /// <param name="ObjectHeight" type="Double">The height of the 3-dimensional polygon in meters</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the 3-dimensional polygon. The color value is used to specify color and transparency values</param>
+                /// <param name="FillColor" type="Object">The color which fills the 3-dimensional polygon, if the alpha value is greater than zero. The color value is used to specify color and transparency values</param>
+                /// <param name="AltitudeType" type="AltitudeTypeCode">An enum that determines the altitude type to be used by the object</param>
+                /// <returns type="ITerrain3DPolygon" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates an ITerrain3DPolygon object</summary>
+                /// <param name="pIGeometry" type="IGeometry">An IGeometry representing the geometric properties and behavior of the object</param>
+                /// <param name="ObjectHeight" type="Double">The height of the 3-dimensional polygon in meters</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the 3-dimensional polygon. The color value is used to specify color and transparency values</param>
+                /// <param name="FillColor" type="Object">The color which fills the 3-dimensional polygon, if the alpha value is greater than zero. The color value is used to specify color and transparency values</param>
+                /// <param name="AltitudeType" type="AltitudeTypeCode">An enum that determines the altitude type to be used by the object</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the 3-dimensional polygon is created. If it is set to an empty string, the object is created under the root</param>
+                /// <returns type="ITerrain3DPolygon" />
+                /// </signature>
+                /// <signature>
+                /// <summary>Creates an ITerrain3DPolygon object</summary>
+                /// <param name="pIGeometry" type="IGeometry">An IGeometry representing the geometric properties and behavior of the object</param>
+                /// <param name="ObjectHeight" type="Double">The height of the 3-dimensional polygon in meters</param>
+                /// <param name="LineColor" type="Object">The color of the lines that make up the 3-dimensional polygon. The color value is used to specify color and transparency values</param>
+                /// <param name="FillColor" type="Object">The color which fills the 3-dimensional polygon, if the alpha value is greater than zero. The color value is used to specify color and transparency values</param>
+                /// <param name="AltitudeType" type="AltitudeTypeCode">An enum that determines the altitude type to be used by the object</param>
+                /// <param name="GroupID" type="String">The Project Tree group in which the 3-dimensional polygon is created. If it is set to an empty string, the object is created under the root</param>
+                /// <param name="Description" type="String">The name of the 3-dimensional polygon as it appears in the Project Tree. If an empty string is passed into this parameter, TerraExplorer assigns it a unique name</param>
+                /// <returns type="ITerrain3DPolygon" />
+                /// </signature>
             },
             CreateArc: function (Position, RadiusX, RadiusY, StartAngle, EndEngle, LineColor, FillColor, NumOfSegments, GroupID, Description)
             {
                 /// <summary>Creates an arc in the 3D Window</summary>
-                /// <param name="Position" type="xxxxx">Description</param>
-                /// <param name="RadiusX" type="xxxxx">Description</param>
-                /// <param name="RadiusY" type="xxxxx">Description</param>
-                /// <param name="StartAngle" type="xxxxx">Description</param>
-                /// <param name="EndEngle" type="xxxxx">Description</param>
-                /// <param name="LineColor" type="xxxxx">Description</param>
-                /// <param name="FillColor" type="xxxxx">Description</param>
-                /// <param name="NumOfSegments" type="xxxxx">Description</param>
-                /// <param name="GroupID" type="xxxxx">Description</param>
-                /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <param name="Position" type="IPosition">Description</param>
+                /// <param name="RadiusX" type="Double">Description</param>
+                /// <param name="RadiusY" type="Double">Description</param>
+                /// <param name="StartAngle" type="Double">Description</param>
+                /// <param name="EndEngle" type="Double">Description</param>
+                /// <param name="LineColor" type="Object">Description</param>
+                /// <param name="FillColor" type="Object">Description</param>
+                /// <param name="NumOfSegments" type="Number">Description</param>
+                /// <param name="GroupID" type="String">Description</param>
+                /// <param name="Description" type="String">Description</param>
+                /// <returns type="ITerrainArc" />
             },
             CreateArrow: function (Position, Length, Style, LineColor, FillColor, GroupID, Description)
             {
@@ -729,7 +829,7 @@
                 /// <param name="FillColor" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainArrow" />
             },
             CreateBox: function (Position, ObjectWidth, ObjectDepth, ObjectHeight, LineColor, FillColor, GroupID, Description)
             {
@@ -742,7 +842,7 @@
                 /// <param name="FillColor" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrain3DRectBase" />
             },
             CreateBuilding: function (pIGeometry, RoofHeight, AltitudeType, GroupID, Description)
             {
@@ -752,7 +852,7 @@
                 /// <param name="AltitudeType" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainBuilding" />
             },
             CreateCircle: function (Position, Radius, LineColor, FillColor, GroupID, Description)
             {
@@ -763,7 +863,7 @@
                 /// <param name="FillColor" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainRegularPolygon" />
             },
             CreateColor: function (Red, Green, Blue, Alpha)
             {
@@ -772,7 +872,7 @@
                 /// <param name="Green" type="xxxxx">Description</param>
                 /// <param name="Blue" type="xxxxx">Description</param>
                 /// <param name="Alpha" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="IColor" />
             },
             CreateCone: function (Position, Radius, ObjectHeight, LineColor, FillColor, NumOfSegments, GroupID, Description)
             {
@@ -785,7 +885,7 @@
                 /// <param name="NumOfSegments" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrain3DRegBase" />
             },
             CreateCylinder: function (Position, Radius, ObjectHeight, LineColor, FillColor, NumOfSegments, GroupID, Description)
             {
@@ -798,7 +898,7 @@
                 /// <param name="NumOfSegments" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrain3DRegBase" />
             },
             CreateDynamicObject: function (Waypoints, MotionStyle, ObjectType, FileNameOrText, ScaleFactor, AltitudeType, GroupID, Description)
             {
@@ -811,7 +911,7 @@
                 /// <param name="AltitudeType" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainDynamicObject" />
             },
             CreateEffect: function (Position, EffectsXML, GroupID, Description)
             {
@@ -820,7 +920,7 @@
                 /// <param name="EffectsXML" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainEffect" />
             },
             CreateElevationLayer: function (ElevationFileName, UpperLeftX, UpperLeftY, LowerRightX, LowerRightY, InitParam, PlugName, GroupID, Description, HScale, HOffset)
             {
@@ -836,7 +936,7 @@
                 /// <param name="Description" type="xxxxx">Description</param>
                 /// <param name="HScale" type="xxxxx">Description</param>
                 /// <param name="HOffset" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainRasterLayer" />
             },
             CreateEllipse: function (Position, RadiusX, RadiusY, LineColor, FillColor, NumOfSegments, GroupID, Description)
             {
@@ -849,7 +949,7 @@
                 /// <param name="NumOfSegments" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainEllipse" />
             },
             CreateFeatureLayer: function (layerName, sConnectionString, GroupID)
             {
@@ -857,12 +957,11 @@
                 /// <param name="layerName" type="xxxxx">Description</param>
                 /// <param name="sConnectionString" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="IFeatureLayer" />
             },
             CreateFromStream: function ()
             {
-                /// <summary>xxxx</summary>
-                /// <returns type="Undefined" />
+                /// <summary>Reserved. Currently not used.</summary>
             },
             CreateHoleOnTerrain: function (pIGeometry, GroupID, Description)
             {
@@ -870,7 +969,7 @@
                 /// <param name="pIGeometry" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainHole" />
             },
             CreateImageLabel: function (Position, ImageFileName, LabelStyle, GroupID, Description)
             {
@@ -882,7 +981,7 @@
                 /// <param name="LabelStyle" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainImageLabel" />
             },
             CreateImageryLayer: function (ImageryFileName, UpperLeftX, UpperLeftY, LowerRightX, LowerRightY, InitParam, PlugName, GroupID, Description)
             {
@@ -896,14 +995,14 @@
                 /// <param name="PlugName" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainRasterLayer" />
             },
             CreateKMLLayer: function (Path, GroupID)
             {
                 /// <summary>Loads a KML layer into the project. KML layers loaded into a project are always read directly from the local or remote data source. KML is an XML grammar and file format for modeling and storing geographic features such as points, lines, images and polygons. KML is an OGC standard that is publically defined. See: http://www.opengeospatial.org/standards/kml.</summary>
                 /// <param name="Path" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="IKMLLayer" />
             },
             CreateLabel: function (Position, Text, ImageFileName, LabelStyle, GroupID, Description)
             {
@@ -914,13 +1013,13 @@
                 /// <param name="LabelStyle" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainLabel" />
             },
             CreateLabelStyle: function (LabelStyle)
             {
                 /// <summary>Creates a text and image label style that defines all label style properties. This style can be applied to any ITerrainLabel or ITerrainImageLabel object</summary>
                 /// <param name="LabelStyle" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ILabelStyle" />
             },
             CreateLocation: function (Position, GroupID, Description)
             {
@@ -928,21 +1027,21 @@
                 /// <param name="Position" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainLocation" />
             },
             CreateLocationHere: function (Group, Description)
             {
                 /// <summary>Creates a location in the current camera position. A location defines the geographical coordinates of a point on the terrain as well as the position from which the point is to be viewed. By clicking on a location name in the Project Tree the camera can fly or jump to the location or play one of the predefined patterns (circle, oval, line or arc)</summary>
                 /// <param name="Group" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainLocation" />
             },
             CreateMeshLayerFromFile: function (FilePath, ParentGroupID)
             {
                 /// <summary>Loads from a file an IMeshLayer representing a unified, stream optimized 3D Mesh Layer (3DML) database</summary>
                 /// <param name="FilePath" type="xxxxx">Description</param>
                 /// <param name="ParentGroupID" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="IMeshLayer" />
             },
             CreateMeshLayerFromSFS: function (ServerPath, layerName, ParentGroupID)
             {
@@ -950,7 +1049,7 @@
                 /// <param name="ServerPath" type="xxxxx">Description</param>
                 /// <param name="layerName" type="xxxxx">Description</param>
                 /// <param name="ParentGroupID" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="IMeshLayer" />
             },
             CreateMessage: function (TargetPosition, msgData, Type, BringToFront)
             {
@@ -959,7 +1058,7 @@
                 /// <param name="msgData" type="xxxxx">Description</param>
                 /// <param name="Type" type="xxxxx">Description</param>
                 /// <param name="BringToFront" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerraExplorerMessage" />
             },
             CreateModel: function (Position, FileName, Scale, ModelType, GroupID, Description)
             {
@@ -970,7 +1069,7 @@
                 /// <param name="ModelType" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainModel" />
             },
             CreateNewFeatureLayer: function (layerName, LayerGeomType, sConnectionString, GroupID)
             {
@@ -979,7 +1078,7 @@
                 /// <param name="LayerGeomType" type="xxxxx">Description</param>
                 /// <param name="sConnectionString" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="IFeatureLayer" />
             },
             CreatePointCloudModel: function (ModelFileName, Position, GroupID, Description)
             {
@@ -988,7 +1087,7 @@
                 /// <param name="Position" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainPointCloudModel" />
             },
             CreatePolygon: function (Geometry, LineColor, FillColor, AltitudeType, GroupID, Description)
             {
@@ -1001,7 +1100,7 @@
                 /// <param name="AltitudeType" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainPolygon" />
             },
             CreatePolygonFromArray: function (verticesArray, LineColor, FillColor, AltitudeType, GroupID, Description)
             {
@@ -1014,7 +1113,7 @@
                 /// <param name="AltitudeType" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainPolygon" />
             },
             CreatePolyline: function (Geometry, LineColor, AltitudeType, GroupID, Description)
             {
@@ -1024,7 +1123,7 @@
                 /// <param name="AltitudeType" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainPolyline" />
             },
             CreatePolylineFromArray: function (verticesArray, LineColor, AltitudeType, GroupID, Description)
             {
@@ -1034,7 +1133,7 @@
                 /// <param name="AltitudeType" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainPolyline" />
             },
             CreatePopupMessage: function (Caption, Src, Left, Top, Width, Height, Timeout)
             {
@@ -1046,7 +1145,7 @@
                 /// <param name="Width" type="xxxxx">Description</param>
                 /// <param name="Height" type="xxxxx">Description</param>
                 /// <param name="Timeout" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="IPopupMessage" />
             },
             CreatePosition: function (X, Y, Altitude, AltitudeType, Yaw, Pitch, Roll, Distance)
             {
@@ -1059,14 +1158,14 @@
                 /// <param name="Pitch" type="xxxxx">Description</param>
                 /// <param name="Roll" type="xxxxx">Description</param>
                 /// <param name="Distance" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="IPosition" />
             },
             CreatePresentation: function (GroupID, Description)
             {
                 /// <summary>The CreatePresentation method enables you to create an empty presentation. You can then add the steps to the presentation and set caption and playback properties using the IPresentation interface</summary>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="IPresentation" />
             },
             CreatePyramid: function (Position, ObjectWidth, ObjectDepth, ObjectHeight, LineColor, FillColor, GroupID, Description)
             {
@@ -1079,7 +1178,7 @@
                 /// <param name="FillColor" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrain3DRectBase" />
             },
             CreateRectangle: function (Position, ObjectWidth, ObjectDepth, LineColor, FillColor, GroupID, Description)
             {
@@ -1091,7 +1190,7 @@
                 /// <param name="FillColor" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainRectangle" />
             },
             CreateRegularPolygon: function (Position, Radius, NumOfSegments, LineColor, FillColor, GroupID, Description)
             {
@@ -1103,7 +1202,7 @@
                 /// <param name="FillColor" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainRegularPolygon" />
             },
             CreateRouteWaypoint: function (X, Y, Altitude, Speed, Yaw, Pitch, Roll, CameraDeltaYaw, CameraDeltaPitch, MessageID)
             {
@@ -1118,7 +1217,7 @@
                 /// <param name="CameraDeltaYaw" type="xxxxx">Description</param>
                 /// <param name="CameraDeltaPitch" type="xxxxx">Description</param>
                 /// <param name="MessageID" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="IRouteWaypoint" />
             },
             CreateSphere: function (Position, Radius, Style, LineColor, FillColor, SegmentDensity, GroupID, Description)
             {
@@ -1131,7 +1230,7 @@
                 /// <param name="SegmentDensity" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainSphere" />
             },
             CreateTerrainModifier: function (pIGeometry, Mode, Flat, Feather, GroupID, Description)
             {
@@ -1142,7 +1241,7 @@
                 /// <param name="Feather" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainModifier" />
             },
             CreateTextLabel: function (Position, Text, LabelStyle, GroupID, Description)
             {
@@ -1154,7 +1253,7 @@
                 /// <param name="LabelStyle" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainLabel" />
             },
             CreateTreeHotlink: function (MessageID, GroupID, Description)
             {
@@ -1162,7 +1261,7 @@
                 /// <param name="name" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITreeHotlink" />
             },
             CreateVideoOnTerrain: function (VideoFileName, Position, GroupID, Description)
             {
@@ -1171,7 +1270,7 @@
                 /// <param name="Position" type="xxxxx">Description</param>
                 /// <param name="GroupID" type="xxxxx">Description</param>
                 /// <param name="Description" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerrainVideo" />
             },
             DeleteObject: function (ObjectID)
             {
@@ -1183,7 +1282,7 @@
             {
                 /// <summary>Returns an interface to the object based on the object ID.</summary>
                 /// <param name="ObjectID" type="xxxxx">Description</param>
-                /// <returns type="Undefined" />
+                /// <returns type="ITerraExplorerObject" />
             }
         };
     }
