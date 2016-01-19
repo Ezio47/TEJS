@@ -133,6 +133,14 @@ var controlFlags = {
     'HUD_LAYER_SCALE_BAR': 128,
     'HUD_LAYER_ZOOM_CONTROL' : 256
 };
+var ElevationBehaviorMode = {
+    /// <field type="Number">Replaces the area defined by the polygon with the selected elevation value</field>
+    'EB_REPLACE':0,
+    /// <field type="Number">Replaces all elevation values that are lower than the selected elevation value with the selected elevation value</field>
+    'EB_BELOW': 1,
+    /// <field type="Number">Replaces all elevation values that are higher than the selected elevation value with the selected elevation value</field>
+    'EB_ABOVE': 2
+};
 var GPSOperationMode = {
     /// <field type="Number">Turn GPS mode off.</field>
     'GPS_MODE_OFF': 0,
