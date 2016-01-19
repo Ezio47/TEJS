@@ -242,6 +242,18 @@ var SliderDisplayMode = {
     /// <field type="String">Automatically adjust range to selected group. You can use this flag in combination with the MODE_FIXED_TIME or MODE_TIME values</field>
     'MODE_ADJUST_FOR_GROUP': 16
 };
+var SphereStyle = {
+    /// <field type="Number">The entire sphere is visible.</field>
+    'SPHERE_NORMAL': 0,
+    /// <field type="Number">The top half is visible.</field>
+    'SPHERE_UPPER_HALF': 1,
+    /// <field type="Number">The lower half is visible.</field>
+    'SPHERE_LOWER_HALF': 2,
+    /// <field type="Number">The upper half, with a base, is visible.</field>
+    'SPHERE_ UPPER_HALF_BASE': 3,
+    /// <field type="Number">The lower half, with a base, is visible.</field>
+    'SPHERE_LOWER_HALF_BASE': 4
+};
 var TerrainQuality = {
     'USE_DATA_IN_MEMORY':0,
     'GET_BEST_RESOLUTION':1
